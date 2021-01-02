@@ -1,0 +1,3828 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>polly general functions &mdash; Pollynet_Processing_Chain  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Rayleigh Scattering module" href="scattering.html" />
+    <link rel="prev" title="lib functions" href="lib.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Pollynet_Processing_Chain
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/anaconda_installation.html">Anaconda installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_config.html">Polly Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_defaults.html">Polly Default Settings for pollynet processing chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_logbook.html">logbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet.html">pollynet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet_processing_chain_config.html">pollynet_processing_chain_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet_processing_program.html">PollyNET Processing Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/running_Pollynet_Processing_Chain_on_the_server.html">Running Picasso on the server (Internal tutorial)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lib.html">lib functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">polly general functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scattering.html">Rayleigh Scattering module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pollynet_Processing_Chain</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>polly general functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/polly_general_func.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib.polly_general_func_lib">
+<span id="polly-general-functions"></span><h1>polly general functions<a class="headerlink" href="#module-lib.polly_general_func_lib" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-lib.polly_general_func_lib"></span><dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_SNR">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_SNR</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">bg</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_SNR" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_SNR calculate the SNR
+.. rubric:: Example</p>
+<p>[SNR] = polly_SNR(signal, bg)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signal: array</dt><dd><p>signal strength.</p>
+</dd>
+<dt>bg: array</dt><dd><p>background. (bg should have the same size as signal)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>SNR: array</dt><dd><p>signal-noise-ratio. For negative signal, the SNR was set to be 0.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-09-01. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_angexp">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_angexp</code><span class="sig-paren">(</span><em class="sig-param">param1</em>, <em class="sig-param">param1_std</em>, <em class="sig-param">param2</em>, <em class="sig-param">param2_std</em>, <em class="sig-param">wavelength1</em>, <em class="sig-param">wavelength2</em>, <em class="sig-param">smoothWindow</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_angexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_ANGEXP calculate the angstroem exponent and its uncertainty.
+.. rubric:: Example</p>
+<p>[angexp, angexpStd] = polly_angexp(param1, param1_std, param2,
+param2_std, wavelength1, wavelength2)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>param1: array</dt><dd><p>extinction or backscatter coefficient at wavelength1.</p>
+</dd>
+<dt>param1_std: array</dt><dd><p>uncertainty of param1.</p>
+</dd>
+<dt>param2: array</dt><dd><p>extinction or backscatter coefficient at wavelength2.</p>
+</dd>
+<dt>param2_std: array</dt><dd><p>uncertainty of param2.</p>
+</dd>
+<dt>wavelength1: float</dt><dd><p>the wavelength for the input parameter 1. [nm]</p>
+</dd>
+<dt>wavelength2: float</dt><dd><p>the wavelength for the input parameter 2. [nm]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>angexp: array</dt><dd><p>angstroem exponent based on param1 and param2</p>
+</dd>
+<dt>angexpStd: array</dt><dd><p>uncertainty of angstroem exponent.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-11-20. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_cloudScreen">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_cloudScreen</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">height</em>, <em class="sig-param">signal</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_cloudScreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_CLOUDSCREEN cloud screen.
+.. rubric:: Example</p>
+<p>% Usecase 1: get the cloud mask
+flagCloudFree = polly_cloudScreen(time, height, signal);</p>
+<p>% Usecase 2: cloudscreen with using signal gradient
+flagCloudFree = polly_cloudScreen(time, height, signal, …</p>
+<blockquote>
+<div><p>‘mode’, 1, ‘detectRange’, [0, 8000], ‘slope_thres’, 1e7)</p>
+</div></blockquote>
+<p>% Usecase 3: cloudscreen with using Zhao’s algorithm
+[flagCloudFree, layerStatus] = polly_cloudScreen(time, height, signal, …</p>
+<blockquote>
+<div><p>‘mode’, 2, ‘minDepth’, 500);</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>time: array</dt><dd><p>measurement time for each profile. (datenum)</p>
+</dd>
+<dt>height: array</dt><dd><p>height above ground. (m)</p>
+</dd>
+<dt>signal: matrix (height x time)</dt><dd><p>signal. (photon count)</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>mode: integer</dt><dd><p>1: with using signal gradient (default)
+2: with using Zhao’s algorithm</p>
+</dd>
+<dt>minDepth: double</dt><dd><p>minimum layer depth (default: 100). (m)</p>
+</dd>
+<dt>detectRange: 2-element array</dt><dd><p>bottom and top height for cloud detection (default: [0, 10000]). (m)</p>
+</dd>
+<dt>heightFullOverlap: double</dt><dd><p>minimum height with full overlap (default: 600). (m)</p>
+</dd>
+<dt>smoothWin: integer</dt><dd><p>smooth window (default: 8). (bins)</p>
+</dd>
+<dt>minSNR: double</dt><dd><p>minimum layer mean signal-noise-ratio (default: 1).</p>
+</dd>
+<dt>background: array</dt><dd><p>background (default: 0 for each profile). (photon count)</p>
+</dd>
+<dt>slope_thres: double</dt><dd><p>threshold of the slope to determine whether there is
+strong backscatter signal (default: 0). [MHz*m]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flagCloudFree: array</dt><dd><p>cloud free mask for each profile.</p>
+</dd>
+<dt>layerStatus: matrix (height x time)</dt><dd><p>layer status for each bin. (0: unknown; 1: cloud; 2: aerosol)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p>Zhao, C., Y. Wang, Q. Wang, Z. Li, Z. Wang, and D. Liu (2014), A new
+cloud and aerosol layer detection method based on micropulse lidar
+measurements, Journal of Geophysical Research: Atmospheres, 119(11),
+6788-6802.</p></li>
+</ol>
+<dl class="simple">
+<dt>History:</dt><dd><p>2020-04-26. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_constrainedfernald">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_constrainedfernald</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">signal</em>, <em class="sig-param">SNR</em>, <em class="sig-param">refHeight</em>, <em class="sig-param">refBeta</em>, <em class="sig-param">molBsc</em>, <em class="sig-param">maxIterations</em>, <em class="sig-param">minLR</em>, <em class="sig-param">maxLR</em>, <em class="sig-param">AOD_AERONET</em>, <em class="sig-param">minAODDev</em>, <em class="sig-param">minHeight</em>, <em class="sig-param">minSNR</em>, <em class="sig-param">window_size</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_constrainedfernald" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_CONSTRAINEDFERNALD retrieve the aerosol backscatter coefficient with AOD
+constrain from AERONET.
+Usage:</p>
+<blockquote>
+<div><p>[aerBsc, bestLR, biasAOD, nIters] = polly_constrainedfernald(height,
+signal, SNR, refHeight, refBeta, molBsc, maxIterations, minLR, maxLR,
+AOD_AERONET, minAODDev, minHeight, minSNR, window_size)</p>
+</div></blockquote>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>signal: array</dt><dd><p>measured signal.</p>
+</dd>
+<dt>SNR: array</dt><dd><p>signal-noise-ratio</p>
+</dd>
+<dt>refHeight: 2-element array</dt><dd><p>reference height. [m]</p>
+</dd>
+<dt>refBeta: float</dt><dd><p>reference value. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molBsc: array</dt><dd><p>molecular backscatter coefficient. [m^{-1}*Sr^{-1}]</p>
+</dd>
+<dt>maxIterations: integer</dt><dd><p>maximum number of the iterations.</p>
+</dd>
+<dt>minLR: float</dt><dd><p>minimum aerosol Lidar ratio. [Sr]</p>
+</dd>
+<dt>maxLR: float</dt><dd><p>maximum aerosol Lidar ratio. [Sr]</p>
+</dd>
+<dt>AOD_AERONET: float</dt><dd><p>AOD measured by AERONET.</p>
+</dd>
+<dt>minAODDev: float</dt><dd><p>minimum deviation of AOD between Lidar and AERONET that can be
+tolerable.</p>
+</dd>
+<dt>LR: float</dt><dd><p>aerosol lidar ratio. [Sr]</p>
+</dd>
+<dt>minHeight: float</dt><dd><p>minimum height for the full FOV. [m]</p>
+</dd>
+<dt>minSNR: float</dt><dd><p>minimum SNR</p>
+</dd>
+<dt>window_size: integer</dt><dd><p>smoothing window size.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBsc: array</dt><dd><p>aerosol backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>bestLR: float</dt><dd><p>the best lidar ratio with the AOD deviation less that required.</p>
+</dd>
+<dt>biasAOD: float</dt><dd><p>deviation of AOD between lidar and AERONET.</p>
+</dd>
+<dt>nIters: integer</dt><dd><p>number of iterations to achieve the minimun AOD deviation.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-02-03. First edition by Zhenping
+2019-03-29. Fix the bug of returning NaN for lidar ratio.
+2019-04-09. Screen out the negative backscatter coefficient during the</p>
+<blockquote>
+<div><p>calculation.</p>
+</div></blockquote>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_depolCal_time">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_depolCal_time</code><span class="sig-paren">(</span><em class="sig-param">depCalAng</em>, <em class="sig-param">mTime</em>, <em class="sig-param">init_depAng</em>, <em class="sig-param">maskDepCalAng</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_depolCal_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_DEPOLCAL_TIME Retrieve the time for the polly depolarization calibration
+period. depolarization calibration: 5 min (+45°) + 5 min (-45°) + 0.5 min
+(which I don’t know why)
+.. rubric:: Example</p>
+<p>[depCal_P_Ang_time_start, depCal_N_Ang_time_start, maskDepCal] =
+polly_depolCal_time(depCalAng, mTime, init_depAng, maskDepCalAng)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl>
+<dt>depCalAng: array</dt><dd><p>depolarization calibration angle. [degree]</p>
+</dd>
+<dt>mTime: array</dt><dd><p>time for each profile. [datenum]</p>
+</dd>
+<dt>init_depAng: float</dt><dd><p>initial depolarization calibration angle. [degree]</p>
+</dd>
+<dt>maskDepCalAng: cell</dt><dd><p>mask for positive and negative calibration profile.
+e.g., {‘none’, ‘none’, ‘p’, ‘p’, ‘p’, ‘p’, ‘p’, ‘p’, ‘p’,</p>
+<blockquote>
+<div><blockquote>
+<div><p>‘p’, ‘none’, ‘none’, ‘n’, ‘n’, ‘n’, ‘n’, ‘n’, ‘n’, ‘n’,
+‘n’, ‘none’};   % ‘p’ for positive angle,</p>
+</div></blockquote>
+<p>%’n’ for negative angle and ‘none’ for invalid profile.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>depCal_P_Ang_time_start: scalar</dt><dd><p>time for the first profile with valid positive angle depolarization
+calibration. [datenum]</p>
+</dd>
+<dt>depCal_P_Ang_time_end: scalar</dt><dd><p>time for the last profile with valid positive angle depolarization
+calibration. [datenum]</p>
+</dd>
+<dt>depCal_N_Ang_time_start: scalar</dt><dd><p>time for the first profile with valid negative angle depolarization
+calibration. [datenum]</p>
+</dd>
+<dt>depCal_N_Ang_time_end: scalar</dt><dd><p>time for the last profile with valid negative angle depolarization
+calibration. [datenum]</p>
+</dd>
+<dt>maskDepCal: logical array</dt><dd><p>profile mask for depolarization calibration.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-07-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_fernald">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_fernald</code><span class="sig-paren">(</span><em class="sig-param">alt</em>, <em class="sig-param">signal</em>, <em class="sig-param">LR_aer</em>, <em class="sig-param">refAlt</em>, <em class="sig-param">refBeta</em>, <em class="sig-param">molBSC</em>, <em class="sig-param">window_size</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_fernald" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_FERNALD retrieve the aerosol backscattering coefficient with Fernald
+method.
+Inputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>alt: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>signal: array</dt><dd><p>elastic signal without background. [Photon Count]</p>
+</dd>
+<dt>LR_aer: float or array</dt><dd><p>aerosol lidar ratio. [Sr]</p>
+</dd>
+<dt>refAlt: float or 2-element array</dt><dd><p>reference altitude or region. [m]</p>
+</dd>
+<dt>refBeta: float</dt><dd><p>aerosol backscatter coefficient at the reference region.
+[m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molBSC: array</dt><dd><p>molecular backscattering coefficient. Unit: m^{-1}*Sr^{-1}</p>
+</dd>
+<dt>window_size: int32</dt><dd><p>Bins of the smoothing window for the signal. [default, 40 bins]</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>array</dt><dd><p>aerosol backscatter coefficient. [m^{-1}*Sr^{-1}]</p>
+</dd>
+<dt>aerBR: array</dt><dd><p>aerosol backscatter ratio.l backscatter ratio. (If err=True)</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>aerBSC</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p>Fernald, Frederick G. “Analysis of Atmospheric Lidar Observations $</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Some Comments.” Applied optics 23, no. 5 (1984): 652-653.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Prof. Yi’s PPT: A brief introduction to atmospheric lidars</p></li>
+</ol>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-01-04. First Edition by ZP.Yin</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_is387Off">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_is387Off</code><span class="sig-paren">(</span><em class="sig-param">sig387</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_is387Off" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_IS387OFF determine whether channel 387nm is turned off.
+.. rubric:: Example</p>
+<p>[flag] = polly_is387Off(sig387)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sig387: array</dt><dd><p>photon count. [height * time]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical array</dt><dd><p>if flag is true, channel 387nm is turned off.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-27. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_is407Off">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_is407Off</code><span class="sig-paren">(</span><em class="sig-param">sig407</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_is407Off" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_IS407OFF determine whether channel 407nm is turned off.
+.. rubric:: Example</p>
+<p>[flag] = polly_is407Off(sig407)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sig407: array</dt><dd><p>photon count. [height * time]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical array</dt><dd><p>if flag is true, channel 407nm is turned off.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-09-06. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_is607Off">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_is607Off</code><span class="sig-paren">(</span><em class="sig-param">sig607</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_is607Off" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_IS607OFF determine whether channel 607nm is turned off.
+.. rubric:: Example</p>
+<p>[flag] = polly_is607Off(sig607)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sig607: array</dt><dd><p>photon count. [height * time]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical array</dt><dd><p>if flag is true, channel 607nm is turned off.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-27. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_isLaserShutterOn">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_isLaserShutterOn</code><span class="sig-paren">(</span><em class="sig-param">sig</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_isLaserShutterOn" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_ISLASERSHUTTERON determine whether the laser shutter is on due to the
+flying object..
+.. rubric:: Example</p>
+<p>[flag] = polly_isLaserShutterOn(sig)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sig: array</dt><dd><p>photon count. [height * time]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical array</dt><dd><p>if flag is true, laser shutter is turned on.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-07-10. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_isRROff">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_isRROff</code><span class="sig-paren">(</span><em class="sig-param">sigRR</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_isRROff" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_ISRROFF determine whether rotational Raman channel is turned off.
+.. rubric:: Example</p>
+<p>[flag] = polly_isRROff(sigRR)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sigRR: array</dt><dd><p>photon count. [height * time]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical array</dt><dd><p>if flag is true, the rotational Raman channel is turned off.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-09-06. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_molDepol">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_molDepol</code><span class="sig-paren">(</span><em class="sig-param">sigTot</em>, <em class="sig-param">bgTot</em>, <em class="sig-param">sigCro</em>, <em class="sig-param">bgCro</em>, <em class="sig-param">Rt</em>, <em class="sig-param">RtStd</em>, <em class="sig-param">Rc</em>, <em class="sig-param">RcStd</em>, <em class="sig-param">depolConst</em>, <em class="sig-param">depolConstStd</em>, <em class="sig-param">minSNR</em>, <em class="sig-param">defaultMolDepol</em>, <em class="sig-param">defaultMolDepolStd</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_molDepol" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_MOLDEPOL etimate the molecular depolarization ratio according to the
+measurements at reference height.
+.. rubric:: Example</p>
+<p>[molDepol, molDepolStd, flagDefault] = polly_molDepol(sigTot, bgTot, …
+sigCro, bgCro, Rt, RtStd, Rc, RcStd, depolConst, depolConstStd, …
+minSNR, defaultMolDepol, defaultMolDepolStd)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sigTot: array</dt><dd><p>signal strength of the total channel at reference height.
+[photon count]</p>
+</dd>
+<dt>bgTot: array</dt><dd><p>background of the total channel at reference height. [photon count]</p>
+</dd>
+<dt>sigCross: array</dt><dd><p>signal strength of the cross channel at reference height.
+[photon count]</p>
+</dd>
+<dt>bgCross: array</dt><dd><p>background of the cross channel at reference height. [photon count]</p>
+</dd>
+<dt>Rt: scalar</dt><dd><p>transmission ratio in total channel</p>
+</dd>
+<dt>RtStd: scalar</dt><dd><p>uncertainty of the transmission ratio in total channel</p>
+</dd>
+<dt>Rc: scalar</dt><dd><p>transmission ratio in cross channel</p>
+</dd>
+<dt>RcStd: scalar</dt><dd><p>uncertainty of the transmission ratio in cross channel</p>
+</dd>
+<dt>depolConst: scalar</dt><dd><p>depolarzation calibration constant. (transmission ratio for the
+parallel component in cross channel and total channel)</p>
+</dd>
+<dt>depolConstStd: scalar</dt><dd><p>uncertainty of the depolarization calibration constant.</p>
+</dd>
+<dt>minSNR: float</dt><dd><p>the SNR constrain for the the signal strength at reference height.
+Choose a strong constrain for ensuring a stable result,
+like 50 or 100.</p>
+</dd>
+<dt>defaultMolDepol: float</dt><dd><p>default molecular depolarization ratio. Detailed information
+please go to doc/polly_defaults.md</p>
+</dd>
+<dt>defaultMolDepolStd: float</dt><dd><p>default std of molecular depolarization ratio. Detailed
+information please go to doc/polly_defaults.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>molDepol: float</dt><dd><p>retrieved molecular depolarization ratio.</p>
+</dd>
+<dt>molDepolStd: float</dt><dd><p>std of retrieved molecular depolarization ratio.</p>
+</dd>
+<dt>flagDefault: logical</dt><dd><p>flag to show whether using the default values. If true,
+it means default molDepol and molDepolStd were used.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-24. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_parDepol">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_parDepol</code><span class="sig-paren">(</span><em class="sig-param">volDepol</em>, <em class="sig-param">volDepolStd</em>, <em class="sig-param">aerBsc</em>, <em class="sig-param">aerBscStd</em>, <em class="sig-param">molBsc</em>, <em class="sig-param">molDepol</em>, <em class="sig-param">molDepolStd</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_parDepol" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_PARDEPOL calculate the particle depolarization ratio and estimate the
+standard deviation of particle depolarization ratio.
+.. rubric:: Example</p>
+<p>[parDepol, parDepolStd] = polly_parDepol(volDepol, volDepolStd,
+aerBsc, aerBscStd, molBsc, molDepol, molDepolStd)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>volDepol: array</dt><dd><p>volume depolarization ratio.</p>
+</dd>
+<dt>volDepolStd: array</dt><dd><p>standard deviation of volume depolarization ratio.</p>
+</dd>
+<dt>aerBsc: array</dt><dd><p>aerosol backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBscStd: array</dt><dd><p>standard deviation of aerosol backscatter coefficient.
+[m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molBsc: array</dt><dd><p>molecule backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molDepol: scalar</dt><dd><p>molecule depolarization ratio. This value is highly dependent on
+the central wavelength and FWHM of the narrow IF in the depol
+channel.</p>
+</dd>
+<dt>molDepolStd: scalar</dt><dd><p>standard deviation of molecule depolarization ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>parDepol: array</dt><dd><p>particle depolarization ratio.</p>
+</dd>
+<dt>parDepolStd: array</dt><dd><p>standard deviation of particle depolarization ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt><dd><p>H.Baars et. al, Aerosol Typing by lidar, Eq.10, AMT, 2017</p>
+</dd>
+<dt>History:</dt><dd><p>2018-09-05. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_parsetime">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_parsetime</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">textFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_parsetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_PARSETIME parse time from polly data file.
+.. rubric:: Example</p>
+<p>[time] = polly_parsetime(file, textFormat)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>filename of polly data.</p>
+</dd>
+</dl>
+</dd>
+<dt>textFormat: char</dt><dd><p>parsing format to analysis polly data filename.</p>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>time: datenum</dt><dd><p>time when the polly data file was created.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-17. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_processInfo">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_processInfo</code><span class="sig-paren">(</span><em class="sig-param">task</em>, <em class="sig-param">processInfo_history</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_processInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_PROCESSINFO find the polly process info for the current task.
+.. rubric:: Example</p>
+<p>[processInfo] = polly_processInfo(task, processInfo_history)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>task: struct</dt><dd><p>todoPath: char
+dataPath: char
+dataFilename: char
+dataFullpath: char
+dataSize: integer
+pollyVersion: char
+dataTime: datenum</p>
+</dd>
+<dt>processInfo_history: struct</dt><dd><p>More detailed info can be found in doc/pollynet.md and
+doc/polly_overviews.xlsx</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>processInfo: struct</dt><dd><p>pollyVersion: char
+startTime: datenum
+endTime: datenum
+pollyConfigFile: char
+pollyProcessFunc: char
+pollyUpdateInfo: char
+pollyDefaultsFile: char</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-17. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_raman_bsc">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_raman_bsc</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">sigElastic</em>, <em class="sig-param">sigVRN2</em>, <em class="sig-param">ext_aer</em>, <em class="sig-param">angstroem</em>, <em class="sig-param">ext_mol</em>, <em class="sig-param">beta_mol</em>, <em class="sig-param">HRef</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">betaRef</em>, <em class="sig-param">window_size</em>, <em class="sig-param">flagSmoothBefore</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_raman_bsc" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_RAMAN_BSC calculate the aerosol backscatter coefficient
+with Raman method.
+Usage:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>[ beta_aer, LR ] = polly_raman_bsc(height, sigElastic, …</dt><dd><p>sigVRN2, ext_aer, ext_mol, beta_mol, HRef, wavelength, betaRef, …
+window_size, flagSmoothBefore)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>sigElastic: array</dt><dd><p>elastic photon count signal.</p>
+</dd>
+<dt>sigVRN2: array</dt><dd><p>N2 vibration rotational raman photon count signal.</p>
+</dd>
+<dt>ext_aer: array</dt><dd><p>aerosol extinction coefficient. [m^{-1}]</p>
+</dd>
+<dt>angstroem: array</dt><dd><p>aerosol angstroem exponent.</p>
+</dd>
+<dt>ext_mol: array</dt><dd><p>molecular extinction coefficient. [m^{-1}]</p>
+</dd>
+<dt>beta_mol: array</dt><dd><p>molecular backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>HRef: 2 element array</dt><dd><p>reference region. [m]</p>
+</dd>
+<dt>wavelength: integer</dt><dd><p>wavelength of the corresponding elastic signal. [nm]</p>
+</dd>
+<dt>betaRef: float</dt><dd><p>aerosol backscatter coefficient at the reference region.
+[m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>window_size: integer</dt><dd><p>number of the bins of the sliding window for the signal smooth.
+[default: 40]</p>
+</dd>
+<dt>flagSmoothBefore: logical</dt><dd><p>flag bit to control whether to smooth the signal before or after
+calculating the signal ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>beta_aer: array</dt><dd><p>aerosol backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>LR: array</dt><dd><p>aerosol lidar ratio.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>netcdf-florian
+Ansmann, A., et al. (1992). “Independent measurement of extinction and
+backscatter profiles in cirrus clouds by using a combined Raman elastic-
+backscatter lidar.” Applied optics 31(33): 7113-7131.</p>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-01-02. First edition by Zhenping.
+2018-07-24. Add the ext_mol_factor and ext_aer_factor for wavelength
+of 1064nm
+2018-09-04. Change the smoothing order. Previous way is smoothing the
+signal. This will create large drift at the signal ridges.
+2018-09-05. Keep the original smoothing order for 355, which makes the
+retrieving results at the far range bins quite stable.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_raman_bsc_rr">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_raman_bsc_rr</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">sigElastic</em>, <em class="sig-param">sigVRN2</em>, <em class="sig-param">ext_aer</em>, <em class="sig-param">ext_mol</em>, <em class="sig-param">beta_mol</em>, <em class="sig-param">HRef</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">betaRef</em>, <em class="sig-param">window_size</em>, <em class="sig-param">flagSmoothBefore</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_raman_bsc_rr" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_RAMAN_BSC calculate the aerosol backscatter coefficient with rotational
+Raman signal.
+Usage:</p>
+<blockquote>
+<div><p>[ beta_aer, LR ] = polly_raman_bsc_rr(height, sigElastic, sigVRN2, …
+ext_aer, ext_mol, beta_mol, HRef, wavelength, betaRef, window_size, …
+flagSmoothBefore)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>sigElastic: array</dt><dd><p>elastic photon count signal.</p>
+</dd>
+<dt>sigVRN2: array</dt><dd><p>N2 vibration rotational raman photon count signal.</p>
+</dd>
+<dt>ext_aer: array</dt><dd><p>aerosol extinction coefficient. [m^{-1}]</p>
+</dd>
+<dt>ext_mol: array</dt><dd><p>molecular extinction coefficient. [m^{-1}]</p>
+</dd>
+<dt>beta_mol: array</dt><dd><p>molecular backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>HRef: 2 element array</dt><dd><p>reference region. [m]</p>
+</dd>
+<dt>wavelength: integer</dt><dd><p>wavelength of the corresponding elastic signal. [nm]</p>
+</dd>
+<dt>betaRef: float</dt><dd><p>aerosol backscatter coefficient at the reference region.
+[m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>window_size: integer</dt><dd><p>number of the bins of the sliding window for the signal smooth.
+[default: 40]</p>
+</dd>
+<dt>flagSmoothBefore: logcial</dt><dd><p>flag bit to control the smoothing order, whether smoothing the
+signal before calculating the signal ratio or not.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>beta_aer: array</dt><dd><p>aerosol backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>LR: array</dt><dd><p>aerosol lidar ratio.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>Ansmann, A., et al. (1992). “Independent measurement of extinction and
+backscatter profiles in cirrus clouds by using a combined Raman elastic-
+backscatter lidar.” Applied optics 31(33): 7113-7131.
+Veselovskii, I., P. Goloub, T. Podvin, V. Bovchaliuk, Y. Derimian, P.
+Augustin, M. Fourmentin, D. Tanre, M. Korenskiy, and D. Whiteman (2016),
+Retrieval of optical and physical properties of African dust from
+multiwavelength Raman lidar measurements during the SHADOW campaign in
+Senegal, Atmospheric Chemistry and Physics, 16(11), 7013.</p>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-01-02. First edition by Zhenping.
+2018-07-24. Add the ext_mol_factor and ext_aer_factor for wavelength
+of 1064nm
+2018-09-04. Change the smoothing order. Previous way is smoothing the
+signal. This will create large drift at the signal ridges.
+2018-09-05. Keep the original smoothing order for 355, which makes the
+retrieving results at the far range bins quite stable.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_raman_bsc_std">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_raman_bsc_std</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">sigElastic</em>, <em class="sig-param">bgElastic</em>, <em class="sig-param">sigVRN2</em>, <em class="sig-param">bgVRN2</em>, <em class="sig-param">ext_aer</em>, <em class="sig-param">sigma_ext_aer</em>, <em class="sig-param">angstroem</em>, <em class="sig-param">sigma_angstroem</em>, <em class="sig-param">ext_mol</em>, <em class="sig-param">beta_mol</em>, <em class="sig-param">HRef</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">betaRef</em>, <em class="sig-param">smoothWindow</em>, <em class="sig-param">nSamples</em>, <em class="sig-param">method</em>, <em class="sig-param">flagSmoothBefore</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_raman_bsc_std" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_RAMAN_BSC_STD calculate the uncertainty of aerosol backscatter
+coefficient with Raman method.
+.. rubric:: Example</p>
+<dl>
+<dt>[ aerBscStd ] = polly_raman_bsc_std(height, sigElastic, bgElastic, …</dt><dd><p>sigVRN2, bgVRN2, ext_aer, sigma_ext_aer, angstroem, …
+sigma_angstroem, ext_mol, beta_mol, HRef, wavelength, …
+betaRef, smoothWindow, nSamples, method)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl>
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>sigElastic: array</dt><dd><p>elastic photon count signal.
+bgElastic: array</p>
+<blockquote>
+<div><p>background of elastic signal.</p>
+</div></blockquote>
+</dd>
+<dt>sigVRN2: array</dt><dd><p>N2 vibration rotational raman photon count signal.</p>
+</dd>
+<dt>bgVRN2: array</dt><dd><p>background of N2 vibration rotational signal.</p>
+</dd>
+<dt>ext_aer: array</dt><dd><p>aerosol extinction coefficient. [m^{-1}]
+sigma_ext_aer: array</p>
+<blockquote>
+<div><p>uncertainty of aerosol extinction coefficient. [m^{-1}]</p>
+</div></blockquote>
+</dd>
+<dt>angstroem: array</dt><dd><p>aerosol angstroem exponent.</p>
+</dd>
+<dt>ext_mol: array</dt><dd><p>molecular extinction coefficient. [m^{-1}]</p>
+</dd>
+<dt>beta_mol: array</dt><dd><p>molecular backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>HRef: 2 element array</dt><dd><p>reference region. [m]</p>
+</dd>
+<dt>wavelength: integer</dt><dd><p>wavelength of the corresponding elastic signal. [nm]</p>
+</dd>
+<dt>betaRef: float</dt><dd><p>aerosol backscatter coefficient at the reference region.
+[m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>smoothWindow: integer or n*3 matrix</dt><dd><p>number of the bins of the sliding window for the signal smooth.
+[default: 40]</p>
+</dd>
+<dt>nSamples: scalar or matrix</dt><dd><p>samples for each error source.
+[samples_angstroem, samples_aerExt, samples_signal,</p>
+<blockquote>
+<div><p>samples_aerBscRef]</p>
+</div></blockquote>
+</dd>
+<dt>method: char</dt><dd><p>computational method. [‘monte-carlo’ or ‘analytical’]</p>
+</dd>
+<dt>flagSmoothBefore: logical</dt><dd><p>flag to control the smooth order.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBscStd: array</dt><dd><p>uncertainty of aerosol backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>netcdf-florian retrieving package
+Ansmann, A., et al. (1992). “Independent measurement of extinction and
+backscatter profiles in cirrus clouds by using a combined Raman
+elastic-backscatter lidar.” Applied optics 31(33): 7113-7131.</p>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-01-02. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_raman_ext">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_raman_ext</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">sig</em>, <em class="sig-param">lambda_emit</em>, <em class="sig-param">lambda_rec</em>, <em class="sig-param">angstrom</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">window_size</em>, <em class="sig-param">C</em>, <em class="sig-param">rh</em>, <em class="sig-param">method</em>, <em class="sig-param">measure_error</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_raman_ext" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_RAMAN_EXT retrieve the aerosol extinction coefficient
+with Raman method
+.. rubric:: Example</p>
+<p>[ ext_aer ] = polly_raman_ext(height, sig, lambda_emit, lambda_rec,
+angstrom, pressure, temperature, window_size, C, rh, method,
+measure_error)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height[m]</p>
+</dd>
+<dt>sig: array</dt><dd><p>measured raman signal. Unit: Photon Count</p>
+</dd>
+<dt>lambda_emit: float</dt><dd><p>the wavelength of the emitted laser beam.[nm]</p>
+</dd>
+<dt>lambda_rec: float</dt><dd><p>the wavelength of raman sigal.[nm]</p>
+</dd>
+<dt>angstrom: float</dt><dd><p>the angstrom exponent for aerosol extinction coefficient</p>
+</dd>
+<dt>pressure: array</dt><dd><p>pressure of the atmosphere. [hPa]</p>
+</dd>
+<dt>temperature: array</dt><dd><p>temperature of the atmosphere. [K]</p>
+</dd>
+<dt>window_size: integer</dt><dd><p>window_size for smoothing the signal with sgolay filter.</p>
+</dd>
+<dt>order: integer</dt><dd><p>order of the implemented sgolay filter.</p>
+</dd>
+<dt>C: array</dt><dd><p>CO2 concentration.[ppmv]</p>
+</dd>
+<dt>rh: array</dt><dd><p>relative humidity.</p>
+</dd>
+<dt>method: char</dt><dd><p>specify the method to calculate the slope of the signal. You can
+choose from ‘moving’, ‘smoothing’ and ‘chi2’.</p>
+</dd>
+<dt>measure_error: array</dt><dd><p>measurement error for each bin.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>array</dt><dd><p>aerosol extinction coefficient [m^{-1}]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ext_aer</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://bitbucket.org/iannis_b/lidar_processing">https://bitbucket.org/iannis_b/lidar_processing</a></p>
+<p>Ansmann, A. et al. Independent measurement of extinction and backscatter
+profiles
+in cirrus clouds by using a combined Raman elastic-backscatter lidar.
+Applied Optics Vol. 31, Issue 33, pp. 7113-7131 (1992)</p>
+<dl class="simple">
+<dt>History:</dt><dd><p>2017-12-18. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_raman_ext_std">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_raman_ext_std</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">signal</em>, <em class="sig-param">bg</em>, <em class="sig-param">lambda_emit</em>, <em class="sig-param">lambda_rec</em>, <em class="sig-param">angstrom</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">window_size</em>, <em class="sig-param">C</em>, <em class="sig-param">rh</em>, <em class="sig-param">nProfiles</em>, <em class="sig-param">method</em>, <em class="sig-param">measure_error</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_raman_ext_std" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_RAMAN_EXT_STD calculate the uncertainty of aerosol
+extinction coefficient with Raman method.
+.. rubric:: Example</p>
+<p>[ ext_std ] = polly_raman_ext_std(height, signal, bg, lambda_emit,
+lambda_rec, angstrom, pressure, temperature, window_size, C, rh,
+nProfiles, method, measure_error)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height[m]</p>
+</dd>
+<dt>signal: array</dt><dd><p>measured raman signal. [Photon Count]</p>
+</dd>
+<dt>bg: array</dt><dd><p>background. [Photon Count]</p>
+</dd>
+<dt>lambda_emit: float</dt><dd><p>the wavelength of the emitted laser beam.[nm]</p>
+</dd>
+<dt>lambda_rec: float</dt><dd><p>the wavelength of raman sigal.[nm]</p>
+</dd>
+<dt>angstrom: float</dt><dd><p>the angstrom exponent for aerosol extinction coefficient</p>
+</dd>
+<dt>pressure: array</dt><dd><p>pressure of the atmosphere. [hPa]</p>
+</dd>
+<dt>temperature: array</dt><dd><p>temperature of the atmosphere. [K]</p>
+</dd>
+<dt>window_size: integer</dt><dd><p>window_size for smoothing the signal.</p>
+</dd>
+<dt>C: array</dt><dd><p>CO2 concentration.[ppmv]</p>
+</dd>
+<dt>rh: array</dt><dd><p>relative humidity.</p>
+</dd>
+<dt>nProfiles: integer</dt><dd><p>number of the generated profiles to calculate the uncertainty.</p>
+</dd>
+<dt>method: str</dt><dd><dl class="simple">
+<dt>method for calculating the signal slope.</dt><dd><p>‘moving’|’movingslope’: using Savitzky-Golay filter.
+‘smoothing’|’smooth’: using finite difference algorithm with
+smoothed signal.
+‘chi2’: using chi2 linear fit.</p>
+</dd>
+</dl>
+</dd>
+<dt>measure_error: array</dt><dd><p>systematic error of signal.
+(not random error, normally treated as 0);</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>uncertainty of aerosol extinction coefficient [m^{-1}]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>History:</dt><dd><p>2017-12-18. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_rayleighfit">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_rayleighfit</code><span class="sig-paren">(</span><em class="sig-param">distance0</em>, <em class="sig-param">sig</em>, <em class="sig-param">sigPCR</em>, <em class="sig-param">bg</em>, <em class="sig-param">molsig</em>, <em class="sig-param">minDecomLogDist</em>, <em class="sig-param">searchBase</em>, <em class="sig-param">searchTop</em>, <em class="sig-param">maxDecomThickness</em>, <em class="sig-param">decomSmoothWin</em>, <em class="sig-param">minRefThickness</em>, <em class="sig-param">minRefDeltaExt</em>, <em class="sig-param">minRefSNR</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_rayleighfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_RAYLEIGHFIT Search the reference height with rayleighfitting algorithm.
+More detailed information can be found in doc/pollynet_processing_program.md
+.. rubric:: Example</p>
+<p>[refHIndx] = polly_rayleighfit(distance0, sig, sigPCR, bg, molsig,
+minDecomLogDist, searchBase, searchTop, maxDecomThickness,
+decomSmoothWin, minRefThickness, minRefDeltaExt, minRefSNR)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>distance0: array</dt><dd><p>the distance between each range bin to the system. [m]</p>
+</dd>
+<dt>sig: array</dt><dd><p>signal strength. [photon count]</p>
+</dd>
+<dt>sigPCR: array</dt><dd><p>signal strength. [photon count rate]</p>
+</dd>
+<dt>bg: array</dt><dd><p>background signal. [photon count]</p>
+</dd>
+<dt>molsig: array</dt><dd><p>range-corrected rayleigh signal.</p>
+</dd>
+<dt>minDecomLogDist: float</dt><dd><p>the minumum logarithm distance for Douglas-Peucker decomposition.</p>
+</dd>
+<dt>searchBase: float</dt><dd><p>the base height for rayleigh fitting. [m]</p>
+</dd>
+<dt>searchTop: float</dt><dd><p>the top height for rayleigh fitting. [m]</p>
+</dd>
+<dt>maxDecomThickness: float</dt><dd><p>maximum thickness for each decomposed segement. [m]</p>
+</dd>
+<dt>decomSmoothWin: integer</dt><dd><p>smoothing window.</p>
+</dd>
+<dt>minRefThickness: float</dt><dd><p>minimum thickness requirement for reference height. [m]</p>
+</dd>
+<dt>minRefDeltaExt: float</dt><dd><p>minimum uncertainty of extinction at reference height.</p>
+</dd>
+<dt>minRefSNR: float</dt><dd><p>minimum integral SNR at reference height.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>refHIndx: 2-element array</dt><dd><p>index of reference height. If no reference height was found, NaN
+will be returned.</p>
+</dd>
+<dt>dpIndx: array</dt><dd><p>Douglas-Peucker decomposition points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about Douglas-Peucker Decomposition and rayleigh
+fitting, please go to doc/pollynet_processing_program.md.</p>
+</div>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_read_defaults">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_read_defaults</code><span class="sig-paren">(</span><em class="sig-param">defaultFile</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_read_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_READ_DEFAULTS read polly default settings.
+.. rubric:: Example</p>
+<p>[defaults] = polly_read_defaults(defaultFile)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>defaultFile: char</dt><dd><p>absoluta path of the polly defaults file.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>defaults:</dt><dd><p>default settings for polly lidar system.
+More detailed information can be found in doc/polly_defaults.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-19. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_read_rawdata">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_read_rawdata</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_read_rawdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_READ_RAWDATA read polly raw data.
+Usage:</p>
+<blockquote>
+<div><p>data = polly_read_rawdata(file)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>absolute path of the polly data.</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>flagFilterFalseMShots: logical</dt><dd><p>whether to filter out profiles with false shots number.</p>
+</dd>
+<dt>flagCorrectFalseMShots: logical</dt><dd><p>whether to correct false shots number.</p>
+</dd>
+<dt>flagDeleteData: logical</dt><dd><p>flag to control whether to delete the data files after extracting
+the data.</p>
+</dd>
+<dt>dataFileFormat: char</dt><dd><p>parsing rules for polly data filename.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>data: struct</dt><dd><dl class="simple">
+<dt>rawSignal: array</dt><dd><p>signal. [Photon Count]</p>
+</dd>
+<dt>mShots: array</dt><dd><p>number of the laser shots for each profile.</p>
+</dd>
+<dt>mTime: array</dt><dd><p>datetime array for the measurement time of each profile.</p>
+</dd>
+<dt>depCalAng: array</dt><dd><p>angle of the polarizer in the receiving channel. (&gt;0 means
+calibration process starts). [degree]</p>
+</dd>
+<dt>zenithAng: numeric</dt><dd><p>zenith angle of the laser beam. [degree]</p>
+</dd>
+<dt>repRate: float</dt><dd><p>laser pulse repetition rate. [s^-1]</p>
+</dd>
+<dt>hRes: float</dt><dd><p>spatial resolution [m]</p>
+</dd>
+<dt>mSite: char</dt><dd><p>measurement site.</p>
+</dd>
+<dt>lat: float</dt><dd><p>latitude of measurement site. [degree]</p>
+</dd>
+<dt>lon: float</dt><dd><p>longitude of measurement site. [degree]</p>
+</dd>
+<dt>alt: float</dt><dd><p>altitude of measurement site. [degree]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-16. First edition by Zhenping.
+2019-07-08. Read the ‘laser_rep_rate’.
+2020-04-16. Unify the argument interface.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_read_temps">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_read_temps</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_read_temps" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_READ_TEMPS read the polly housekeeping data saved in a temporary file.
+.. rubric:: Example</p>
+<p>[res] = polly_read_temps(file)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>filename. (absolute filename)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl>
+<dt>res: struct</dt><dd><dl class="simple">
+<dt>time: datenum array</dt><dd><p>log time.</p>
+</dd>
+<dt>T1064: array</dt><dd><p>temperature of the 1064 PMT</p>
+</dd>
+<dt>pyro: array</dt><dd><p>laser energy</p>
+</dd>
+</dl>
+<p>T1: array
+RH1: array
+T2: array
+RH2: array
+Tout: array
+RHout: array
+Status: array
+Dout: array</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>example of polly temps file:</p>
+<blockquote>
+<div><blockquote>
+<div><p>Time, UTC      T1064    pyro      T1     RH1      T2     RH2    Tout   RHout   Status   Dout</p>
+</div></blockquote>
+<p>23.09.2019 00:00:01     -31.3    44.3    25.0    27.2    24.4    28.8    18.5    37.6       7       7
+23.09.2019 00:00:05     -31.2    44.2    25.0    27.2    24.5    29.0    18.5    37.9       7       7
+23.09.2019 00:00:10     -31.3    43.9    25.0    27.4    24.6    28.7    18.6    37.6       7       7</p>
+</div></blockquote>
+<dl class="simple">
+<dt>History:</dt><dd><p>2019-09-28. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_saturationdetect">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_saturationdetect</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">height</em>, <em class="sig-param">hBase</em>, <em class="sig-param">hTop</em>, <em class="sig-param">sigThresh</em>, <em class="sig-param">cloudMaxGThickness</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_saturationdetect" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_SATURATIONDETECT saturation bin detection. More detailed information can
+be found in doc/pollynet_processing_program.md
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[flag] = polly_saturationdetect(signal, height, hRange, sigThresh,</dt><dd><p>cloudMaxGThickness)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signal: array</dt><dd><p>photon count rate. [MHz]</p>
+</dd>
+<dt>height: array</dt><dd><p>height of each range bin. [m]</p>
+</dd>
+<dt>hRange: 2-element array</dt><dd><p>range constrain for the detection.</p>
+</dd>
+<dt>sigThresh: float</dt><dd><p>the maximum signal to be trusted without strong signal satureation.
+[MHz]</p>
+</dd>
+<dt>cloudMaxGThickness: float</dt><dd><p>the maximun penetration depth for strong attenuation clouds. [m]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical</dt><dd><p>saturation flag for each range bin.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-21. First Edition by Zhenping
+2019-07-08. Add the criteria for the absolute values</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_trans_correct">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_trans_correct</code><span class="sig-paren">(</span><em class="sig-param">sigTot</em>, <em class="sig-param">bgTot</em>, <em class="sig-param">sigCross</em>, <em class="sig-param">bgCross</em>, <em class="sig-param">Rt</em>, <em class="sig-param">RtStd</em>, <em class="sig-param">Rc</em>, <em class="sig-param">RcStd</em>, <em class="sig-param">depolConst</em>, <em class="sig-param">depolConstStd</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_trans_correct" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_TRANS_CORRECT correct the effect of different transmission inside the
+Tot and depol channel.
+.. rubric:: Example</p>
+<p>[sigTotCor, sigTotCorStd] = Polly_trans_correct(sigEl, sigCross, Rt,
+RtStd, Rc, RcStd, depolConst, depolConstStd)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sigTot: array</dt><dd><p>signal in total channel.</p>
+</dd>
+<dt>bgTot: array</dt><dd><p>background in total channel.</p>
+</dd>
+<dt>sigCross: array</dt><dd><p>signal in cross channel.</p>
+</dd>
+<dt>bgCross: array</dt><dd><p>background in total channel.</p>
+</dd>
+<dt>Rt: float</dt><dd><p>transmission ratio of perpendicular and parallel component in
+total channel.</p>
+</dd>
+<dt>RtStd: float</dt><dd><p>uncertainty of the transmission ratio of perpendicular and
+parallel componnet in total channel.</p>
+</dd>
+<dt>Rc: float</dt><dd><p>transmission ratio of perpendicular and parallel component in
+cross channel.</p>
+</dd>
+<dt>RcStd: float</dt><dd><p>uncertainty of the transmission ratio of perpendicular and
+parallel componnet in total channel.</p>
+</dd>
+<dt>depolConst: float</dt><dd><p>depolarization calibration constant.</p>
+</dd>
+<dt>depolConstStd: float</dt><dd><p>uncertainty of the depolarization calibration constant.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>sigTotCor: array</dt><dd><p>transmission corrected elastic signal.</p>
+</dd>
+<dt>bgTotCor: array</dt><dd><p>background of transmission corrected elastic signal.</p>
+</dd>
+<dt>sigTotCorStd: array</dt><dd><p>uncertainty of transmission corrected elastic signal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>Mattis, I., Tesche, M., Grein, M., Freudenthaler, V., and Müller, D.:
+Systematic error of lidar profiles caused by a polarization-dependent
+receiver transmission: Quantification and error correction scheme,
+Appl. Opt., 48, 2742-2751, 2009.</p>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-08-23. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_volDepol">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_volDepol</code><span class="sig-paren">(</span><em class="sig-param">sigTot</em>, <em class="sig-param">bgTot</em>, <em class="sig-param">sigCross</em>, <em class="sig-param">bgCross</em>, <em class="sig-param">Rt</em>, <em class="sig-param">RtStd</em>, <em class="sig-param">Rc</em>, <em class="sig-param">RcStd</em>, <em class="sig-param">depolConst</em>, <em class="sig-param">depolConstStd</em>, <em class="sig-param">smoothWindow</em>, <em class="sig-param">flagSmoothBefore</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_volDepol" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_VOLDEPOL calculate the volume depolarization ratio for pollyXT system.
+.. rubric:: Example</p>
+<p>[volDepol, volDepolStd] = polly_volDepol(sigTot, bgTot, sigCross,
+bgCross, Rt, RtStd, Rc, RcStd, depolConst, depolConstStd, smoothWindow)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sigTot: array</dt><dd><p>signal strength of the total channel. [photon count]</p>
+</dd>
+<dt>bgTot: array</dt><dd><p>background of the total channel. [photon count]</p>
+</dd>
+<dt>sigCross: array</dt><dd><p>signal strength of the cross channel. [photon count]</p>
+</dd>
+<dt>bgCross: array</dt><dd><p>background of the cross channel. [photon count]</p>
+</dd>
+<dt>Rt: scalar</dt><dd><p>transmission ratio in total channel</p>
+</dd>
+<dt>RtStd: scalar</dt><dd><p>uncertainty of the transmission ratio in total channel</p>
+</dd>
+<dt>Rc: scalar</dt><dd><p>transmission ratio in cross channel</p>
+</dd>
+<dt>RcStd: scalar</dt><dd><p>uncertainty of the transmission ratio in cross channel</p>
+</dd>
+<dt>depolConst: scalar</dt><dd><p>depolarzation calibration constant. (transmission ratio for the
+parallel component in cross channel and total channel)</p>
+</dd>
+<dt>depolConstStd: scalar</dt><dd><p>uncertainty of the depolarization calibration constant.</p>
+</dd>
+<dt>smoothWindow: scalar or m*3 matrix</dt><dd><p>the width of the sliding smoothing window for the signal.</p>
+</dd>
+<dt>flagSmoothBefore: logical</dt><dd><p>flag to control the vol-depol smoothing whether before or after the
+signal ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>volDepol: array</dt><dd><p>volume depolarization ratio.</p>
+</dd>
+<dt>volDepolStd: array</dt><dd><p>uncertainty of the volume depolarization ratio</p>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt><dd><p>instrumentation info about PollyXT can be found in
+(R.Engelmann et al, AMT, 2016) and deduction about volume
+depolarization calculation can be found in (Freudenthaler et al,
+Tellus B, 2009)</p>
+</dd>
+<dt>History:</dt><dd><p>2018-09-02. First edition by Zhenping
+2018-09-04. Change the smoothing order. Smoothing the signal ratio
+instead of smoothing the signal.
+2019-05-24. Add ‘flagSmoothBefore’ to control the smoothing order.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.polly_volDepol2">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">polly_volDepol2</code><span class="sig-paren">(</span><em class="sig-param">sigTot</em>, <em class="sig-param">sigCross</em>, <em class="sig-param">Rt</em>, <em class="sig-param">Rc</em>, <em class="sig-param">depolConst</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.polly_volDepol2" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLY_VOLDEPOL2 calculate the 2-dimensional volume depolarization ratio for
+pollyXT system.
+.. rubric:: Example</p>
+<p>[volDepol] = polly_volDepol2(sigTot, sigCross, Rt, Rc, depolConst)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sigTot: array</dt><dd><p>signal strength of the total channel. [photon count]</p>
+</dd>
+<dt>sigCross: array</dt><dd><p>signal strength of the cross channel. [photon count]</p>
+</dd>
+<dt>Rt: scalar</dt><dd><p>transmission ratio in total channel</p>
+</dd>
+<dt>Rc: scalar</dt><dd><p>transmission ratio in cross channel</p>
+</dd>
+<dt>depolConst: scalar</dt><dd><p>depolarzation calibration constant. (transmission ratio for the
+parallel component in cross channel and total channel)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>volDepol: array</dt><dd><p>volume depolarization ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt><dd><p>instrumentation info about PollyXT can be found in
+(R.Engelmann et al, AMT, 2016) and deduction about volume
+depolarization calculation can be found in (Freudenthaler et al,
+Tellus B, 2009)</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-24. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_NR_angstrexp">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_NR_angstrexp</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_NR_angstrexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_NR_ANGSTREXP Retrieve the angstroem exponent with klett-retrieve and
+raman-retrieved aerosol optical properties.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[ang_ext_355_532_raman, ang_bsc_355_532_raman,</dt><dd><p>ang_bsc_355_532_klett] = pollyxt_NR_angstrexp(data, config)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>ang_ext_355_532_raman: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_355_532_raman: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_355_532_klett: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-06. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_NR_att_beta">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_NR_att_beta</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_NR_att_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_NR_ATT_BETA Calculate the attenuated backscatter.
+.. rubric:: Example</p>
+<p>[att_beta_NR_355, att_beta_NR_532] = pollyxt_NR_att_beta(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>att_beta_NR_355: matrix</dt><dd><p>attenuated backscatter at 355 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>att_beta_NR_532: matrix</dt><dd><p>attenuated backscatter at 532 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2002-05-07. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_NR_klett">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_NR_klett</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_NR_klett" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_NR_KLETT Retrieve aerosol optical properties from NR channels with klett method
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[aerBsc355_NR_klett, aerBsc532_NR_klett, aerExt355_NR_klett,</dt><dd><dl class="simple">
+<dt>aerExt532_NR_klett, refBeta_NR_355_klett, refBeta_NR_532_klett] =</dt><dd><p>pollyxt_NR_klett(data, config)</p>
+</dd>
+</dl>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBsc355_NR_klett: matrix</dt><dd><p>aerosol backscatter coefficient at 355 nm with klett method.
+[m^{-1}*sr^{-1}]</p>
+</dd>
+<dt>aerBsc532_NR_klett: matrix</dt><dd><p>aerosol backscatter coefficient at 532 nm with klett method.
+[m^{-1}*sr^{-1}]</p>
+</dd>
+<dt>aerExt355_NR_klett: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with klett method.
+[m^{-1}]</p>
+</dd>
+<dt>aerExt532_NR_klett: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with klett method. [m^{-1}]</p>
+</dd>
+<dt>refBeta_NR_355_klett: array</dt><dd><p>reference value for retrieving the NR aerosol backscatter at 355 nm.
+[m^{-1}*sr^{-1}]</p>
+</dd>
+<dt>refBeta_NR_532_klett: array</dt><dd><p>reference value for retrieving the NR aerosol backscatter at 532 nm.
+[m^{-1}*sr^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-05. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_NR_raman">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_NR_raman</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_NR_raman" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_NR_RAMAN Retrieve aerosol optical properties for near-range channels
+with raman method
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[aerBsc355_NR_raman, aerBsc532_NR_raman, aerExt355_NR_raman,</dt><dd><p>aerExt532_NR_raman, LR355_NR_raman, LR532_NR_raman, refBeta355_NR_raman,
+refBeta532_NR_raman] = pollyxt_NR_raman(data, config)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBsc355_NR_raman: matrix</dt><dd><p>aerosol backscatter coefficient at 355 nm with raman method.
+[m^{-1}*sr^{-1}]</p>
+</dd>
+<dt>aerBsc532_NR_raman: matrix</dt><dd><p>aerosol backscatter coefficient at 532 nm with raman method.
+[m^{-1}*sr^{-1}]</p>
+</dd>
+<dt>aerExt355_NR_raman: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with raman method. [m^{-1}]</p>
+</dd>
+<dt>aerExt532_NR_raman: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with raman method. [m^{-1}]</p>
+</dd>
+<dt>LR355_NR_raman: matrix</dt><dd><p>lidar ratio at 355 nm. [sr]</p>
+</dd>
+<dt>LR532_NR_raman: matrix</dt><dd><p>lidar ratio at 532 nm. [sr]</p>
+</dd>
+<dt>refBeta355_NR_raman: array</dt><dd><p>reference value used for retrieving the Near-range backscatter
+at 355 nm with Raman method. [m^{-1}*sr^{-1}]</p>
+</dd>
+<dt>refBeta532_NR_raman: array</dt><dd><p>reference value used for retrieving the Near-range backscatter
+at 532 nm with Raman method. [m^{-1}*sr^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-06. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_OC_angstrexp">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_OC_angstrexp</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_OC_angstrexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_OC_ANGSTREXP Retrieve the angstroem exponent with klett-retrieve and raman-retrieved aerosol optical properties.
+.. rubric:: Example</p>
+<p>[ang_ext_355_532_raman, ang_bsc_355_532_raman, ang_bsc_532_1064_raman, ang_bsc_355_532_klett, ang_bsc_532_1064_klett] = pollyxt_OC_angstrexp(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>ang_ext_355_532_raman: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_355_532_raman: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_532_1064_raman: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_355_532_klett: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_532_1064_klett: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-11-27. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_OC_att_beta">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_OC_att_beta</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_OC_att_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_OC_ATT_BETA Calculate the overlap corrected attenuated backscatter.
+.. rubric:: Example</p>
+<p>[att_beta_355, att_beta_532, att_beta_1064, att_beta_387, att_beta_607] = pollyxt_OC_att_beta(data, config)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl>
+<dt>att_beta_355: matrix</dt><dd><p>attenuated backscatter at 355 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>att_beta_532: matrix</dt><dd><p>attenuated backscatter at 532 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>att_beta_1064: matrix</dt><dd><p>attenuated backscatter at 1064 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>att_beta_387: matrix</dt><dd><p>attenuated backscatter at 387 nm. [m^{-1}Sr^{-1}]
+Note: the differential molecular Raman backscatter cross section was</p>
+<blockquote>
+<div><p>replaced with differential molecular Rayleigh cross section at
+the same wavelength.</p>
+</div></blockquote>
+</dd>
+<dt>att_beta_607: matrix</dt><dd><p>attenuated backscatter at 607 nm. [m^{-1}Sr^{-1}]
+Note: the differential molecular Raman backscatter cross section was</p>
+<blockquote>
+<div><p>replaced with differential molecular Rayleigh cross section at
+the same wavelength.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-11-27. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_OC_depolratio">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_OC_depolratio</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_OC_depolratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_OC_DEPOLRATIO retrieve volume depolarization ratio and particle depolarization ratio with overlap corrected signal.
+.. rubric:: Example</p>
+<p>[voldepol355_klett, pardepol355_klett, pardepolStd355_klett, voldepol355_raman, pardepol355_raman, pardepolStd355_raman, moldepol355, moldepolStd355, flagDefaultMoldepol355, voldepol532_klett, pardepol532_klett, pardepolStd532_klett, voldepol532_raman, pardepol532_raman, pardepolStd532_raman, moldepol532, moldepolStd532, flagDefaultMoldepol532] = pollyxt_OC_depolratio(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>voldepol355_klett: matrix</dt><dd><p>volume depolarization ratio at 355 nm for each cloud free group with the same smoothing of Klett method.</p>
+</dd>
+<dt>pardepol355_klett: matrix</dt><dd><p>particle depolarization ratio at 355 nm based on klett-retrieved backscatter coefficient.</p>
+</dd>
+<dt>pardepol355Std_klett: matrix</dt><dd><p>uncertainty of particle depolarization ratio at 355 nm based on klett-retrieved backscatter coefficient.</p>
+</dd>
+<dt>voldepol355_raman: matrix</dt><dd><p>volume depolarization ratio at 355 nm for each cloud free group with the same smoothing of Raman method.</p>
+</dd>
+<dt>pardepol355_raman: matrix</dt><dd><p>particle depolarization ratio at 355 nm based on klett-retrieved backscatter coefficient.</p>
+</dd>
+<dt>pardepol355Std_raman: matrix</dt><dd><p>uncertainty of particle depolarization ratio at 355 nm based on raman-retrieved backscatter coefficient.</p>
+</dd>
+<dt>moldepol355: array</dt><dd><p>molecular volume depolarization ratio at 355nm.</p>
+</dd>
+<dt>moldepolStd355: array</dt><dd><p>std of molecular volume depolarization ratio at 355nm.</p>
+</dd>
+<dt>flagDefaultMoldepol355: logical</dt><dd><p>flag to show whether using the default molecular volume depolarization ratio.</p>
+</dd>
+<dt>voldepol532_klett: matrix</dt><dd><p>volume depolarization ratio at 532 nm for each cloud free group with the same smoothing of Klett method.</p>
+</dd>
+<dt>pardepol532_klett: matrix</dt><dd><p>particle depolarization ratio at 532 nm based on klett-retrieved backscatter coefficient.</p>
+</dd>
+<dt>pardepol532Std_klett: matrix</dt><dd><p>uncertainty of particle depolarization ratio at 532 nm based on klett-retrieved backscatter coefficient.</p>
+</dd>
+<dt>voldepol532_raman: matrix</dt><dd><p>volume depolarization ratio at 532 nm for each cloud free group with the same smoothing of Raman method.</p>
+</dd>
+<dt>pardepol532_raman: matrix</dt><dd><p>particle depolarization ratio at 532 nm based on klett-retrieved backscatter coefficient.</p>
+</dd>
+<dt>pardepol532Std_raman: matrix</dt><dd><p>uncertainty of particle depolarization ratio at 532 nm based on raman-retrieved backscatter coefficient.</p>
+</dd>
+<dt>moldepol532: array</dt><dd><p>molecular volume depolarization ratio at 532nm.</p>
+</dd>
+<dt>moldepolStd532: array</dt><dd><p>std of molecular volume depolarization ratio at 532nm.</p>
+</dd>
+<dt>flagDefaultMoldepol532: logical</dt><dd><p>flag to show whether using the default molecular volume depolarization ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-11-27. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_OC_klett">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_OC_klett</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_OC_klett" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_OC_KLETT Retrieve aerosol optical properties for overlap correction far-range signal with klett method
+.. rubric:: Example</p>
+<p>[aerBsc355_klett, aerBsc532_klett, aerBsc1064_klett, aerExt355_klett, aerExt532_klett, aerExt1064_klett] = pollyxt_OC_klett(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBsc355_klett: matrix</dt><dd><p>aerosol backscatter coefficient at 355 nm with klett method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc532_klett: matrix</dt><dd><p>aerosol backscatter coefficient at 532 nm with klett method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc1064_klett: matrix</dt><dd><p>aerosol backscatter coefficient at 1064 nm with klett method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerExt355_klett: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with klett method. [m^{-1}]</p>
+</dd>
+<dt>aerExt532_klett: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with klett method. [m^{-1}]</p>
+</dd>
+<dt>aerExt1064_klett: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with klett method. [m^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-11-27. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_OC_raman">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_OC_raman</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_OC_raman" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_OC_RAMAN Retrieve aerosol optical properties for overlap corrected total and raman signal with raman method
+.. rubric:: Example</p>
+<p>[aerBsc355_raman, aerBsc532_raman, aerBsc1064_raman, aerExt355_raman, aerExt532_raman, aerExt1064_raman, aerLR355_raman, aerLR532_raman, aerLR1064_raman] = pollyxt_OC_raman(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBsc355_raman: matrix</dt><dd><p>aerosol backscatter coefficient at 355 nm with raman method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc532_raman: matrix</dt><dd><p>aerosol backscatter coefficient at 532 nm with raman method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc1064_raman: matrix</dt><dd><p>aerosol backscatter coefficient at 1064 nm with raman method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerExt355_raman: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with raman method. [m^{-1}]</p>
+</dd>
+<dt>aerExt532_raman: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with raman method. [m^{-1}]</p>
+</dd>
+<dt>aerExt1064_raman: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with raman method. [m^{-1}]</p>
+</dd>
+<dt>LR355_raman: matrix</dt><dd><p>lidar ratio at 355 nm. [Sr]</p>
+</dd>
+<dt>LR532_raman: matrix</dt><dd><p>lidar ratio at 532 nm. [Sr]</p>
+</dd>
+<dt>LR1064_raman: matrix</dt><dd><p>lidar ratio at 1064 nm. [Sr]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-11-27. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_angstrexp">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_angstrexp</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_angstrexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_ANGSTREXP Retrieve the angstroem exponent with klett-retrieve and
+raman-retrieved aerosol optical properties.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[ang_ext_355_532_raman, ang_bsc_355_532_raman,</dt><dd><p>ang_bsc_532_1064_raman, ang_bsc_355_532_klett,
+ang_bsc_532_1064_klett] = pollyxt_angstrexp(data, config)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>ang_ext_355_532_raman: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_355_532_raman: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_532_1064_raman: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_355_532_klett: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+<dt>ang_bsc_532_1064_klett: matrix</dt><dd><p>angstroem exponent.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-24. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_att_beta">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_att_beta</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_att_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_ATT_BETA Calculate the attenuated backscatter.
+.. rubric:: Example</p>
+<dl>
+<dt>[att_beta_355, att_beta_532, att_beta_1064, att_beta_387,</dt><dd><p>att_beta_607] = pollyxt_att_beta(data, config)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl>
+<dt>att_beta_355: matrix</dt><dd><p>attenuated backscatter at 355 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>att_beta_532: matrix</dt><dd><p>attenuated backscatter at 532 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>att_beta_1064: matrix</dt><dd><p>attenuated backscatter at 1064 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>att_beta_387: matrix</dt><dd><p>attenuated backscatter at 387 nm. [m^{-1}Sr^{-1}]
+Note: the differential molecular Raman backscatter cross section was</p>
+<blockquote>
+<div><p>replaced with differential molecular Rayleigh cross section at
+the same wavelength.</p>
+</div></blockquote>
+</dd>
+<dt>att_beta_607: matrix</dt><dd><p>attenuated backscatter at 607 nm. [m^{-1}Sr^{-1}]
+Note: the differential molecular Raman backscatter cross section was</p>
+<blockquote>
+<div><p>replaced with differential molecular Rayleigh cross section at
+the same wavelength.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-24. First Edition by Zhenping
+2019-08-03. Add ‘att_beta_387’ and ‘att_beta_607’</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_constrainedklett">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_constrainedklett</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">AERONET</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_constrainedklett" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_CONSTRAINEDKLETT Retrieve the aerosol optical properties with the
+constrains from AERONET.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[aerBsc355_aeronet, aerBsc532_aeronet, aerBsc1064_aeronet,</dt><dd><p>aerExt355_aeronet, aerExt532_aeronet, aerExt1064_aeronet,
+LR355_aeronet, LR532_aeronet,
+LR1064_aeronet] = pollyxt_constrainedklett(data, AERONET, config)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>AERONET: struct</dt><dd><dl class="simple">
+<dt>datetime: array</dt><dd><p>time of each measurment point.</p>
+</dd>
+<dt>AOD_{wavelength}: array</dt><dd><p>AOD at wavelength.</p>
+</dd>
+<dt>wavelength: array</dt><dd><p>wavelength of each channel. [nm]</p>
+</dd>
+<dt>IWV: array</dt><dd><p>Integrated Water Vapor. [cm]</p>
+</dd>
+<dt>angstrexp440_870: array</dt><dd><p>angstroem exponent 440-870 nm</p>
+</dd>
+<dt>AERONETAttri: struct</dt><dd><dl class="simple">
+<dt>URL: char</dt><dd><p>URL to retrieve the data.</p>
+</dd>
+<dt>level: char</dt><dd><p>product level. (‘10’, ‘15’, ‘20’)</p>
+</dd>
+<dt>status: logical</dt><dd><p>status to show whether retrieve the data successfully.</p>
+</dd>
+<dt>IWVUnit: char</dt><dd><p>unit of integrated water vapor. [cm]</p>
+</dd>
+<dt>location: char</dt><dd><p>AERONET site</p>
+</dd>
+<dt>PI: char</dt><dd><p>PI of the current AERONET site.</p>
+</dd>
+<dt>contact: char</dt><dd><p>email of the PI.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBsc355_aeronet: matrix</dt><dd><p>aerosol backscatter coefficient at 355 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc532_aeronet: matrix</dt><dd><p>aerosol backscatter coefficient at 532 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc1064_aeronet: matrix</dt><dd><p>aerosol backscatter coefficient at 1064 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerExt355_aeronet: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm. [m^{-1}]</p>
+</dd>
+<dt>aerExt532_aeronet: matrix</dt><dd><p>aerosol extinction coefficient at 532 nm. [m^{-1}]</p>
+</dd>
+<dt>aerExt1064_aeronet: matrix</dt><dd><p>aerosol extinction coefficient at 1064 nm. [m^{-1}]</p>
+</dd>
+<dt>LR355_aeronet: array</dt><dd><p>lidar ration at 355 nm. [Sr]</p>
+</dd>
+<dt>LR532_aeronet: array</dt><dd><p>lidar ration at 532 nm. [Sr]</p>
+</dd>
+<dt>LR1064_aeronet: array</dt><dd><p>lidar ration at 1064 nm. [Sr]</p>
+</dd>
+<dt>deltaAOD355: array</dt><dd><p>the minimum deviation between lidar retrieved AOD and AEROENT AOD.</p>
+</dd>
+<dt>deltaAOD532: array</dt><dd><p>the minimum deviation between lidar retrieved AOD and AEROENT AOD.</p>
+</dd>
+<dt>deltaAOD1064: array</dt><dd><p>the minimum deviation between lidar retrieved AOD and AEROENT AOD.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping
+2019-08-31. Add SNR control for the signal at reference height</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_depolcali">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_depolcali</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em>, <em class="sig-param">dbFile</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_depolcali" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DEPOLCALI calibrate the PollyXT depol channels both at 355 and 532 nm
+with +- 45deg method.
+.. rubric:: Example</p>
+<p>[data, depCalAttri] = pollyxt_depolcali(data, config)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>dbFile: char</dt><dd><p>absolute path of the database.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>The depolarization calibration results will be inserted.
+More information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>depCalAttri: struct</dt><dd><p>depolarization calibration information for each calibration period.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-17. First edition by Zhenping
+2019-08-28. Add flag to control whether to do depolarization</p>
+<blockquote>
+<div><p>calibration.</p>
+</div></blockquote>
+<p>2020-04-18. Generalise the interface.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_depolratio">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_depolratio</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_depolratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DEPOLRATIO retrieve volume depolarization ratio and particle
+depolarization ratio.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[voldepol355_klett, pardepol355_klett, pardepolStd355_klett,</dt><dd><p>voldepol355_raman, pardepol355_raman, pardepolStd355_raman,
+moldepol355, moldepolStd355, flagDefaultMoldepol355,
+voldepol532_klett, pardepol532_klett, pardepolStd532_klett,
+voldepol532_raman, pardepol532_raman,
+pardepolStd532_raman, moldepol532, moldepolStd532,
+flagDefaultMoldepol532] = pollyxt_depolratio(data, config)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>voldepol355_klett: matrix</dt><dd><p>volume depolarization ratio at 355 nm for each cloud free group with
+the same smoothing of Klett method.</p>
+</dd>
+<dt>pardepol355_klett: matrix</dt><dd><p>particle depolarization ratio at 355 nm based on klett-retrieved
+backscatter coefficient.</p>
+</dd>
+<dt>pardepol355Std_klett: matrix</dt><dd><p>uncertainty of particle depolarization ratio at 355 nm based on
+klett-retrieved backscatter coefficient.</p>
+</dd>
+<dt>voldepol355_raman: matrix</dt><dd><p>volume depolarization ratio at 355 nm for each cloud free group with
+the same smoothing of Raman method.</p>
+</dd>
+<dt>pardepol355_raman: matrix</dt><dd><p>particle depolarization ratio at 355 nm based on klett-retrieved
+backscatter coefficient.</p>
+</dd>
+<dt>pardepol355Std_raman: matrix</dt><dd><p>uncertainty of particle depolarization ratio at 355 nm based on
+raman-retrieved backscatter coefficient.</p>
+</dd>
+<dt>moldepol355: array</dt><dd><p>molecular volume depolarization ratio at 355nm.</p>
+</dd>
+<dt>moldepolStd355: array</dt><dd><p>std of molecular volume depolarization ratio at 355nm.</p>
+</dd>
+<dt>flagDefaultMoldepol355: logical</dt><dd><p>flag to show whether using the default molecular volume depolarization
+ratio.</p>
+</dd>
+<dt>voldepol532_klett: matrix</dt><dd><p>volume depolarization ratio at 532 nm for each cloud free group with
+the same smoothing of Klett method.</p>
+</dd>
+<dt>pardepol532_klett: matrix</dt><dd><p>particle depolarization ratio at 532 nm based on klett-retrieved
+backscatter coefficient.</p>
+</dd>
+<dt>pardepol532Std_klett: matrix</dt><dd><p>uncertainty of particle depolarization ratio at 532 nm based on
+klett-retrieved backscatter coefficient.</p>
+</dd>
+<dt>voldepol532_raman: matrix</dt><dd><p>volume depolarization ratio at 532 nm for each cloud free group
+with the same smoothing of Raman method.</p>
+</dd>
+<dt>pardepol532_raman: matrix</dt><dd><p>particle depolarization ratio at 532 nm based on klett-retrieved
+backscatter coefficient.</p>
+</dd>
+<dt>pardepol532Std_raman: matrix</dt><dd><p>uncertainty of particle depolarization ratio at 532 nm based on
+raman-retrieved backscatter coefficient.</p>
+</dd>
+<dt>moldepol532: array</dt><dd><p>molecular volume depolarization ratio at 532nm.</p>
+</dd>
+<dt>moldepolStd532: array</dt><dd><p>std of molecular volume depolarization ratio at 532nm.</p>
+</dd>
+<dt>flagDefaultMoldepol532: logical</dt><dd><p>flag to show whether using the default molecular volume
+depolarization ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping
+2019-05-24. Harmonize the smoothing for parDepol_klett and parDepol_raman</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_NR_att_beta">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_NR_att_beta</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_NR_att_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_NR_ATT_BETA display attenuated signal
+.. rubric:: Example</p>
+<p>pollyxt_display_NR_att_beta(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_OC_att_beta">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_OC_att_beta</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_OC_att_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_OC_ATT_BETA display attenuated signal
+.. rubric:: Example</p>
+<p>pollyxt_display_OC_att_beta(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_OC_retrieving">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_OC_retrieving</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_OC_retrieving" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_OC_RETRIEVING display aerosol optical products
+.. rubric:: Example</p>
+<p>pollyxt_display_OC_retrieving(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_WV">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_WV</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_WV" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_WV display the water vapor mixing ratio and relative humidity.
+.. rubric:: Example</p>
+<p>pollyxt_display_WV(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-31. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_att_beta">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_att_beta</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_att_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_ATT_BETA display attenuated signal
+.. rubric:: Example</p>
+<p>pollyxt_display_att_beta(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_depolcali">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_depolcali</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">attri</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_depolcali" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_DEPOLCALI display the depolarization calibration results
+.. rubric:: Example</p>
+<p>pollyxt_display_depolcali(data, config, taskInfo, attri)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, attri</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-29. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_lidarconst">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_lidarconst</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_lidarconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_LIDARCONST Display the lidar constants.
+.. rubric:: Example</p>
+<p>pollyxt_display_lidarconst(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping
+2019-01-28. Add support for 387 and 607 channels.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_longterm_cali">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_longterm_cali</code><span class="sig-paren">(</span><em class="sig-param">dbFile</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_longterm_cali" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_LONGTERM_CALI Display the lidar constants.
+.. rubric:: Example</p>
+<p>pollyxt_display_longterm_cali(taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-02-08. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_monitor">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_monitor</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_monitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_MONITOR display the values of sensors.
+.. rubric:: Example</p>
+<p>pollyxt_display_monitor(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2019-01-05. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_overlap">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_overlap</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">attri</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_OVERLAP display the overlap function.
+.. rubric:: Example</p>
+<p>pollyxt_display_overlap(data, taskInfo, attri, config)</p>
+<dl>
+<dt>Inputs:</dt><dd><p>data: struct
+taskInfo: struct</p>
+<blockquote>
+<div><p>the present processed task information. Go to fileinfo_new.txt for more details.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>attri: struct</dt><dd><p>attributes about overlap function.</p>
+</dd>
+<dt>config: struct</dt><dd><p>polly processing configuration. More detailed information can be found in doc/polly_config.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-22. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_quasiretrieving">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_quasiretrieving</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_quasiretrieving" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_QUASIRETRIEVING display the quasi retrievings results
+.. rubric:: Example</p>
+<p>pollyxt_display_quasiretrieving(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_quasiretrieving_V2">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_quasiretrieving_V2</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_quasiretrieving_V2" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_QUASIRETRIEVING_V2 display the quasi retrievings results
+.. rubric:: Example</p>
+<p>pollyxt_display_quasiretrieving_V2(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_rcs">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_rcs</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_rcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_RCS display the range corrected signal, vol-depol at 355 and 532 nm
+.. rubric:: Example</p>
+<p>pollyxt_display_rcs(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-29. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_retrieving">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_retrieving</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_retrieving" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_RETRIEVING display aerosol optical products
+.. rubric:: Example</p>
+<p>pollyxt_display_retrieving(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_saturation">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_saturation</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_saturation" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_SATURATION display the saturation mask.
+.. rubric:: Example</p>
+<p>pollyxt_display_saturation(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-29. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_targetclassi">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_targetclassi</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_targetclassi" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_TARGETCLASSI display the target classification reuslts
+.. rubric:: Example</p>
+<p>pollyxt_display_targetclassi(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_display_targetclassi_V2">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_display_targetclassi_V2</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_display_targetclassi_V2" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_DISPLAY_TARGETCLASSI_V2 display the target classification reuslts
+.. rubric:: Example</p>
+<p>pollyxt_display_targetclassi_V2(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_klett">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_klett</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_klett" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_KLETT Retrieve aerosol optical properties with klett method
+.. rubric:: Example</p>
+<p>[aerBsc355_klett, aerBsc532_klett, aerBsc1064_klett, aerExt355_klett, aerExt532_klett, aerExt1064_klett] = pollyxt_klett(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBsc355_klett: matrix</dt><dd><p>aerosol backscatter coefficient at 355 nm with klett method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc532_klett: matrix</dt><dd><p>aerosol backscatter coefficient at 532 nm with klett method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc1064_klett: matrix</dt><dd><p>aerosol backscatter coefficient at 1064 nm with klett method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerExt355_klett: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with klett method. [m^{-1}]</p>
+</dd>
+<dt>aerExt532_klett: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with klett method. [m^{-1}]</p>
+</dd>
+<dt>aerExt1064_klett: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with klett method. [m^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping
+2019-08-31. Add SNR control for the reference height.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_lidar_calibration">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_lidar_calibration</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_lidar_calibration" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_LIDAR_CALIBRATION calibrate the lidar system
+.. rubric:: Example</p>
+<p>[LC] = pollyxt_lidar_calibration(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>LC: struct</dt><dd><dl class="simple">
+<dt>LC_klett_355: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_klett_532: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_klett_1064: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_raman_355: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_raman_532: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_raman_1064: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_aeronet_355: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_aeronet_532: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_aeronet_1064: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_raman_387: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LC_raman_607: array</dt><dd><p>lidar calibration constants for 30s profile.</p>
+</dd>
+<dt>LCStd_klett_355: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_klett_532: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_klett_1064: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_raman_355: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_raman_532: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_raman_1064: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_aeronet_355: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_aeronet_532: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_aeronet_1064: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_raman_387: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LCStd_raman_607: array</dt><dd><p>uncertainty of lidar constant.</p>
+</dd>
+<dt>LC_start_time: array</dt><dd><p>start time of the lidar calibration period.</p>
+</dd>
+<dt>LC_stop_time: array</dt><dd><p>stop time of the lidar calibration period.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-24. First Edition by Zhenping
+2019-01-28. Add calibration for Raman channels.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_overlap">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_overlap</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_OVERLAP calculate and correct the overlap functions.
+.. rubric:: Example</p>
+<p>[data] = pollyxt_overlap(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>data: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>overlapAttri: struct</dt><dd><p>All information about overlap.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-19. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_overlap_cal">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_overlap_cal</code><span class="sig-paren">(</span><em class="sig-param">signalFR</em>, <em class="sig-param">bgFR</em>, <em class="sig-param">signalNR</em>, <em class="sig-param">bgNR</em>, <em class="sig-param">height</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_overlap_cal" title="Permalink to this definition">¶</a></dt>
+<dd><p>pollyxt_overlap_cal calculate the overlap function.
+.. rubric:: Example</p>
+<p>overlap = pollyxt_overlap_cal(signalFR, bgFR, signalNR, bgNR, height);</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signalFR: array</dt><dd><p>far-range signal. (photon count)</p>
+</dd>
+<dt>bgFR: array</dt><dd><p>background of far-range signal. (photon count)</p>
+</dd>
+<dt>signalNR: array</dt><dd><p>near-range signal. (photon count)</p>
+</dd>
+<dt>bgNR: array</dt><dd><p>background of near-range signal. (photon count)</p>
+</dd>
+<dt>height: array</dt><dd><p>height above ground. (m)</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>hFullOverlap: numeric</dt><dd><p>minimum height with full overlap function for far-range signal
+(default: 600). (m)</p>
+</dd>
+<dt>overlapCalMode: integer</dt><dd><p>overlap calculation mode.
+1: signal ratio between near-range and far-range channel
+2: Raman method</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>overlap: array</dt><dd><p>overlap function. If no overlap function was calculated, <cite>overlap</cite> will
+be empty.</p>
+</dd>
+<dt>overlapStd: array</dt><dd><p>error of the overlap function. If no overlap function was calculated,
+<cite>overlapStd</cite> will be empty.</p>
+</dd>
+<dt>sigRatio: numeric</dt><dd><p>signal ratio between near-range and far-range signal.</p>
+</dd>
+<dt>normRange: 2-element array</dt><dd><p>height index of the signal normalization range.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_preprocess">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_preprocess</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_preprocess" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_PREPROCESS deadtime correction, background correction, first-bin shift,
+mask for low-SNR and mask for depolarization-calibration process.
+Usage:</p>
+<blockquote>
+<div><p>data = pollyxt_preprocess(data, config)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data: struct</dt><dd><dl class="simple">
+<dt>rawSignal: array</dt><dd><p>signal. [Photon Count]</p>
+</dd>
+<dt>mShots: array</dt><dd><p>number of the laser shots for each profile.</p>
+</dd>
+<dt>mTime: array</dt><dd><p>datetime array for the measurement time of each profile.</p>
+</dd>
+<dt>depCalAng: array</dt><dd><p>angle of the polarizer in the receiving channel. (&gt;0 means
+calibration process starts)</p>
+</dd>
+<dt>zenithAng: array</dt><dd><p>zenith angle of the laer beam.</p>
+</dd>
+<dt>repRate: float</dt><dd><p>laser pulse repetition rate. [s^-1]</p>
+</dd>
+<dt>hRes: float</dt><dd><p>spatial resolution [m]</p>
+</dd>
+<dt>mSite: string</dt><dd><p>measurement site.</p>
+</dd>
+</dl>
+</dd>
+<dt>config: struct</dt><dd><p>configuration. Detailed information can be found in doc/polly_config.md.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>data: struct</dt><dd><dl class="simple">
+<dt>rawSignal: array</dt><dd><p>signal. [Photon Count]</p>
+</dd>
+<dt>mShots: array</dt><dd><p>number of the laser shots for each profile.</p>
+</dd>
+<dt>mTime: array</dt><dd><p>datetime array for the measurement time of each profile.</p>
+</dd>
+<dt>depCalAng: array</dt><dd><p>angle of the polarizer in the receiving channel. (&gt;0 means
+calibration process starts)</p>
+</dd>
+<dt>zenithAng: array</dt><dd><p>zenith angle of the laer beam.</p>
+</dd>
+<dt>repRate: float</dt><dd><p>laser pulse repetition rate. [s^-1]</p>
+</dd>
+<dt>hRes: float</dt><dd><p>spatial resolution [m]</p>
+</dd>
+<dt>mSite: string</dt><dd><p>measurement site.</p>
+</dd>
+<dt>signal: array</dt><dd><p>Background removed signal</p>
+</dd>
+<dt>bg: array</dt><dd><p>background</p>
+</dd>
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>lowSNRMask: array</dt><dd><p>If SNR less SNRmin, mask is set true. Otherwise, false</p>
+</dd>
+<dt>depCalMask: array</dt><dd><p>If polly was doing depolarization calibration, depCalMask is set
+true. Otherwise, false.</p>
+</dd>
+<dt>fogMask: array</dt><dd><p>If it is foggy which means the signal will be very weak,
+fogMask will be set true. Otherwise, false</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-16. First edition by Zhenping.
+2019-07-10. Add mask for laser shutter due to approaching airplanes.
+2019-08-27. Add mask for turnoff of PMT at 607 and 387nm.</p>
+</dd>
+<dt>Copyright:</dt><dd><p>Ground-based remote sensing (tropos)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_quasiretrieve">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_quasiretrieve</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_quasiretrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_QUASIRETRIEVE Retrieving the intensive aerosol optical properties with
+Quasi-retrieving method.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[quasi_par_bsc_532, quasi_par_bsc_532, quasi_par_bsc_1064,</dt><dd><p>quasi_par_depol_532, volDepol_355, volDepol_532, quasi_ang_532_1064,
+quality_mask_355, quality_mask_532, quality_mask_1064,
+quality_mask_volDepol_355,
+quality_mask_volDepol_532] = pollyxt_quasiretrieve(data, config)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>quasi_par_bsc_355: matrix</dt><dd><p>quasi particle backscatter coefficient at 355 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>quasi_par_bsc_532: matrix</dt><dd><p>quasi particle backscatter coefficient at 532 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>quasi_par_bsc_1064: matrix</dt><dd><p>quasi particle backscatter coefficient at 1064 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>quasi_par_depol_532: matrix</dt><dd><p>quasi particle depolarization ratio at 532 nm.</p>
+</dd>
+<dt>volDepol_355: matrix</dt><dd><p>volume depolarization ratio at 355 nm.</p>
+</dd>
+<dt>volDepol_532: matrix</dt><dd><p>volume depolarization ratio at 532 nm.</p>
+</dd>
+<dt>quasi_angstrexp_532_1064: matrix</dt><dd><p>quasi backscatter related Ångström exponent at 532-1064.</p>
+</dd>
+<dt>quality_mask_355: matrix</dt><dd><p>quality mask for attenuated backscatter at 355 nm.
+(0: good data, 1: low-SNR and 2: depolarization calibration periods.)</p>
+</dd>
+<dt>quality_mask_532: matrix</dt><dd><p>quality mask for attenuated backscatter at 532 nm.
+(0: good data, 1: low-SNR and 2: depolarization calibration periods.)</p>
+</dd>
+<dt>quality_mask_1064: matrix</dt><dd><p>quality mask for attenuated backscatter at 1064 nm.
+(0: good data, 1: low-SNR and 2: depolarization calibration periods.)</p>
+</dd>
+<dt>quality_mask_volDepol_355: matrix</dt><dd><p>quality mask for volume depolarization ratio at 355 nm.
+(0: good data, 1: low-SNR and 2: depolarization calibration periods.)</p>
+</dd>
+<dt>quality_mask_volDepol_532: matrix</dt><dd><p>quality mask for volume depolarization ratio at 532 nm.
+(0: good data, 1: low-SNR and 2: depolarization calibration periods.)</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-24. First Edition by Zhenping
+2019-08-03. Add the data mask for fog and laser shutter</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_quasiretrieve_V2">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_quasiretrieve_V2</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_quasiretrieve_V2" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_QUASIRETRIEVE_V2 Retrieving the intensive aerosol optical properties with Quasi-retrieving method. Detailed information can be found in doc/pollynet_processing_program.md
+.. rubric:: Example</p>
+<p>[quasi_par_bsc_355_V2, quasi_par_bsc_532_V2, quasi_par_bsc_1064_V2, quasi_par_depol_532_V2, volDepol_355, volDepol_532, quasi_ang_532_1064, quality_mask_355_V2, quality_mask_532_V2, quality_mask_1064_V2, quality_mask_volDepol_355_V2, quality_mask_volDepol_532_V2] = pollyxt_quasiretrieve_V2(data, config)</p>
+<dl class="simple">
+<dt>Input:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>quasi_par_bsc_355_V2: matrix</dt><dd><p>quasi particle backscatter coefficient at 355 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>quasi_par_bsc_532_V2: matrix</dt><dd><p>quasi particle backscatter coefficient at 532 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>quasi_par_bsc_1064_V2: matrix</dt><dd><p>quasi particle_V2 backscatter coefficient at 1064 nm. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>quasi_par_depol_532_V2: matrix</dt><dd><p>quasi particle depolarization ratio at 532 nm.</p>
+</dd>
+<dt>volDepol_355: matrix_V2</dt><dd><p>volume depolarization_V2 ratio at 355 nm.</p>
+</dd>
+<dt>volDepol_532: matrix</dt><dd><p>volume depolarization ratio at 532 nm.</p>
+</dd>
+<dt>quasi_angstrexp_532_1064: matrix</dt><dd><p>quasi backscatter related Ångström exponent at 532-1064.</p>
+</dd>
+<dt>quality_mask_355_V2: matrix</dt><dd><p>quality mask for attenuated backscatter at 355 nm. In which, 0 means good data, 1 means low-SNR data and 2 means depolarization calibration periods.</p>
+</dd>
+<dt>quality_mask_532_V2: matrix</dt><dd><p>quality mask for attenuated backscatter at 532 nm. In which, 0 means good data, 1 means low-SNR data and 2 means depolarization calibration periods.</p>
+</dd>
+<dt>quality_mask_1064_V2: matrix</dt><dd><p>quality mask for attenuated backscatter at 1064 nm. In which, 0 means good data, 1 means low-SNR data and 2 means depolarization calibration periods.</p>
+</dd>
+<dt>quality_mask_volDepol_355_V2: matrix</dt><dd><p>quality mask for volume depolarization ratio at 355 nm. In which, 0 means good data, 1 means low-SNR data and 2 means depolarization calibration periods.</p>
+</dd>
+<dt>quality_mask_volDepol_532_V2: matrix</dt><dd><p>quality mask for volume depolarization ratio at 532 nm. In which, 0 means good data, 1 means low-SNR data and 2 means depolarization calibration periods.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-04. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_raman">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_raman</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_raman" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_RAMAN Retrieve aerosol optical properties with raman method
+.. rubric:: Example</p>
+<p>[aerBsc355_raman, aerBsc532_raman, aerBsc1064_raman, aerExt355_raman, aerExt532_raman, aerExt1064_raman, aerLR355_raman, aerLR532_raman, aerLR1064_raman] = pollyxt_raman(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>aerBsc355_raman: matrix</dt><dd><p>aerosol backscatter coefficient at 355 nm with raman method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc532_raman: matrix</dt><dd><p>aerosol backscatter coefficient at 532 nm with raman method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerBsc1064_raman: matrix</dt><dd><p>aerosol backscatter coefficient at 1064 nm with raman method. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>aerExt355_raman: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with raman method. [m^{-1}]</p>
+</dd>
+<dt>aerExt532_raman: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with raman method. [m^{-1}]</p>
+</dd>
+<dt>aerExt1064_raman: matrix</dt><dd><p>aerosol extinction coefficient at 355 nm with raman method. [m^{-1}]</p>
+</dd>
+<dt>LR355_raman: matrix</dt><dd><p>lidar ratio at 355 nm. [Sr]</p>
+</dd>
+<dt>LR532_raman: matrix</dt><dd><p>lidar ratio at 532 nm. [Sr]</p>
+</dd>
+<dt>LR1064_raman: matrix</dt><dd><p>lidar ratio at 1064 nm. [Sr]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping
+2019-08-31. Add SNR control for elastic signal at reference height as well.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_rayleighfit">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_rayleighfit</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_rayleighfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_RAYLEIGHFIT Find the reference height with rayleigh fitting algorithm.
+.. rubric:: Example</p>
+<p>[refH355, refH532, refH1064] = pollyxt_rayleighfit(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>refH355: matrix</dt><dd><p>[[refHBaseIndx355_1, refHTopIndx355_1], [refHBaseIndx355_2, refHTopIndx355_2], …]. The number of layers reference height is compatible with the number of cloudfreegroups. If no reference height was found, the corresponding layer will be filled with NaN.</p>
+</dd>
+<dt>refH532: matrix</dt><dd><p>as above.</p>
+</dd>
+<dt>refH1064: matrix</dt><dd><p>as above.</p>
+</dd>
+<dt>dpIndx355: cell</dt><dd><p>Douglas-Peucker decomposition points for each cloud-free group.</p>
+</dd>
+<dt>dpIndx532: cell</dt><dd><p>as above;</p>
+</dd>
+<dt>dpIndx1064: cell</dt><dd><p>as above.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_read_IWV">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_read_IWV</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_read_IWV" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_READ_IWV read integrated water vapor from external instruments, like
+sunphotometer or microwave radiometer.
+.. rubric:: Example</p>
+<p>[IWV, globalAttri] = pollyxt_read_IWV(data, config)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl>
+<dt>IWV: array</dt><dd><p>integrated water vapor. (kg * m^{-2})</p>
+</dd>
+<dt>globalAttri:</dt><dd><dl class="simple">
+<dt>source: char</dt><dd><p>data source. (‘AERONET’, ‘MWR’ or else)</p>
+</dd>
+<dt>site: char</dt><dd><p>measurement site.</p>
+</dd>
+<dt>datetime: array</dt><dd><p>datetime of applied IWV.</p>
+</dd>
+</dl>
+<p>PI: char
+contact: char</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-26. First Edition by Zhenping
+2019-05-19. Fix the bug of returning empty IWV when more than 2 MWR files</p>
+<blockquote>
+<div><p>were found.</p>
+</div></blockquote>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_read_laserlogbook">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_read_laserlogbook</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">flagDeleteData</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_read_laserlogbook" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_READ_LASERLOGBOOK read the health parameters of the lidar from
+the zipped laserlogbook file
+Usage:</p>
+<blockquote>
+<div><p>health = pollyxt_read_laserlogbook(file, flagDeleteData)</p>
+</div></blockquote>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>the full filename.</p>
+</dd>
+<dt>flagDeleteData: logical</dt><dd><p>flag to control whether to delete the laserlogbook file.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl>
+<dt>health: struct</dt><dd><p>time: datenum array
+AD: array</p>
+<blockquote>
+<div><p>laser energy (measured inside laser head.) [a.u.]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>EN: array</dt><dd><p>laser energy (measured inside laser head.) [mJ]</p>
+</dd>
+<dt>counts: array</dt><dd><p>flashlamp used counts.</p>
+</dd>
+<dt>ExtPyro: array</dt><dd><p>raw output energy (ExtPyro). [mJ]</p>
+</dd>
+<dt>Temp1064: array</dt><dd><p>temperature for the PMT at 1064nm channel. [degree celsius]</p>
+</dd>
+<dt>Temp1: array</dt><dd><p>temperature for the transmitting chamber. [degree celsius]</p>
+</dd>
+<dt>Temp2: array</dt><dd><p>temperature for the receiving chamber. [degree celsius]</p>
+</dd>
+<dt>OutsideRH: array</dt><dd><p>RH outside the polly system. [%]</p>
+</dd>
+<dt>OutsideT: array</dt><dd><p>temperature outside the Polly system. [degree celsius]</p>
+</dd>
+<dt>roof: array</dt><dd><p>status to show whether the roof is closed.</p>
+</dd>
+<dt>rain: array</dt><dd><p>status to show whether it is raining.</p>
+</dd>
+<dt>shutter: array</dt><dd><p>status to show whether the shutter is closed.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History</dt><dd><p>2018-08-05. First edition by Zhenping.
+2019-08-04. Parse nearly all available information in the laserlogbook.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_readmeteor">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_readmeteor</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_readmeteor" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_READMETEOR Read meteorological data.
+.. rubric:: Example</p>
+<p>[temp, pres, relh, meteorAttri] = pollyxt_readmeteor(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>temp: matrix (cloudfreegroups * height)</dt><dd><p>temperature for each range bin. [C]</p>
+</dd>
+<dt>pres: matrix (cloudfreegroups * height)</dt><dd><p>pressure for each range bin. [hPa]</p>
+</dd>
+<dt>rh: matrix (cloudfreegroups * height)</dt><dd><p>relative humidity for each range bin. [%]</p>
+</dd>
+<dt>meteorAttri: struct</dt><dd><dl class="simple">
+<dt>dataSource: cell</dt><dd><p>The data source used in the data processing for each cloud-free group.</p>
+</dd>
+<dt>URL: cell</dt><dd><p>The data file info for each cloud-free group.</p>
+</dd>
+<dt>datetime: array</dt><dd><p>datetime label for the meteorlogical data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-22. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_results_report">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_results_report</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_results_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>pollyxt_results_report Write the info to done list file and generate the report
+for the current task. These report can be used for further examination.
+.. rubric:: Example</p>
+<p>[reportStr] = pollyxt_results_report(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>Outputs:</dt><dd><p>reportStr</p>
+</dd>
+<dt>History:</dt><dd><p>2019-01-04. First Edition by Zhenping
+2019-03-13. Add entries of ‘TC’, ‘VDR_355’ and ‘VDR_532’.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_saturationdetect">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_saturationdetect</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_saturationdetect" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SATURATIONDETECT detect the bins which is fully saturated by the
+clouds.
+.. rubric:: Example</p>
+<p>[flag] = pollyxt_saturationdetect(data, height, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data: struct</dt><dd><p>More detailed information can be found in
+docpollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>processing configurations. Deatiled information can be found in
+docpolly_config.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical matrix</dt><dd><p>if it is true, it means the current range bin should be saturated
+by clouds. Vice versa.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-21. First Edition by Zhenping
+2019-07-08. Fix the bug of converting signal to PCR.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_NR_retrieving_results">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_NR_retrieving_results</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_NR_retrieving_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_NR_RETRIEVING_RESULTS saving the retrieved results, including backscatter, extinction coefficients, lidar ratio, volume/particles depolarization ratio and so on.
+.. rubric:: Example</p>
+<p>pollyxt_save_NR_retrieving_results(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-06. First Edition by Zhenping
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_OC_att_bsc">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_OC_att_bsc</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_OC_att_bsc" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_OC_ATT_BSC save the attenuated backscatter.
+.. rubric:: Example</p>
+<p>pollyxt_save_OC_att_bsc(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2019-11-27. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_OC_retrieving_results">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_OC_retrieving_results</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_OC_retrieving_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_OC_RETRIEVING_RESULTS saving the retrieved results, including backscatter, extinction coefficients, lidar ratio, volume/particles depolarization ratio and so on.
+.. rubric:: Example</p>
+<p>pollyxt_save_OC_retrieving_results(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-11-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_WVMR_RH">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_WVMR_RH</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_WVMR_RH" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_WVMR_RH save the water vapor mixing ratio and relative humidity.
+.. rubric:: Example</p>
+<p>pollyxt_save_WVMR_RH(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2019-03-15. First Edition by Zhenping
+2019-05-16. Extended the attributes for all the variables and comply with the ACTRIS convention.
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_att_bsc">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_att_bsc</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_att_bsc" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_ATT_BSC save the attenuated backscatter.
+.. rubric:: Example</p>
+<p>pollyxt_save_att_bsc(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2019-01-10. First Edition by Zhenping
+2019-05-16. Extended the attributes for all the variables and comply with the ACTRIS convention.
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_cloudinfo">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_cloudinfo</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_cloudinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_CLOUDINFO Saving the cloud layering information to netcdf file.
+.. rubric:: Example</p>
+<p>pollyxt_save_cloudinfo(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-21 First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_overlap">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_overlap</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em>, <em class="sig-param">globalAttri</em>, <em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_OVERLAP Save the overlap file.
+.. rubric:: Example</p>
+<p>pollyxt_save_overlap(data, taskInfo, config, globalAttri, file);</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>polly processing configuration. More detailed information can be found in doc/polly_config.md</p>
+</dd>
+<dt>globalAttri: struct</dt><dd><dl class="simple">
+<dt>overlap532: array</dt><dd><p>calculated overlap for 532 nm far range total channel.</p>
+</dd>
+<dt>overlap355: array</dt><dd><p>calculated overlap for 355 nm far range total channel.</p>
+</dd>
+<dt>overlap532Defaults: array</dt><dd><p>default overlap for 532 nm far range total channel.</p>
+</dd>
+<dt>overlap355Defaults: array</dt><dd><p>default overlap for 355 nm far range total channel.</p>
+</dd>
+</dl>
+</dd>
+<dt>file: char</dt><dd><p>netcdf file to save the overlap parameters.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-21. First Edition by Zhenping
+2019-05-16. Extended the attributes for all the variables and comply with the ACTRIS convention.
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_quasi_results">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_quasi_results</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_quasi_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_QUASI_RESULTS Saving the target classification results to netcdf file.
+.. rubric:: Example</p>
+<p>pollyxt_save_quasi_results(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping
+2019-05-16. Extended the attributes for all the variables and comply with the ACTRIS convention.
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_quasi_results_V2">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_quasi_results_V2</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_quasi_results_V2" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_QUASI_RESULTS_V2 Saving the quasi retrieving results (V2) to netcdf file.
+.. rubric:: Example</p>
+<p>pollyxt_save_quasi_results_V2(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-03. First Edition by Zhenping
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_retrieving_results">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_retrieving_results</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_retrieving_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>pollyxt_save_retrieving_results saving the retrieved results, including backscatter, extinction coefficients, lidar ratio, volume/particles depolarization ratio and so on.
+.. rubric:: Example</p>
+<p>pollyxt_save_retrieving_results(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-31. First Edition by Zhenping
+2019-05-10. Add one field of start&amp;end time to be compatible with larda ncReader.
+2019-05-16. Extended the attributes for all the variables and comply with the ACTRIS
+2019-05-24. Add voldepol with different smoothing window  convention.
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_tc">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_tc</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_tc" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_TC Saving the target classification results to netcdf file.
+.. rubric:: Example</p>
+<p>pollyxt_save_tc(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping
+2019-05-16. Extended the attributes for all the variables and comply with the ACTRIS convention.
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_tc_V2">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_tc_V2</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_tc_V2" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_TC_V2 Saving the target classification results to netcdf file. (Based on quasi retrieving results V2)
+.. rubric:: Example</p>
+<p>pollyxt_save_tc_V2(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>taskInfo: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping
+2019-05-16. Extended the attributes for all the variables and comply with the ACTRIS convention.
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_save_voldepol">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_save_voldepol</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">taskInfo</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_save_voldepol" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SAVE_VOLDEPOL save the attenuated backscatter.
+.. rubric:: Example</p>
+<p>pollyxt_save_voldepol(data, taskInfo, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>data, taskInfo, config</p>
+</dd>
+<dt>History:</dt><dd><p>2019-01-10. First Edition by Zhenping
+2019-05-16. Extended the attributes for all the variables and comply with the ACTRIS convention.
+2019-09-27. Turn on the netCDF4 compression.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_select_liconst">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_select_liconst</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em>, <em class="sig-param">dbFile</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_select_liconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SELECT_LICONST select the most suitable lidar calibration constants.
+.. rubric:: Example</p>
+<p>LCUsed = pollyxt_select_liconst(data, config, dbFile)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>dbFile: char</dt><dd><p>absolute path of the database.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>LCUsed: struct</dt><dd><dl class="simple">
+<dt>LCUsed355: float</dt><dd><p>applied lidar constant at 355 nm.</p>
+</dd>
+<dt>LCUsedTag355: integer</dt><dd><p>source of the applied lidar constant at 355 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning355: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+<dt>LCUsed532: float</dt><dd><p>applied lidar constant at 532 nm.</p>
+</dd>
+<dt>LCUsedTag532: integer</dt><dd><p>source of the applied lidar constant at 532 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning532: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+<dt>LCUsed1064: float</dt><dd><p>applied lidar constant at 1064 nm.</p>
+</dd>
+<dt>LCUsedTag1064: integer</dt><dd><p>source of the applied lidar constant at 1064 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning1064: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+<dt>LCUsed387: float</dt><dd><p>applied lidar constant at 387 nm.</p>
+</dd>
+<dt>LCUsedTag387: integer</dt><dd><p>source of the applied lidar constant at 387 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning387: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+<dt>LCUsed607: float</dt><dd><p>applied lidar constant at 607 nm.</p>
+</dd>
+<dt>LCUsedTag607: integer</dt><dd><p>source of the applied lidar constant at 607 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning607: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+<dt>LCUsed532NR: float</dt><dd><p>applied lidar constant at near-range 532 nm.</p>
+</dd>
+<dt>LCUsedTag532NR: integer</dt><dd><p>source of the applied lidar constant at near-range 532 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning532NR: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+<dt>LCUsed607NR: float</dt><dd><p>applied lidar constant at near-range 607 nm.</p>
+</dd>
+<dt>LCUsedTag607NR: integer</dt><dd><p>source of the applied lidar constant at near-range 607 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning607NR: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+<dt>LCUsed355NR: float</dt><dd><p>applied lidar constant at near-range 355 nm.</p>
+</dd>
+<dt>LCUsedTag355NR: integer</dt><dd><p>source of the applied lidar constant at near-range 355 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning355NR: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+<dt>LCUsed387NR: float</dt><dd><p>applied lidar constant at near-range 387 nm.</p>
+</dd>
+<dt>LCUsedTag387NR: integer</dt><dd><p>source of the applied lidar constant at near-range 387 nm.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>flagLCWarning387NR: integer</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-18. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_splitcloudfree">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_splitcloudfree</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_splitcloudfree" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_SPLITCLOUDFREE split the continous cloud free profiles into several small groups.
+.. rubric:: Example</p>
+<p>[cloudFreeSubContGroup] = pollyxt_splitcloudfree(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>cloudFreeSubContGroup: matrix</dt><dd><p>[[iGroupStartIndx, iGroupEndIndx], …].</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-22. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_targetclassi">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_targetclassi</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_targetclassi" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_TARGETCLASSI Aerosol target classification based on algorithms presented in H.Baar et al, 2017, AMT.
+.. rubric:: Example</p>
+<p>[tc_mask] = pollyxt_targetclassi(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>tc_mask: matrix</dt><dd><p>‘0: No signal’
+‘1: Clean atmosphere’
+‘2: Non-typed particles/low conc.’
+‘3: Aerosol: small’
+‘4: Aerosol: large, spherical’
+‘5: Aerosol: mixture, partly non-spherical’
+‘6: Aerosol: large, non-spherical’
+‘7: Cloud: non-typed’
+‘8: Cloud: water droplets’
+‘9: Cloud: likely water droplets’
+‘10: Cloud: ice crystals’
+‘11: Cloud: likely ice crystal</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-25. First Edition by Zhenping
+2019-08-30. Add SNR criteria to treat the bits with low SNR as ‘No Signal’.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_targetclassi_V2">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_targetclassi_V2</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_targetclassi_V2" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_TARGETCLASSI_V2 Aerosol target classification based on algorithms presented in H.Baar et al, 2017, AMT. The inputs of quasi retrieving results are based on the improved quasi retrieving method. Detailed information about this improvement can be found ‘../../doc/quasi_retrieving_V2.pdf’
+.. rubric:: Example</p>
+<p>[tc_mask] = pollyxt_targetclassi_V2(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>tc_mask: matrix</dt><dd><p>‘0: No signal’
+‘1: Clean atmosphere’
+‘2: Non-typed particles/low conc.’
+‘3: Aerosol: small’
+‘4: Aerosol: large, spherical’
+‘5: Aerosol: mixture, partly non-spherical’
+‘6: Aerosol: large, non-spherical’
+‘7: Cloud: non-typed’
+‘8: Cloud: water droplets’
+‘9: Cloud: likely water droplets’
+‘10: Cloud: ice crystals’
+‘11: Cloud: likely ice crystal</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-03. First Edition by Zhenping
+2019-08-30. Add SNR criteria to treat the bits with low SNR as ‘No Signal’.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_transratioCor">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_transratioCor</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_transratioCor" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_TRANSRATIOCOR correct the effects of non-ideal transmission ratio in total channel to retrieve the real elastic signal.
+.. rubric:: Example</p>
+<p>[el355, bgEl355, el532, bgEl532] = pollyxt_transratioCor(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>el355: matrix</dt><dd><p>elastic signal with transmission ratio correction.</p>
+</dd>
+<dt>bgEl355: matrix</dt><dd><p>background elastic signal with transmission ratio correction.</p>
+</dd>
+<dt>el532: matrix</dt><dd><p>elastic signal with transmission ratio correction.</p>
+</dd>
+<dt>bgEl532: matrix</dt><dd><p>background elastic signal with transmission ratio correction.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_wv_calibration">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_wv_calibration</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_wv_calibration" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYXT_WV_CALIBRATION water vapor calibration.
+.. rubric:: Example</p>
+<p>[wvconst, wvconstStd, globalAttri] = pollyxt_wv_calibration(data, config)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in
+doc/pollynet_processing_program.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>wvconst: array</dt><dd><p>water vapor calibration constant. [g/kg]</p>
+</dd>
+<dt>wvconstStd: array</dt><dd><p>uncertainty of water vapor calibration constant. [g/kg]</p>
+</dd>
+<dt>globalAttri: struct</dt><dd><dl class="simple">
+<dt>cali_start_time: array</dt><dd><p>water vapor calibration start time. [datenum]</p>
+</dd>
+<dt>cali_stop_time: array</dt><dd><p>water vapor calibration stop time. [datenum]</p>
+</dd>
+<dt>WVCaliInfo: cell</dt><dd><p>calibration information for each calibration period.</p>
+</dd>
+<dt>IntRange: matrix</dt><dd><p>index of integration range for calculate the raw IWV from lidar.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>Dai, G., Althausen, D., Hofer, J., Engelmann, R., Seifert, P.,
+B??hl, J., Mamouri, R.-E., Wu, S., and Ansmann, A.: Calibration of Raman
+lidar water vapor profiles by means of AERONET photometer observations
+and GDAS meteorological data, Atmospheric Measurement Techniques,
+11, 2735-2748, 2018.</p>
+<dl>
+<dt>History:</dt><dd><p>2018-12-26. First Edition by Zhenping
+2019-08-08. Add the sunrise and sunset to exclude the low SNR</p>
+<blockquote>
+<div><p>calibration periods.</p>
+</div></blockquote>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.polly_general_func_lib.pollyxt_wv_retrieve">
+<code class="sig-prename descclassname">lib.polly_general_func_lib.</code><code class="sig-name descname">pollyxt_wv_retrieve</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">config</em>, <em class="sig-param">IWVIntRangeIndx</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.polly_general_func_lib.pollyxt_wv_retrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>pollyxt_wv_retrieve retrieve the water vapor mixing ratio and relative humidity.
+.. rubric:: Example</p>
+<p>[wvmr, rh, wvProfileInfo, WVMR, RH] = pollyxt_wv_retrieve(data, config, IWVIntRangeIndx)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data.struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>config: struct</dt><dd><p>More detailed information can be found in doc/pollynet_processing_program.md</p>
+</dd>
+<dt>IWVIntRangeIndx: matrix</dt><dd><p>integration range for IWV.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>wvmr: matrix</dt><dd><p>water vapor mixing ratio profile. [g*kg^{-1}] numel(data.cloudFreeGroups)*numel(data.height)</p>
+</dd>
+<dt>rh: matrix</dt><dd><p>relative humidity. [%] numel(data.cloudFreeGroups)*numel(data.height)</p>
+</dd>
+<dt>wvProfileInfo: struct</dt><dd><dl class="simple">
+<dt>n407Pros: array</dt><dd><p>number of accumulated 407nm profiles for each wvmr profile in cloud free period.</p>
+</dd>
+</dl>
+</dd>
+<dt>WVMR: matrix</dt><dd><p>spatial-temporal resolved water vapor mixing ratio. [g*kg^{-1}]</p>
+</dd>
+<dt>RH: matrix</dt><dd><p>spatial-temporal resolved relative humidity. [%]</p>
+</dd>
+<dt>IWV: array</dt><dd><p>time series of IWV. [kg*m^{-2}]</p>
+</dd>
+<dt>quality_mask_WVMR: matrix</dt><dd><p>0 means valid point; 1 means low SNR; 2 means depol calibration; 3 turned off</p>
+</dd>
+<dt>quality_mask_RH<span class="classifier">matrix</span></dt><dd><p>see above.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-26. First Edition by Zhenping
+2019-05-22. Add quality control for wvmr and RH.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="scattering.html" class="btn btn-neutral float-right" title="Rayleigh Scattering module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lib.html" class="btn btn-neutral float-left" title="lib functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Yin, Baars
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

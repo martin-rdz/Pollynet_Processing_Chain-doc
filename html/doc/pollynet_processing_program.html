@@ -1,0 +1,996 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PollyNET Processing Program &mdash; Pollynet_Processing_Chain  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running Picasso on the server (Internal tutorial)" href="running_Pollynet_Processing_Chain_on_the_server.html" />
+    <link rel="prev" title="pollynet_processing_chain_config" href="pollynet_processing_chain_config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Pollynet_Processing_Chain
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda_installation.html">Anaconda installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_config.html">Polly Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_defaults.html">Polly Default Settings for pollynet processing chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_logbook.html">logbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pollynet.html">pollynet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pollynet_processing_chain_config.html">pollynet_processing_chain_config</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PollyNET Processing Program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup">setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#read-polly-data">read polly data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signal-preprocessing">signal preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#depol-calibration">Depol-Calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-screen">cloud-screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overlap-estimation">overlap estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#period-splitting">period-splitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-meteor-data">read meteor data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rayleigh-fitting">rayleigh fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transmission-correction">transmission correction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#klett-and-raman-retrieving">klett and raman retrieving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#water-vapor-calibration">water vapor calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lidar-calibration">lidar calibration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#algorithm">Algorithm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#saturation-detection">saturation detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#products">Products</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#retrieving-results">retrieving results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#depolarization-calibration">depolarization calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">water vapor calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">lidar calibration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aerosol-categorization">aerosol categorization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#error-analysis">Error Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualization">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#howto">Howto</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-add-a-new-polly-process-function">How to add a new polly process function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-add-a-new-defaults-file">How to add a new defaults file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-add-a-new-water-vapor-calibration-instrument">How to add a new water vapor calibration instrument</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#appendix">Appendix</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data">data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#defaults">defaults</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taskinfo">taskInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#campaigninfo">campaignInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processinfo">processInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#done-filelist">done_filelist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#polly-config">polly config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pollynet-processing-chain-config">pollynet processing chain config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="running_Pollynet_Processing_Chain_on_the_server.html">Running Picasso on the server (Internal tutorial)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lib.html">lib functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polly_general_func.html">polly general functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scattering.html">Rayleigh Scattering module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pollynet_Processing_Chain</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>PollyNET Processing Program</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc/pollynet_processing_program.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pollynet-processing-program">
+<h1>PollyNET Processing Program<a class="headerlink" href="#pollynet-processing-program" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#description">Description</a></p></li>
+<li><p><a class="reference external" href="#Installation">Installation</a></p></li>
+<li><p><a class="reference external" href="#workflow">Workflow</a></p></li>
+<li><p><a class="reference external" href="#algorithm">Algorithm</a></p>
+<ul>
+<li><p><a class="reference external" href="#saturation-detection">saturation detection</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#products">Products</a></p></li>
+<li><p><a class="reference external" href="#error-analysis">Error Analysis</a></p></li>
+<li><p><a class="reference external" href="#visualization">Visualization</a></p></li>
+<li><p><a class="reference external" href="#howto">Howto</a></p>
+<ul>
+<li><p><a class="reference external" href="#How-to-add-a-new-polly-process-function">How to add a new polly process function</a></p></li>
+<li><p><a class="reference external" href="#How-to-add-a-new-defaults-file">How to add a new defaults file</a></p></li>
+<li><p><a class="reference external" href="#How-to-add-a-new-water-vapor-calibration-instrument">How to add a new water vapor calibration instrument</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#appendix">Appendix</a></p>
+<ul>
+<li><p><a class="reference external" href="#variables">Variables</a></p>
+<ul>
+<li><p><a class="reference external" href="#data">data</a></p></li>
+<li><p><a class="reference external" href="#taskinfo">taskInfo</a></p></li>
+<li><p><a class="reference external" href="#campaigninfo">campaignInfo</a></p></li>
+<li><p><a class="reference external" href="#processinfo">processInfo</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#polly-config">polly_config</a></p></li>
+<li><p><a class="reference external" href="#pollynet-processing-chain-config">pollynet_processing_chain_config</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This document will show you how the pollynet processing program works and how to add a new processing routine for new polly systems. Before your reading, we highly suggest you to turn to the paper “The automated multiwavelength Raman polarization and water-vapor lidar PollyXT: the neXT generation” to have a general idea about <strong>PollyXT</strong>.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>MATLAB</strong></p></li>
+</ul>
+<p>Before you download and install the <strong>pollynet_processing_program</strong>, make sure you’ve installed <code class="docutils literal notranslate"><span class="pre">MATLAB</span> <span class="pre">2014a</span></code> and <code class="docutils literal notranslate"><span class="pre">python3</span></code> in your development machine. Because nearly all the code was based on <strong>MATLAB</strong> and some part of the data visualization is based on <strong>python3</strong> and python packages of <strong>matplotlib</strong>, <strong>numpy</strong> and <strong>scipy</strong>.</p>
+<p>To install <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, you may need to contact with your IT department or find detailed information in the MATLAB official webpage (https://de.mathworks.com/help/install/index.html?s_tid=srctitle).</p>
+<ul class="simple">
+<li><p><strong>python</strong> and python packages</p></li>
+</ul>
+<p>An convenient way to install all of these is to download the <a class="reference external" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=2ahUKEwiV8sS5_sfjAhVM3qQKHePpAZQQFjACegQICBAB&amp;url=https%3A%2F%2Fconda.io%2Fdocs%2Fuser-guide%2Finstall%2Fdownload.html&amp;usg=AOvVaw3pmqgYKVkcF28EUZaVftcT">Anaconda</a>. <strong>Anaconda</strong> is a standard platform for Python data science. Therefore, it will get everything ready for python once you installed it.</p>
+<p>After you’ve installed the dependences, you can check it with using linux command <code class="docutils literal notranslate"><span class="pre">which</span></code></p>
+<center>
+<img src='../img/picasso_installation/matlab_python_dependence.png', width='', height='', alt='matlab_python_dependence'>
+<br>
+<b>
+check matlab and python dependence
+</b>
+</center></div>
+<div class="section" id="download">
+<h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<p>The whole program was mangaged with GitHub. You can download it through (make sure <code class="docutils literal notranslate"><span class="pre">git</span></code> was installed in your local environment)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/ZPYin/Pollynet_Processing_Chain
+</pre></div>
+</div>
+<center>
+<img src='../img/picasso_installation/download_picasso.png', width='', height='', alt='download_code_base'>
+<br>
+<b>
+download Pollynet_Processing_Chain
+</b>
+</center><p>After you downloaded the code, you can find the folder structure of the code base as below,</p>
+<center>
+<img src='../img/picasso_installation/picasso_repo.png', width='', height='', alt='folder_structure'>
+<br>
+<b>
+folder structure of Pollynet_Processing_Chain
+</b>
+</center></div>
+<div class="section" id="setup">
+<h3>setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>The repository you’ve downloaded has not been configured yet. You need to tell it which kind of polly data you want to process. This is achieved through setting up entries in the <a class="reference external" href="../config/template_pollynet_processing_chain_link.txt"><strong>link</strong></a> file. Since <strong>polly</strong> has been upgraded after many years, the system configuration could also be different. Therefore, you need to specify the settings for the polly. This can be done by setting up new polly configuration file, which is names as <a class="reference external" href="../config/template_polly_config.json"><strong>polly_config.json</strong></a>.</p>
+<ol class="simple">
+<li><p>Finish the global settings with following the example of <a class="reference external" href="../config/template_pollynet_processing_chain_config.json"><strong>template_pollynet_processing_chain_config.json</strong></a>. The better way is just changing this file with your own preferences and requirements.</p></li>
+<li><p>Configure the polly processing settings with creating a json file, naming {polly}<em>config</em>{date}.json. Write in the polly settings with the help from the <a class="reference external" href="../config/template_polly_config.json"><strong>template_polly_config.json</strong></a>.</p></li>
+<li><p>Add the entry to the processing program with adding a new line in <a class="reference external" href="../config/template_pollynet_processing_chain_link.txt"><strong>template_pollynet_processing_chain_link.txt</strong></a>. For each polly data, it will search the processing settings in this history file. If no history was found, the polly data will be neglected.</p></li>
+<li><p>Add the polly campaign history in the <strong>/todo_filelist/pollynet_history_of_places_new.txt</strong>.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<center>
+<img src='../img/PollyNET_Processing_Program_Workflow.jpg', width='', height='', alt='pollynet_flowchart'>
+<br>
+<b>
+flowchart of Pollynet_Processing_Chain
+</b>
+</center><p>Top is the flowchart of the processing program. It includes three main processing parts, create processing task, find processing function and activate processing.</p>
+<p>The <a class="reference external" href="../todo_filelist/fileinfo_new.txt">fileinfo_new.txt</a> is generated by top-level function which is controlled by our pollynet website maintainers. In this file, there contains the folder and file of the stored polly raw data, instrument label, data size and so on. For processing program, the data file is necessary to start a processing task and the instrument label is used to search for the proper running configurations. (The configurations of different polly can be found in <a class="reference internal" href="pollynet.html"><span class="doc">pollynet.md</span></a>). In the fileinfo_new.txt, each row content stands for a new task. All the task related info will be saved in <a class="reference external" href="#taskinfo">taskInfo</a></p>
+<p>Every polly lidar system is not stationary system. It is either container based or box-based which can be transferred to remote locations. PollyNET is aimed at measuring the aerosol distribution globally and the same lidar instrument can join different campaigns. The history campaign info can be loaded by searching the information stored in <a class="reference external" href="../todo_filelist/pollynet_history_of_places_new.txt">pollynet_history_of_places_new.txt</a>. After that, we can got the polly data file, polly version and location info. These info will be saved in <a class="reference external" href="#campaigninfo">campaignInfo</a>. With these info, we can search the predefined polly configuration, defaults and precessing function file by looking through <a class="reference external" href="../config/pollynet_processing_config_history.txt">pollynet_processing_config_history.txt</a>. Detailed information about polly configuration and defaults can be found in <a class="reference internal" href="polly_config.html"><span class="doc">polly_config.md</span></a> and <a class="reference internal" href="polly_defaults.html"><span class="doc">polly_defaults.md</span></a>.</p>
+<p>Then it will active the processing chain for the stored polly data. As different polly system can provide different products and in the future the newly built polly system can even provide some extradinary products which we could never imagine, therefore it’s better not to keep the processing flowchart fixed. In the figure above, only the typical processing flow of pollyxt is displayed. But we should keep in mind, it can be super easy to be extended as the way you like. Regarding to how to make it extended, please go to <a class="reference external" href="#How-to-add-a-new-polly-process-function">Howto</a>.</p>
+<div class="section" id="read-polly-data">
+<h3>read polly data<a class="headerlink" href="#read-polly-data" title="Permalink to this headline">¶</a></h3>
+<p>For a normal processing function, it will start with reading the polly raw data. At present, all the data is stored in <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/docs/">netcdf</a> format. MATLAB has provided with a lot of netcdf functions which can help you have a quick look inside the data file. Also you can follow the <a class="reference external" href="../lib/polly_read_rawdata.m">read function</a> in this repository. Remember all the data sharing in the program is via <strong>data</strong> struct. This can simplify the definition part of inputs and outputs for each processing function. But it will make the struct very complicated and swelling as the processing runs. You can find the detailed information about this struct in <a class="reference external" href="#data">here</a>.</p>
+</div>
+<div class="section" id="signal-preprocessing">
+<h3>signal preprocessing<a class="headerlink" href="#signal-preprocessing" title="Permalink to this headline">¶</a></h3>
+<p><strong>For the following parts, I will assume you have a lidar background.</strong></p>
+<p>PMT in the lidar receiving part will convert the light signal into electric signal. And signal recorder will sample the electric current into digit data and save them in our storage disk. Basically, there are two ways to sample the signal, photon counting and AD conversion. They both have their limits and expertise. For our decades experiences, we found the photon counting is better for our polly systems. But for photon counting system, we need to dealing with <a class="reference external" href="https://en.wikipedia.org/wiki/Dead_time">deadtime effects</a>.</p>
+<p>Three different correction schemes are embedded in the preprocessing function. You can find the detailed information in <a class="reference internal" href="polly_config.html"><span class="doc">polly_config.md</span></a>. Although some of the deadtime effects can be corrected in some degree, we still want to warn the users not to apply the signal with Photon Count Rate above 70 MHz.</p>
+<p>Then, we need to substract the background from the raw signal. The background can be calculated by using the pretriggering signal (1-250 bin for pollyxt system).</p>
+<p>Also we will make a depol-calibration mask and fog mask by inspecting the angle of the polarizer and signal strength at certain height.</p>
+</div>
+<div class="section" id="depol-calibration">
+<h3>Depol-Calibration<a class="headerlink" href="#depol-calibration" title="Permalink to this headline">¶</a></h3>
+<p>For pollyxt systems, the depol-calibration is implemented by using the $\pm\Delta45°$ method. Polly will start serveral automatic calibration processes everyday. We can extract the calibration profiles by comparing the angle of the polarizer or we can pre-defined the calibration time in the configuration file (Default way).</p>
+<p align='center'>
+  <img src='../img/20181214-0235_532.png' width='400' height='400' caption='Depol-Calibration-Results'>
+  <br>
+  <b>Depol-Calibration-Results</b>
+</p></div>
+<div class="section" id="cloud-screen">
+<h3>cloud-screen<a class="headerlink" href="#cloud-screen" title="Permalink to this headline">¶</a></h3>
+<p>There are different ways to realize cloud-screen, gradient method, wavelet method, variance method and so on. No matter which kind of method you use, you have to set a threshold. In the program, I only used the gradient method with comparing the slope of range-corrected signal to the pre-defined threshold. We can control the filtering strength by using different thresholds. In the overlap estimation part, the results is highly sensible with cloud contamination. Therefore, we can decrease the threshold to further limit the filtering.</p>
+</div>
+<div class="section" id="overlap-estimation">
+<h3>overlap estimation<a class="headerlink" href="#overlap-estimation" title="Permalink to this headline">¶</a></h3>
+<p>There are two basic ways to estimate the overlap function for polly system. Firstly, using the Raman signal and tuning the overlap to achieve the convergence between Klett retrieving results and Raman retrieving results. But this method is controlled by the assumed lidar ratio and not easy to be implemented in an automatic way. Secondly, we can take advantage of the Near-Range and Far-Range channel, as the full overlap height for the Near-Range channel is only 120 m, we can easily estimate the overlap of Far-Range channel down to 120m by comparing the signal ratio between Near-Range and Far-Range signal.</p>
+<p align='center'>
+<img src='../img/2018_12_14_Fri_LACROS_06_00_01_overlap.png' width='400' height='350' caption='Overlap'>
+<br>
+<b>Overlap</b>
+</p></div>
+<div class="section" id="period-splitting">
+<h3>period-splitting<a class="headerlink" href="#period-splitting" title="Permalink to this headline">¶</a></h3>
+<p>This part is used to split the continuous cloud-free profiles into several certain-length subgroups. The default length is 60 min.</p>
+</div>
+<div class="section" id="read-meteor-data">
+<h3>read meteor data<a class="headerlink" href="#read-meteor-data" title="Permalink to this headline">¶</a></h3>
+<p>This part is used to read the meteorological data. We have GDAS1 profiles in our server, which we can access with one-day delay. Therefore for realtime analysis, we need standard-atmosphere model data. Besides, an interface of reading radiosonde is also added to support the data analysis from Polarstern cruise.</p>
+</div>
+<div class="section" id="rayleigh-fitting">
+<h3>rayleigh fitting<a class="headerlink" href="#rayleigh-fitting" title="Permalink to this headline">¶</a></h3>
+<p>Rayleigh fitting part is used to search the reference height for aerosol retrieving. The philosophy is based on the similarity between the detected signal and pure molecular signal. Detailed information can be found in <strong>Pollynet_Processing_Chain.pptx</strong></p>
+</div>
+<div class="section" id="transmission-correction">
+<h3>transmission correction<a class="headerlink" href="#transmission-correction" title="Permalink to this headline">¶</a></h3>
+<p>Normally, the transmission ratio of parallel and vertical polarized component is not 1. Therefore, the signal in the total channel does not strictly equal to elastic signal. You can find the correction formula in <strong>dissertation_baars.pdf</strong>.</p>
+</div>
+<div class="section" id="klett-and-raman-retrieving">
+<h3>klett and raman retrieving<a class="headerlink" href="#klett-and-raman-retrieving" title="Permalink to this headline">¶</a></h3>
+<p>You can find thousands of documents about the analysis of klett and raman method. Read one or two of them, then you can easily understand this part in the program.</p>
+</div>
+<div class="section" id="water-vapor-calibration">
+<h3>water vapor calibration<a class="headerlink" href="#water-vapor-calibration" title="Permalink to this headline">¶</a></h3>
+<p>The key about water vapor calibration is to find a standard instrument. For most of PollyNET site, you can find a collocated AERONET site. You can find the site by looking at <a class="reference external" href="AERONET-station-list.txt">AERONET-station-list</a> or go to <a class="reference external" href="https://aeronet.gsfc.nasa.gov/cgi-bin/type_one_station_opera_v2_new">AERONET website</a>. Detailed information about the calibration method can be found in <a class="reference external" href="https://www.atmos-meas-tech.net/11/2735/2018/">Guangyao’s paper</a>.</p>
+<p>For LACROS campaign, there will be a good option by using the IWV from MWR. Because, MWR can provide nighttime measurement results which is ideal for water vapor calibration. You need to specify the folder of the MWR products to allow the program to read the IWV. Go to <strong>pollyxt_lacros</strong> to have a look.</p>
+</div>
+<div class="section" id="lidar-calibration">
+<h3>lidar calibration<a class="headerlink" href="#lidar-calibration" title="Permalink to this headline">¶</a></h3>
+<p>Lidar calibration is based on the Raman or Klett retrieving results. At present, overlap correction is not implemented, which means the klett method could suffer a strong overlap effect at the lower altitude. In the calibration part, we treat the blind area to be constant. This is a good assumption at most conditions, but we should keep in mind if there is low level aerosol layers, it will create very large deviations. So our priority is using the Raman results when it is available.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="s1">&#39;Connor method has been tested. But for the photon counting system, it&#39;</span><span class="n">s</span> <span class="ow">not</span> <span class="n">so</span> <span class="n">pratical</span> <span class="n">due</span> <span class="n">to</span> <span class="n">deadtime</span> <span class="n">effects</span><span class="o">.</span> <span class="n">But</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">keep</span> <span class="n">an</span> <span class="n">eye</span> <span class="n">on</span> <span class="n">this</span><span class="p">,</span> <span class="n">because</span> <span class="n">this</span> <span class="n">can</span> <span class="n">complement</span> <span class="n">the</span> <span class="n">scope</span> <span class="n">of</span> <span class="n">the</span> <span class="n">calibrated</span> <span class="n">conditions</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="algorithm">
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="saturation-detection">
+<h3>saturation detection<a class="headerlink" href="#saturation-detection" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<p>The program can generate</p>
+<div class="section" id="retrieving-results">
+<h3>retrieving results<a class="headerlink" href="#retrieving-results" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="depolarization-calibration">
+<h3>depolarization calibration<a class="headerlink" href="#depolarization-calibration" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id1">
+<h3>water vapor calibration<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>lidar calibration<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="aerosol-categorization">
+<h3>aerosol categorization<a class="headerlink" href="#aerosol-categorization" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="error-analysis">
+<h2>Error Analysis<a class="headerlink" href="#error-analysis" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="howto">
+<h2>Howto<a class="headerlink" href="#howto" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-add-a-new-polly-process-function">
+<h3>How to add a new polly process function<a class="headerlink" href="#how-to-add-a-new-polly-process-function" title="Permalink to this headline">¶</a></h3>
+<p>You can follow the below steps to create a new process procedure for a new polly systems.</p>
+<ul class="simple">
+<li><p>add a new configuration file in config folder to save all the related configurations. You can copy the content from other similar polly systems to speed up this process</p></li>
+<li><p>add a default file in <code class="docutils literal notranslate"><span class="pre">/lib/pollyDefaults</span></code>. Don’t forget to add the default overlap files.</p></li>
+<li><p>create a new folder, named with <code class="docutils literal notranslate"><span class="pre">{polly</span> <span class="pre">Version}_func_lib</span></code>. Write all the related processing functions inside or copy all the functions from the folder of other polly systems. If you copy all the functions from other folder, don’t forget to change the function definitions inside.</p></li>
+<li><p>create a new main processing function in the root folder and name it with <code class="docutils literal notranslate"><span class="pre">pollynet_processing_chain_{polly</span> <span class="pre">version}.m</span></code>. Write all the processing part here.</p></li>
+<li><p>add a new entry in <code class="docutils literal notranslate"><span class="pre">/config/pollynet_processing_config_history.txt</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="how-to-add-a-new-defaults-file">
+<h3>How to add a new defaults file<a class="headerlink" href="#how-to-add-a-new-defaults-file" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="how-to-add-a-new-water-vapor-calibration-instrument">
+<h3>How to add a new water vapor calibration instrument<a class="headerlink" href="#how-to-add-a-new-water-vapor-calibration-instrument" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="data">
+<h4>data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>data: struct
+  rawSignal: matrix [channel×bin×time]
+    raw signal from netcdf files. [Photon Count]
+  mShots: matrix [channel×time]
+    number of accumulated laser shots.
+  mTime: array [time]
+    date and time for each profile. [datenum]
+  depCalAng: array [time]
+    angle of the polarizer. [°]
+  hRes: float
+    spatial resolution. [m]
+  zenithAng: float
+    zenith angle of the whole system. [°]
+  mSite: char
+    location of the system.
+  deadtime: matrix [channel×orders]
+    parameters for deadtime correction which are stored in the netcdf file.
+  lat: float
+    latitude of measurement site. [degree]
+  lon: float
+    longtitude of measurement site. [degree]
+  alt0: float
+    altitude of measurement site. [m]
+  monitorStatus: struct
+    time: array
+      date and time for each monitor data. [datenum]
+    ExtPyro: array
+      gauge data from ExtPyro. [mJ]
+    Temp1064: array
+      temperature of the PMT at 1064 channel. [°C]
+    Temp1: array
+      temperature of the emitting cabin. [°C]
+    Temp2: array
+      temperature of the receiving cabin. [°C]
+    OutsideT: array
+      ambient temperature. [°C]
+    OutsideRH: array
+      ambient relative humidity. [%]
+    roof: array
+      status of the roof.
+    rain: array
+      status of rain.
+    shutter: array
+      stauts of shutter.
+  signal: matrix [channel×bin×time]
+    background-substracted and deadtime corrected signal. [Photon Count]
+  bg: matrix[channel×bin×time]
+    background of each bin. [Photon Count]
+  height: array
+    height above ground. [m]
+  alt: array
+    altitude above mean sea level. [m]
+  distance0: array
+    tilted distance of each bin. [m]
+  lowSNRMask: logical matrix [channel×bin×time]
+    mask for low signal-noise ratio.
+  depCalMask: array
+    mask for depolarization calibration.
+  fogMask: array
+    mask for fog.
+  flagSaturation: matrix [channel×bin×time]
+    flag to show whether the bin is saturated by clouds.
+  depol_cal_fac_532: float
+    depolarization calibration factor at 532 nm.
+  depol_cal_fac_std_532: float
+    uncertainty of depolarization calibration factor at 532 nm.
+  depol_cal_fac_355: float
+    depolarization calibration factor at 355 nm.
+  depol_cal_fac_std_355: float
+    uncertainty of depolarization calibration factor at 355 nm.
+  depCaliAttri: struct
+    depCalAttri532 or depCalAttri355: struct
+      sig_t_p: cell
+        mean signal at total channel at positive calibration angle in each calibration period.
+      sig_t_m: cell
+        mean signal at total channel at negative calibration angle in each calibration period.
+      sig_x_p: cell
+        mean signal at cross channel at positive calibration angle in each calibration period.
+      sig_x_m: cell
+        mean signal at cross channel at negative calibration angle in each calibration period.
+      caliHIndxRange: cell
+        index of calibration range along the height axisinr each calibration period.
+      indx_45m: cell
+        index of the profiles at negative calibration angle in each calibration period.
+      indx_45p: cell
+        index of the profiles at positive calibration angle in each calibration period.
+      dplus: cell
+        signal ratio at positive calibration angle in each calibration period.
+      dminus: cell
+        signal ratio at negative calibration angle in each calibration period.
+      segmentLen: cell
+        segment length to calculate the mean value of signal ratioinr each calibration period.
+      indx: cell
+        index of the base index of the most stable spatial segment in each calibration period.
+      mean_dplus_tmp: cell
+        mean signal ratio at positive calibration angle at each calibration segment in each calibration period.
+      std_dplus_tmp: cell
+        uncertainty of signal ratio at positive calibration angle for all the calibration segments in each calibration period.
+      mean_dminus_tmp: cell
+        mean signal ratio at negative calibration angle at each calibration segment in each calibration period.
+      std_dminus_tmp: cell
+        uncertainty of signal ratio at negative calibration angle at each calibration segment in each calibration period.
+      TR_t: cell
+        Transmission ratio at total channel in each calibration period.
+      TR_x: cell
+        Transmission ratio at cross channel in each calibration period.
+      segIndx: cell
+        index of the most stable segment in each calibration period.
+      thisCaliTime: cell
+        date and time for each calibration period. [datenum]
+  depol_cal_fac_532: array
+    depolarization calibration factor at 532 nm for each calibration period.
+  depol_cal_fac_std_532: array
+    uncertainty of depolarization calibration factor at 532 nm for each calibration period.
+  depol_cal_time_532: array
+    date and time for each calibration period. [datenum]
+  depol_cal_fac_355: array
+    depolarization calibration factor at 355 nm for each calibration period.
+  depol_cal_fac_std_355: array
+    uncertainty of depolarization calibration factor at 355 nm for each calibration period.
+  depol_cal_time_355: array
+    date and time for each calibration period. [datenum]
+  flagCloudFree2km: logical array
+    flag to show whether it&#39;s cloud-free below 2 km.
+  flagCloudFree8km: logical array
+    flag to show whether it&#39;s cloud-free below 8 km.
+  overlap532: array
+    the estimated overlap function for 532 Far-Range channel.
+  flagOverlapUsedDefault532: logical
+    flag to show whether the overlap at 532 nm is the default overlap.
+  overlap355: array
+    the estimated overlap function for 355 Far-Range channel.
+  flagOverlapUsedDefault355: logical
+    flag to show whether the overlap at 355 nm is the default overlap.
+  cloudFreeGroups: matrix [group×2]
+    start and end index of each cloud-free group.
+  temperature: matrix [group×bin]
+    temperature at each range bin for each cloud-free group. [°C]
+  pressure: matrix [group×bin]
+    pressure at each range bin for each cloud-free group. [hPa]
+  relh: matrix [group×bin]
+    relative humidity at each range bin for each cloud-free group. [%]
+  meteorAttri: struct
+    dataSource: cell
+      data source of meteorological data for each cloud-free group.
+    URL: cell
+      URL for meteorological data for each cloud-free group. [URL or directory]
+    datetime: array
+      date and time for the applied meteorological data at each cloud-free group.
+  AERONET: struct
+    datetime: array
+      date and time for each AERONET results.
+    AOD_{wavelength}: array
+      AOD at certain wavelength.
+    wavelength: array
+      wavelength of each channel. [nm]
+    IWV: array
+      Integral water vapor. [kg*m^{-2}]
+    angstrexp440_870: array
+      Å 440-870nm.
+    AERONETAttri: struct
+      URL: char
+        URL for accessing the AERONET data.
+      level: char
+        product level.
+      status: int
+        the retrieving stauts for the data. 0 means no successful access.
+      IWVUnit: char
+        unit for IWV.
+      location: char
+        location for the current measurement.
+      PI: char
+        PI for the current AERONET site.
+      contact: char
+        contact of PI.
+  refHIndx355: matrix [group×bin]
+    index of reference height at 355 nm for each cloud-free group.
+  refHIndx532: matrix [group×bin]
+    index of reference height at 532 nm for each cloud-free group.
+  refHIndx1064: matrix [group×bin]
+    index of reference height at 1064 nm for each cloud-free group.
+  dpIndx{wavelength}: cell
+    index of douglas-peucker decomposed points for each cloud-free signal profile.
+  el{wavelength}: matrix [bin×time]
+    elastic signal. [Phtoton Count]
+  bgEl{wavelength}: matrix [bin×time]
+    background of elastic signal. [Photon Count]
+  aerBsc{wavelength}_{method}: matrix [group×bin]
+    aerosol backscatter coefficients. [m^{-1}*Sr^{-1}]
+  aerExt{wavelength}_{method}: matrix [group×bin]
+    aerosol extinction coefficients. [m^{-1}]
+  LR{wavelength}_raman: matrix [group×bin]
+    aerosol lidar ratio retrieved by raman method. [Sr]
+  LR{wavelength}_aeronet: array [group]
+    aerosol ldiar ratio retrieved by constrained-AOD klett method. [Sr]
+  voldepol{wavelength}_{method}: matrix [group×bin]
+    volume depolarization ratio at each cloud-free group with the same smoothing for the corresponding backscatter.
+  pardepol{wavelength}_{method}: matrix [group×bin]
+    particle depolarization ratio.
+  pardepolStd{wavelength}_{method}: matrix [group×bin]
+    uncertainty of particle depolarization ratio.
+  flagDefaultMoldepol{wavelength}: array
+    flag to show whether the used molecule depolarization ratio is from default settings.
+  moldepol{wavelength}: array [group]
+    molecule depolarization ratio.
+  moldepolStd{wavelength}: array [group]
+    uncertainty of molecule depolarization ratio.
+  ang_{bsc,ext}_{wavelength}_{method}: matrix [group×bin]
+    Ångstroem exponent.
+  IWV: array
+    Integrated water vapor from lidar measurements for each cloud-free groups. [kg*m^{-2}]
+  IWVAttri: struct
+    source: char
+      data source of IWV.
+    site: char
+      site of the external instrument.
+    datetime: array
+      date and time for the used IWV from external instrument for each water vapor calibration period.
+    PI: char
+      PI for the external instrument.
+    contact: char
+      contact of PI.
+  wvconstUsed: float
+    applied water vapor calibration constant in the processing. [g*kg^{-1}]
+  wvconstUsedStd: float
+    Uncertainty of the applied water vapor calibration constant in the processing. [g*kg^{-1}]
+  wvconstUsedInfo: struct
+    flagCalibrated: int
+      flag to show whether there is a successful calibration.
+    IWVInstrument: char
+      data source for the external instrument.
+    nIWVCali: int
+      number of successful water vapor calibration periods.
+  wvmr: matrix [group×bin]
+    water vapor mixing ratio profile for each cloud-free group. [g*kg^{-1}]
+  rh: matrix [group×bin]
+    relative humidity for each cloud-free group. [%]
+  wvmr: matrix [bin×time]
+    high resolved water vapor mixing ratio profiles. [g*kg^{-1}]
+  rh: matrix [bin×time]
+    high resolved relative humidity profiles. [%]
+  LC: struct
+    LC_{method}_{wavelength}: array
+      lidar calibration constants. This constant is calibrated for each 30-s resolved profile.
+  LCUsed: struct
+    LCUsed{wavelength}: float
+      appiled lidar constant.
+    LCUsedTage{wavelength}: int
+      lidar constant status. 
+        0: &#39;no calibration&#39;; 
+        1: klett method; 
+        2: raman method; 
+        3: defaults
+    flagLCWarning{wavelength}: int
+      whether there is a strong fluctuation of the lidar constants.
+  att_beta_{wavelength}: matrix [bin×time]
+    attenuated backscatter. [m^{-1}*Sr^{-1}]
+  quasi_par_beta_{wavelength}{_V2}: matrix [bin×time]
+    quasi particle backscatter coefficient. [m^{-1}*Sr^{-1}]
+  volDepol_{wavelength}: matrix [bin×time]
+    high resolved volume depolarization ratio profile.
+  quasi_parDepol_532{_V2}: matrix [binxtime]
+    high resolved particle depolarization ratio profile.
+  quasi_ang_532_1064{_V2}: matrix [bin×time]
+    quasi Ångstroem exponent 532-1064.
+  quality_mask_{wavelength}{_V2}: matrix [bin×time]
+    signal quality mask. This mask is calculated with the smoothed signal. 
+      0: good signal; 
+      1: low SNR; 
+      2: depolarization calibration
+  quasiAttri{_V2}: struct
+    flagGDAS1: int
+      flag to show whetehr GDAS1 data was used.
+    timestamp: float
+      time stamp of the appled GDAS1 data.
+    meteorDataSource: str
+      meteorological data type. 
+      e.g., &#39;gdas1&#39;, &#39;standard_atmosphere&#39;, &#39;websonde&#39;, &#39;radiosonde&#39;
+  tc_mask: matrix [bin×time]
+    target classification mask.
+      0: No signal; 
+      1: Clean atmosphere; 
+      2: Non-typed particles/low conc.; 
+      3: Aerosol: small; 
+      4: Aerosol: large, spherical; 
+      5: Aerosol: mixture, partly non-spherical; 
+      6: Aerosol: large, non-spherical; 
+      7: Cloud: non-typed; 
+      8: Cloud: water droplets; 
+      9: Cloud: likely water droplets; 
+      10: Cloud: ice crystals; 
+      11: Cloud: likely ice crystals  
+</pre></div>
+</div>
+</div>
+<div class="section" id="defaults">
+<h4>defaults<a class="headerlink" href="#defaults" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaults</span><span class="p">:</span> <span class="n">struct</span>
+  <span class="n">depolCaliConst</span><span class="p">{</span><span class="n">wavelength</span><span class="p">}:</span> <span class="nb">float</span>
+    <span class="n">default</span> <span class="n">depolariazation</span> <span class="n">constant</span><span class="o">.</span>
+  <span class="n">depolCaliConstStd</span><span class="p">{</span><span class="n">wavelength</span><span class="p">}:</span> <span class="nb">float</span>
+    <span class="n">default</span> <span class="n">uncertainty</span> <span class="n">of</span> <span class="n">depolarization</span> <span class="n">constant</span><span class="o">.</span>  
+  <span class="n">LC</span><span class="p">:</span> <span class="n">array</span>
+    <span class="n">lidar</span> <span class="n">constant</span> <span class="k">for</span> <span class="n">each</span> <span class="n">channel</span><span class="o">.</span>
+  <span class="n">LCStd</span><span class="p">:</span> <span class="n">array</span>
+    <span class="n">uncertainty</span> <span class="n">of</span> <span class="n">lidar</span> <span class="n">constant</span><span class="o">.</span>
+  <span class="n">overlapFile</span><span class="p">{</span><span class="n">wavelength</span><span class="p">}:</span> <span class="n">char</span>
+    <span class="n">absolute</span> <span class="n">directory</span> <span class="n">of</span> <span class="n">the</span> <span class="n">default</span> <span class="n">overlap</span> <span class="n">file</span><span class="o">.</span> 
+  <span class="n">molDepol</span><span class="p">{</span><span class="n">wavelength</span><span class="p">}:</span> <span class="nb">float</span>
+    <span class="n">molecule</span> <span class="n">depolarization</span> <span class="n">ratio</span><span class="o">.</span>
+  <span class="n">molDepolStd</span><span class="p">{</span><span class="n">wavelength</span><span class="p">}:</span> <span class="nb">float</span>
+    <span class="n">uncertainty</span> <span class="n">of</span> <span class="n">molecule</span> <span class="n">depolarization</span> <span class="n">ratio</span><span class="o">.</span>
+  <span class="n">wvconst</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">water</span> <span class="n">vapor</span> <span class="n">calibration</span> <span class="n">constant</span><span class="o">.</span> <span class="p">[</span><span class="n">g</span><span class="o">*</span><span class="n">kg</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">}]</span>
+  <span class="n">wvconstStd</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">uncertainty</span> <span class="n">of</span> <span class="n">water</span> <span class="n">vapor</span> <span class="n">calibration</span> <span class="n">constant</span><span class="o">.</span> <span class="p">[</span><span class="n">g</span><span class="o">*</span><span class="n">kg</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="taskinfo">
+<h4>taskInfo<a class="headerlink" href="#taskinfo" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">taskInfo</span><span class="p">:</span> <span class="n">struct</span>
+  <span class="n">todoPath</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">the</span> <span class="n">todo</span> <span class="n">path</span> <span class="n">which</span> <span class="n">saves</span> <span class="n">the</span> <span class="n">polly</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">fileinfo_new</span><span class="o">.</span><span class="n">txt</span>
+  <span class="n">dataPath</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">the</span> <span class="n">relative</span> <span class="n">folder</span> <span class="n">of</span> <span class="n">the</span> <span class="n">polly</span> <span class="n">data</span> <span class="n">to</span> <span class="n">the</span> <span class="n">todo</span> <span class="n">path</span><span class="o">.</span>
+  <span class="n">dataFilename</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">filename</span> <span class="n">of</span> <span class="n">the</span> <span class="n">polly</span> <span class="n">data</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">construct</span> <span class="n">the</span> <span class="n">absolute</span> <span class="n">path</span> <span class="n">of</span> <span class="n">the</span> <span class="n">polly</span> <span class="n">data</span> <span class="n">by</span> <span class="n">combining</span> <span class="n">todoPath</span><span class="p">,</span> <span class="n">dataPath</span> <span class="ow">and</span> <span class="n">dataFilename</span><span class="o">.</span>
+  <span class="n">zipFile</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">filename</span> <span class="n">of</span> <span class="n">the</span> <span class="n">zipped</span> <span class="n">polly</span> <span class="n">data</span><span class="o">.</span>
+  <span class="n">dataSize</span><span class="p">:</span> <span class="n">single</span>
+    <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">polly</span> <span class="n">data</span> <span class="n">file</span><span class="o">.</span>
+  <span class="n">pollyVersion</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">polly</span> <span class="n">version</span><span class="o">.</span> <span class="n">Detailed</span> <span class="n">information</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="ow">in</span> <span class="p">[</span><span class="n">polly</span> <span class="n">version</span><span class="p">](</span><span class="n">pollynet</span><span class="o">.</span><span class="n">md</span><span class="p">)</span>
+  <span class="n">startTime</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">start</span> <span class="n">time</span> <span class="k">for</span> <span class="n">processing</span> <span class="n">the</span> <span class="n">task</span><span class="o">.</span> <span class="p">[</span><span class="n">datenum</span><span class="p">]</span>
+  <span class="n">dataTime</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">date</span> <span class="ow">and</span> <span class="n">time</span> <span class="k">for</span> <span class="n">the</span> <span class="n">creation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">current</span> <span class="n">polly</span> <span class="n">data</span><span class="o">.</span> <span class="p">[</span><span class="n">datenum</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="campaigninfo">
+<h4>campaignInfo<a class="headerlink" href="#campaigninfo" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>campaignInfo: struct
+  name: char
+    polly version. Detailed information can be found in [polly version](pollynet.md)
+  location: char
+    location of the current measurement campaign. Detailed information can be found in [pollynet history info](../todo_filelist/pollynet_history_of_places_new.txt)
+  startTime: float
+    start time for the current campaign. [datenum]
+  endTime: float
+    end time for the current campaign. [datenum]
+  lon: float
+    longitude of the campaign. [°]
+  lat: float
+    latitude of the campaign. [°]
+  asl: float
+    height above average sea level. [m]
+  depolConst: float
+    depolarization constant for 532 nm.
+  molDepol: float
+    molecule depolarization ratio for 532 nm.
+  caption: char
+    some description about the campaign.
+</pre></div>
+</div>
+</div>
+<div class="section" id="processinfo">
+<h4>processInfo<a class="headerlink" href="#processinfo" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">processInfo</span><span class="p">:</span> <span class="n">struct</span>
+  <span class="n">fileinfo_new</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">filename</span> <span class="n">of</span> <span class="n">the</span> <span class="n">fileinfo_new</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">collection</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">present</span> <span class="n">polly</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">PollyNER</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">waited</span> <span class="k">for</span> <span class="n">processing</span><span class="o">.</span>
+  <span class="n">doneListFile</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">done</span> <span class="nb">list</span> <span class="n">file</span> <span class="n">which</span> <span class="n">contains</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">information</span> <span class="n">of</span> <span class="n">generated</span> <span class="n">figures</span> <span class="n">by</span> <span class="n">the</span> <span class="n">program</span><span class="o">.</span>
+  <span class="n">pollynet_history_of_places_new</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">pollynet</span> <span class="n">history</span> <span class="n">file</span> <span class="n">which</span> <span class="n">contains</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">history</span> <span class="n">information</span> <span class="n">about</span> <span class="n">different</span> <span class="n">finished</span> <span class="ow">or</span> <span class="n">ongoing</span> <span class="n">campaigns</span><span class="o">.</span>
+  <span class="n">log_folder</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">folder</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">log</span> <span class="n">file</span><span class="o">.</span>
+  <span class="n">gdas1_folder</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">the</span> <span class="n">root</span> <span class="n">folder</span> <span class="n">of</span> <span class="n">GDAS1</span> <span class="n">profiles</span><span class="o">.</span>
+  <span class="n">defaultsFile_folder</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">folder</span> <span class="n">of</span> <span class="n">defaults</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">results_folder</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">folder</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">processing</span> <span class="n">results</span> <span class="ow">and</span> <span class="n">calibration</span> <span class="n">results</span><span class="o">.</span>
+  <span class="n">pic_folder</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">folder</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">figures</span><span class="o">.</span>
+  <span class="n">pollynet_config_history_file</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">history</span> <span class="n">file</span> <span class="n">to</span> <span class="n">log</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">files</span><span class="p">,</span> <span class="n">defaults_reading</span> <span class="n">function</span> <span class="ow">and</span> <span class="n">processing</span> <span class="n">function</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">polly</span> <span class="n">systems</span><span class="o">.</span>
+  <span class="n">minDataSize</span><span class="p">:</span> <span class="n">int32</span>
+    <span class="n">Mininmum</span> <span class="n">data</span> <span class="n">size</span> <span class="n">that</span> <span class="n">was</span> <span class="n">accepted</span> <span class="k">for</span> <span class="n">the</span> <span class="n">data</span> <span class="n">processing</span><span class="o">.</span>
+  <span class="n">institue</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">institute</span> <span class="n">full</span><span class="o">-</span><span class="n">name</span><span class="o">.</span> <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span> <span class="n">nc</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">contact</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">contact</span><span class="o">.</span> <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span> <span class="n">nc</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">homepage</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">pollynet</span> <span class="n">home</span> <span class="n">page</span><span class="o">.</span> <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span> <span class="n">nc</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">programVersion</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">program</span> <span class="n">version</span><span class="o">.</span> <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span> <span class="n">nc</span> <span class="n">files</span><span class="o">.</span>
+  <span class="n">visualizationMode</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">visualization</span> <span class="n">mode</span><span class="p">,</span> <span class="s1">&#39;matlab&#39;</span> <span class="ow">or</span> <span class="s1">&#39;python&#39;</span><span class="o">.</span> <span class="n">Python</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">supported</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">server</span> <span class="n">than</span> <span class="n">matlab</span><span class="o">.</span>
+  <span class="n">pyBinDir</span><span class="p">:</span> <span class="n">char</span>
+    <span class="n">path</span> <span class="k">for</span> <span class="n">the</span> <span class="n">appled</span> <span class="n">python</span> <span class="n">interpreter</span><span class="o">.</span>
+	<span class="n">flagEnableCaliResultsOutput</span><span class="p">:</span> <span class="n">logical</span>
+    <span class="n">flag</span> <span class="n">bit</span> <span class="n">to</span> <span class="n">control</span> <span class="n">whehter</span> <span class="n">to</span> <span class="n">output</span> <span class="n">the</span> <span class="n">calibration</span> <span class="n">results</span>
+  <span class="n">flagReduceMATLABToolboxDependence</span><span class="p">:</span> <span class="n">logical</span>
+    <span class="n">flag</span> <span class="n">bit</span> <span class="n">to</span> <span class="n">control</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">use</span> <span class="n">the</span> <span class="n">matlab</span> <span class="n">toolbox</span> <span class="p">(</span><span class="n">statistical</span> <span class="n">toolbox</span> <span class="ow">and</span> <span class="n">curveture</span> <span class="n">toolbox</span><span class="p">)</span>
+  <span class="n">flagDeleteData</span><span class="p">:</span> <span class="n">logical</span>
+    <span class="n">flag</span> <span class="n">bit</span> <span class="n">to</span> <span class="n">control</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">delete</span> <span class="n">the</span> <span class="n">data</span> <span class="n">file</span> <span class="n">after</span> <span class="n">finishing</span> <span class="n">the</span> <span class="n">processing</span><span class="o">.</span>
+  <span class="n">flagEnableResultsOutput</span><span class="p">:</span> <span class="n">logical</span>
+    <span class="n">flag</span> <span class="n">bit</span> <span class="n">to</span> <span class="n">control</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">processing</span> <span class="n">results</span><span class="o">.</span>
+  <span class="n">flagEnableDataVisualization</span><span class="p">:</span> <span class="n">logical</span>
+    <span class="n">flag</span> <span class="n">bit</span> <span class="n">to</span> <span class="n">control</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">visualize</span> <span class="n">the</span> <span class="n">results</span><span class="o">.</span>
+  <span class="n">flagSendNotificationEmail</span><span class="p">:</span> <span class="n">logical</span>
+    <span class="n">flag</span> <span class="n">bit</span> <span class="n">to</span> <span class="n">control</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">send</span> <span class="n">email</span> <span class="n">to</span> <span class="n">the</span> <span class="n">admin</span> <span class="k">for</span> <span class="n">each</span> <span class="n">running</span> <span class="n">task</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="done-filelist">
+<h4>done_filelist<a class="headerlink" href="#done-filelist" title="Permalink to this headline">¶</a></h4>
+<p>|ident|Name|
+|:—:|:—|
+|ANGEXP_Raman|     averaged angstrÃ¶m exponent profile|
+|ANGEXP|     averaged angstrÃ¶m exponent profile|
+|ANGEXP_Klett|     averaged angstrÃ¶m exponent profile|
+|~~Bsc~~ Bsc_AERONET|     averaged backscatter profile from AOD-Constrained method|
+|Bsc_Klett|     averaged backscatter profile from Klett method|
+|Bsc_Raman|     averaged backscatter profile from Raman method|
+|~~DepRatio~~|     averaged depolarization ratio profile|
+|DepRatio_Raman|     averaged depolarization ratio profile|
+|DepRatio_Klett|     averaged depolarization ratio profile|
+|Ext_Klett|     averaged extinction profile from Klett method|
+|Ext_Raman|     averaged extinction profile from Raman method|
+|~~Ext_Klett~~ Ext_AERONET|     averaged extinction profile from AOD-Constrained method|
+|LR|     averaged lidar ratio profile|
+|Meteor_P|     averaged pressure profile from input|
+|SIG|     averaged range-corrected signals|
+|RH_av|     averaged relative humidity profile|
+|Meteor_T|     averaged temperature profile from input|
+|WVMR_av|     averaged water vapour mixing ratio profile|
+|ATT_BETA_1064|     Calibrated attenuated backscatter coefficient at 1064 nm|
+|ATT_BETA_355|     Calibrated attenuated backscatter coefficient at 355 nm|
+|ATT_BETA_532|     Calibrated attenuated backscatter coefficient at 532 nm|
+|monitor|     houskeeping data|
+|LC_1064|     Lidar constant of 1064 FR channel|
+|LC_1064_NF|     Lidar constant of 1064 NR channel|
+|LC_355|     Lidar constant of 355 FR channel|
+|LC_355_NF|     Lidar constant of 355 NR channel|
+|LC_532|     Lidar constant of 532 FR channel|
+|LC_532_NF|     Lidar constant of 532 NR channel|
+|TC|     Lidar Target Categoriaztion|
+|Quasi_ANGEXP_532_1064|     Quasi angström exponent 532/1064 nm|
+|Quasi_Bsc_1064|     Quasi particle backscatter coefficient at 1064 nm|
+|Quasi_Bsc_355|     Quasi particle backscatter coefficient at 355 nm|
+|Quasi_Bsc_532|     Quasi particle backscatter coefficient at 532 nm|
+|Quasi_PDR_532|     Quasi particle depolarization ratio at 532 nm|
+|RCS_FR_1064|     Range-corrected signal far-range at 1064 nm|
+|RCS_FR_355|     Range-corrected signal far-range at 355 nm|
+|RCS_FR_532|     Range-corrected signal far-range at 532 nm|
+|RCS_NR_355|     Range-corrected signal near-range at 355 nm|
+|RCS_NR_532|     Range-corrected signal near-range at 532 nm|
+|RH|     relative humidity|
+|overlap|     Retrieved overlap function of the channels|
+|SAT_NR_1064|     Signal status FR 1064 nm|
+|SAT_FR_1064|     Signal status FR 1064 nm|
+|SAT_NR_355|     Signal status FR 355 nm|
+|SAT_FR_355|     Signal status FR 355 nm|
+|SAT_FR_532|     Signal status FR 532 nm|
+|SAT_NR_532|     Signal status FR 532 nm|
+|VDR_1064|     Volume depolarization ratio at 1064 nm|
+|VDR_355|     Volume depolarization ratio at 355 nm|
+|VDR_532|     Volume depolarization ratio at 532 nm|
+|WVMR|     water vapour mixing ratio |
+|LT_CaliRes| long term lidar calibration results|</p>
+</div>
+</div>
+<div class="section" id="polly-config">
+<h3>polly config<a class="headerlink" href="#polly-config" title="Permalink to this headline">¶</a></h3>
+<p>Detailed information can be found in <a class="reference internal" href="polly_config.html"><span class="doc">polly_config</span></a></p>
+</div>
+<div class="section" id="pollynet-processing-chain-config">
+<h3>pollynet processing chain config<a class="headerlink" href="#pollynet-processing-chain-config" title="Permalink to this headline">¶</a></h3>
+<p>Detailed information can be found in <a class="reference internal" href="pollynet_processing_chain_config.html"><span class="doc">pollynet_processing_chain_config</span></a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="running_Pollynet_Processing_Chain_on_the_server.html" class="btn btn-neutral float-right" title="Running Picasso on the server (Internal tutorial)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pollynet_processing_chain_config.html" class="btn btn-neutral float-left" title="pollynet_processing_chain_config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Yin, Baars
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

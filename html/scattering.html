@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Rayleigh Scattering module &mdash; Pollynet_Processing_Chain  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="polly general functions" href="polly_general_func.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Pollynet_Processing_Chain
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/anaconda_installation.html">Anaconda installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_config.html">Polly Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_defaults.html">Polly Default Settings for pollynet processing chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_logbook.html">logbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet.html">pollynet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet_processing_chain_config.html">pollynet_processing_chain_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet_processing_program.html">PollyNET Processing Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/running_Pollynet_Processing_Chain_on_the_server.html">Running Picasso on the server (Internal tutorial)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lib.html">lib functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_general_func.html">polly general functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Rayleigh Scattering module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pollynet_Processing_Chain</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Rayleigh Scattering module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/scattering.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib.Rayleigh_Scattering">
+<span id="rayleigh-scattering-module"></span><h1>Rayleigh Scattering module<a class="headerlink" href="#module-lib.Rayleigh_Scattering" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-lib.Rayleigh_Scattering"></span><dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.air_refractive_index">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">air_refractive_index</code><span class="sig-paren">(</span><em class="sig-param">wavelength</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">C</em>, <em class="sig-param">relative_humidity</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.air_refractive_index" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>AIR_FRACTIVE_INDEX Calculate the refractive index of air.</dt><dd><blockquote>
+<div><p>Inputs:</p>
+</div></blockquote>
+<dl>
+<dt>wavelength<span class="classifier">float</span></dt><dd><blockquote>
+<div><p>Light wavelegnth [nm]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>pressure<span class="classifier">float</span></dt><dd><p>Atmospheric pressure [hPa]</p>
+</dd>
+</dl>
+</dd>
+<dt>temperature<span class="classifier">float</span></dt><dd><p>Atmospehric temperature [K]</p>
+</dd>
+<dt>C<span class="classifier">float</span></dt><dd><p>Concentration of CO2 [ppmv]</p>
+</dd>
+<dt>relative_humidity<span class="classifier">float</span></dt><dd><blockquote>
+<div><p>Relative humidity from 0 to 100 [%]</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd>
+<dt>n_air<span class="classifier">float</span></dt><dd><p>Refractive index of air.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://bitbucket.org/iannis_b/lidar_molecular">https://bitbucket.org/iannis_b/lidar_molecular</a></p>
+<dl class="simple">
+<dt>Copyright:</dt><dd><p>Group of Ground-based Remote Sensing (Leibniz-Institut f�r Troposph�renforschung)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.alpha_rayleigh">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">alpha_rayleigh</code><span class="sig-paren">(</span><em class="sig-param">wavelength</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">C</em>, <em class="sig-param">rh</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.alpha_rayleigh" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>ALPHA_RAYLEIGH Cacluate the extinction coefficient for Rayleigh scattering.</dt><dd><p>Inputs:</p>
+</dd>
+<dt>wavelength<span class="classifier">float or array of floats</span></dt><dd><p>Wavelegnth [nm]</p>
+</dd>
+<dt>pressure<span class="classifier">float or array of floats</span></dt><dd><p>Atmospheric pressure [hPa]</p>
+</dd>
+<dt>temperature<span class="classifier">float</span></dt><dd><p>Atmospheric temperature [K]</p>
+</dd>
+<dt>C<span class="classifier">float</span></dt><dd><p>CO2 concentration [ppmv].</p>
+</dd>
+<dt>rh<span class="classifier">float</span></dt><dd><blockquote>
+<div><p>Relative humidity from 0 to 100 [%]</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd>
+<dt>alpha: float</dt><dd><p>The molecular scattering coefficient [m-1]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.beta_pi_rayleigh">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">beta_pi_rayleigh</code><span class="sig-paren">(</span><em class="sig-param">wavelength</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">C</em>, <em class="sig-param">rh</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.beta_pi_rayleigh" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>BETA_PI_RAYLEIGH Calculates the total Rayleigh backscatter coefficient.</dt><dd><p>Inputs:</p>
+</dd>
+<dt>wavelength: float</dt><dd><p>Wavelength [nm]</p>
+</dd>
+<dt>pressure: float</dt><dd><p>The atmospheric pressure [hPa]</p>
+</dd>
+<dt>temperature: float</dt><dd><p>The atmospheric temperature [K]</p>
+</dd>
+<dt>C: float</dt><dd><p>CO2 concentration [ppmv].</p>
+</dd>
+<dt>rh: float</dt><dd><blockquote>
+<div><p>Relative humidity from 0 to 100 [%]</p>
+</div></blockquote>
+<p>Returns</p>
+</dd>
+<dt>beta_pi: array</dt><dd><p>molecule backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.dsigma_phi_rayleigh">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">dsigma_phi_rayleigh</code><span class="sig-paren">(</span><em class="sig-param">theta</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">C</em>, <em class="sig-param">rh</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.dsigma_phi_rayleigh" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>DSIGMA_PHI_RAYLEIGH Calculates the angular rayleigh scattering cross section per molecule.</dt><dd><p>Inputs:</p>
+</dd>
+<dt>theta: float</dt><dd><p>Scattering angle [rads]</p>
+</dd>
+<dt>wavelength: float</dt><dd><p>Wavelength [nm]</p>
+</dd>
+<dt>pressure: float</dt><dd><p>The atmospheric pressure [hPa]</p>
+</dd>
+<dt>temperature: float</dt><dd><p>The atmospheric temperature [K]</p>
+</dd>
+<dt>C: float</dt><dd><p>CO2 concentration [ppmv].</p>
+</dd>
+<dt>rh: float</dt><dd><blockquote>
+<div><p>Relative humidity from 0 to 100 [%]</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd>
+<dt>dsigma: float</dt><dd><p>rayleigh-scattering cross section [m2sr-1]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.enhancement_factor_f">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">enhancement_factor_f</code><span class="sig-paren">(</span><em class="sig-param">pressure</em>, <em class="sig-param">temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.enhancement_factor_f" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>ENHANCEMENT_FACTOR_F Enhancement factor.</dt><dd><p>Inputs:</p>
+</dd>
+<dt>pressure: float</dt><dd><p>Atmospheric pressure [hPa]</p>
+</dd>
+<dt>temperature: float</dt><dd><p>Atmospehric temperature [K]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.kings_factor_atmosphere">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">kings_factor_atmosphere</code><span class="sig-paren">(</span><em class="sig-param">wavelength</em>, <em class="sig-param">C</em>, <em class="sig-param">p_e</em>, <em class="sig-param">p_t</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.kings_factor_atmosphere" title="Permalink to this definition">¶</a></dt>
+<dd><p>KING_FACTOR_ATMOSPHERE calculate the king factor.
+Usage:</p>
+<blockquote>
+<div><p>k = king_factor_atmosphere(wavelength, C, p_e, p_t)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>wavelength: float</dt><dd><p>Unit: nm</p>
+</dd>
+<dt>C: float</dt><dd><p>CO2 concentration in ppmv</p>
+</dd>
+<dt>p_e: float</dt><dd><p>water vapor pressure in hPa</p>
+</dd>
+<dt>p_t: float</dt><dd><p>total air pressure in hPa</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>float</dt><dd><p>total atmospheric King’s factor</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>k</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://bitbucket.org/iannis_b/lidar_molecular">https://bitbucket.org/iannis_b/lidar_molecular</a></p>
+<dl class="simple">
+<dt>Copyright:</dt><dd><p>Group of Ground-based Remote Sensing (Leibniz-Institut f�r Troposph�renforschung)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.molar_fraction_water_vapour">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">molar_fraction_water_vapour</code><span class="sig-paren">(</span><em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">relative_humidity</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.molar_fraction_water_vapour" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>MOLAR_FRACTION_WATER_VAPOUR Molar fraction of water vapor.</dt><dd><p>Inputs:</p>
+</dd>
+<dt>pressure: float</dt><dd><p>Total pressure [hPa]</p>
+</dd>
+<dt>temperature: float</dt><dd><p>Atmospehric temperature [K]</p>
+</dd>
+<dt>relative_humidity:</dt><dd><p>Relative humidity from 0 to 100 [%]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.number_density_at_pt">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">number_density_at_pt</code><span class="sig-paren">(</span><em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">relative_humidity</em>, <em class="sig-param">ideal</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.number_density_at_pt" title="Permalink to this definition">¶</a></dt>
+<dd><p>NUMBER_DENSITY_AT_PT Calculate the number density for a given temperature and pressure,
+taking into account the compressibility of air.</p>
+<blockquote>
+<div><blockquote>
+<div><p>Inputs:</p>
+</div></blockquote>
+<dl>
+<dt>pressure: float or array</dt><dd><p>Pressure in hPa</p>
+</dd>
+<dt>temperature: float or array</dt><dd><p>Temperature in K</p>
+</dd>
+<dt>relative_humidity: float or array (?)</dt><dd><p>? The relative humidity of air (Check)</p>
+</dd>
+<dt>ideal: boolean</dt><dd><blockquote>
+<div><p>If False, the compressibility of air is considered. If True, the
+compressibility is set to 1.</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd>
+<dt>n: array or array</dt><dd><p>Number density of the atmosphere [m^{-3}]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.phase_function">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">phase_function</code><span class="sig-paren">(</span><em class="sig-param">theta</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">C</em>, <em class="sig-param">rh</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.phase_function" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>PHASE_FUNCTION Calculates the phase function at an angle theta for a specific wavelegth.</dt><dd><blockquote>
+<div><p>Inputs:</p>
+</div></blockquote>
+<dl>
+<dt>theta: float</dt><dd><p>Scattering angle [rads]</p>
+</dd>
+<dt>wavelength: float</dt><dd><p>Wavelength [nm]</p>
+</dd>
+<dt>pressure: float</dt><dd><p>The atmospheric pressure [hPa]</p>
+</dd>
+<dt>temperature: float</dt><dd><p>The atmospheric temperature [K]</p>
+</dd>
+<dt>C: float</dt><dd><p>CO2 concentration [ppmv].</p>
+</dd>
+<dt>rh: float</dt><dd><blockquote>
+<div><p>Relative humidity from 0 to 100 [%]</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd>
+<dt>p: float</dt><dd><blockquote>
+<div><p>Scattering phase function</p>
+</div></blockquote>
+<p>Notes:</p>
+</dd>
+</dl>
+<p>The formula is derived from Bucholtz (1995). A different formula is given in
+Miles (2001).</p>
+<p>The use of this formula insetad of the wavelenght independent 3/4(1+cos(th)**2)
+improves the results for back and forward scatterring by ~1.5%</p>
+<p>Anthony Bucholtz, “Rayleigh-scattering calculations for the terrestrial atmosphere”,
+Applied Optics 34, no. 15 (May 20, 1995): 2765-2773.</p>
+<p>R. B Miles, W. R Lempert, and J. N Forkey, “Laser Rayleigh scattering”,
+Measurement Science and Technology 12 (2001): R33-R51</p>
+</dd>
+</dl>
+<p>TODO: Check use formula and values.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.rayleigh_scattering">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">rayleigh_scattering</code><span class="sig-paren">(</span><em class="sig-param">wavelength</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">C</em>, <em class="sig-param">rh</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.rayleigh_scattering" title="Permalink to this definition">¶</a></dt>
+<dd><p>RAYLEIGH_SCATTERING calculate the molecular volume backscatter coefficient and
+extinction coefficient.</p>
+<blockquote>
+<div><dl>
+<dt>Inputs:</dt><dd><blockquote>
+<div><dl class="simple">
+<dt>wavelength: float</dt><dd><p>Wavelegnth [nm]</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>pressure: float</dt><dd><p>The atmospheric pressure [hPa]</p>
+</dd>
+<dt>temperature: float</dt><dd><p>The atmospheric temperature [K]</p>
+</dd>
+<dt>C: float</dt><dd><p>CO2 concentration [ppmv].</p>
+</dd>
+<dt>rh: float</dt><dd><p>Relative humidity from 0 to 100 [%]</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>beta_mol: float</dt><dd><p>molecular backscatter coefficient. [m^{-1}*Sr^{-1}]</p>
+</dd>
+<dt>alpha_mol: float</dt><dd><p>molecular extinction coefficient. [m^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt><dd><p>Bucholtz, A.: Rayleigh-scattering calculations for the terrestrial atmosphere, Appl. Opt. 34, 2765-2773 (1995)
+A. Behrendt and T. Nakamura, “Calculation of the calibration constant of polarization lidar and its dependency on atmospheric temperature,” Opt. Express, vol. 10, no. 16, pp. 805-817, 2002.</p>
+</dd>
+<dt>History:</dt><dd><p>2017-12-16. First edition by Zhenping. All the code is based on the
+python source code of Ioannis Binietoglou’s [
+repo](<a class="reference external" href="https://bitbucket.org/iannis_b/lidar_molecular">https://bitbucket.org/iannis_b/lidar_molecular</a>).
+Detailed information please go to [repo](<a class="reference external" href="https://bitbucket.org/iannis_b/lidar_molecular">https://bitbucket.org/iannis_b/lidar_molecular</a>)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.rh_to_pressure">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">rh_to_pressure</code><span class="sig-paren">(</span><em class="sig-param">rh</em>, <em class="sig-param">temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.rh_to_pressure" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>RH_TO_PRESSURE Convert relative humidity to water vapour partial pressure.</dt><dd><p>Inputs:</p>
+</dd>
+<dt>rh: float</dt><dd><p>Relative humidity from 0 to 100 [%]</p>
+</dd>
+<dt>temperature: float</dt><dd><blockquote>
+<div><p>Temperature [K]</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd>
+<dt>p_wv: float</dt><dd><p>Water vapour pressure [hPa].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt id="lib.Rayleigh_Scattering.rho_atmosphere">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">rho_atmosphere</code><a class="headerlink" href="#lib.Rayleigh_Scattering.rho_atmosphere" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>RHO_ATMOSPHERE Calculate the depolarization factor of the atmosphere.</dt><dd><p>Inputs:</p>
+</dd>
+<dt>wavelength<span class="classifier">float or array of floats</span></dt><dd><p>Wavelength in nm</p>
+</dd>
+<dt>C<span class="classifier">float</span></dt><dd><p>CO2 concentration in ppmv</p>
+</dd>
+<dt>p_e<span class="classifier">float</span></dt><dd><p>water-vapor pressure [hPa]</p>
+</dd>
+<dt>p_t<span class="classifier">float</span></dt><dd><blockquote>
+<div><p>total air pressure [hPa]</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd>
+</dl>
+<p>rho: float or array of floats
+Depolarization factor</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.saturation_vapor_pressure">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">saturation_vapor_pressure</code><span class="sig-paren">(</span><em class="sig-param">temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.saturation_vapor_pressure" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>SATURATION_VAPOR_PRESSURE Saturation vapor pressure of water of moist air.</dt><dd><blockquote>
+<div><p>Note: In original documentation, this was specified as the saturation pressure of</p>
+</div></blockquote>
+<dl>
+<dt>pure water vapour. This seems wrong.</dt><dd><p>Inputs:</p>
+</dd>
+<dt>temperature: float</dt><dd><blockquote>
+<div><p>Atmospheric temperature [K]</p>
+</div></blockquote>
+<p>Returns:</p>
+</dd>
+<dt>E: float</dt><dd><blockquote>
+<div><p>Saturation vapor pressure [hPa]</p>
+</div></blockquote>
+<p>References:</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Ciddor, P. E.: Refractive index of air: new equations for the visible and near
+infrared, Appl. Opt., 35(9), 1566-1573, doi:10.1364/AO.35.001566, 1996.</p>
+<p>Davis, R. S.: Equation for the Determination of the Density of
+Moist Air (1981/91), Metrologia, 29(1), 67, doi:10.1088/0026-1394/29/1/008, 1992.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.Rayleigh_Scattering.sigma_rayleigh">
+<code class="sig-prename descclassname">lib.Rayleigh_Scattering.</code><code class="sig-name descname">sigma_rayleigh</code><span class="sig-paren">(</span><em class="sig-param">wavelength</em>, <em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">C</em>, <em class="sig-param">rh</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.Rayleigh_Scattering.sigma_rayleigh" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>SIGMA_RAYLEIGH Calculates the Rayleigh-scattering cross section per molecule.</dt><dd><p>Inputs:
+wavelength: float</p>
+<blockquote>
+<div><p>Wavelegnth [nm]</p>
+</div></blockquote>
+</dd>
+<dt>pressure: float</dt><dd><p>The atmospheric pressure [hPa]</p>
+</dd>
+<dt>temperature: float</dt><dd><p>The atmospheric temperature [K]</p>
+</dd>
+<dt>C: float</dt><dd><p>CO2 concentration [ppmv].</p>
+</dd>
+<dt>rh: float</dt><dd><blockquote>
+<div><p>Relative humidity from 0 to 100 [%]</p>
+</div></blockquote>
+<p>Returns</p>
+</dd>
+<dt>sigma: float</dt><dd><p>Rayleigh-scattering cross section [m2]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="polly_general_func.html" class="btn btn-neutral float-left" title="polly general functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Yin, Baars
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

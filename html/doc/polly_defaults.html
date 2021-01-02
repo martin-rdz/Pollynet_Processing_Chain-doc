@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Polly Default Settings for pollynet processing chain &mdash; Pollynet_Processing_Chain  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="logbook" href="polly_logbook.html" />
+    <link rel="prev" title="Polly Config" href="polly_config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Pollynet_Processing_Chain
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda_installation.html">Anaconda installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_config.html">Polly Config</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Polly Default Settings for pollynet processing chain</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#polly-systems">Polly Systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#polly-1v2">Polly_1V2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pollyxt-dwd">PollyXT-DWD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pollyxt-lacros">PollyXT-LACROS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arielle">arielle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pollyxt-uw">PollyXT-UW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pollyxt-tropos">PollyXT-TROPOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pollyxt-fmi">PollyXT-FMI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pollyxt-noa">PollyXT-NOA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pollyxt-tjk">PollyXT-TJK</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="polly_logbook.html">logbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pollynet.html">pollynet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pollynet_processing_chain_config.html">pollynet_processing_chain_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pollynet_processing_program.html">PollyNET Processing Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_Pollynet_Processing_Chain_on_the_server.html">Running Picasso on the server (Internal tutorial)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lib.html">lib functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polly_general_func.html">polly general functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scattering.html">Rayleigh Scattering module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pollynet_Processing_Chain</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Polly Default Settings for pollynet processing chain</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc/polly_defaults.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="polly-default-settings-for-pollynet-processing-chain">
+<h1>Polly Default Settings for pollynet processing chain<a class="headerlink" href="#polly-default-settings-for-pollynet-processing-chain" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#polly-default-settings-for-pollynet-processing-chain">Polly Default Settings for pollynet processing chain</a></p>
+<ul>
+<li><p><a class="reference external" href="#description">Description</a></p></li>
+<li><p><a class="reference external" href="#polly-systems">Polly Systems</a></p>
+<ul>
+<li><p><a class="reference external" href="#polly1v2">Polly_1V2</a></p></li>
+<li><p><a class="reference external" href="#pollyxt-dwd">PollyXT-DWD</a></p></li>
+<li><p><a class="reference external" href="#pollyxt-lacros">PollyXT-LACROS</a></p></li>
+<li><p><a class="reference external" href="#arielle">arielle</a></p></li>
+<li><p><a class="reference external" href="#pollyxt-uw">PollyXT-UW</a></p></li>
+<li><p><a class="reference external" href="#pollyxt-tropos">PollyXT-TROPOS</a></p></li>
+<li><p><a class="reference external" href="#pollyxt-fmi">PollyXT-FMI</a></p></li>
+<li><p><a class="reference external" href="#pollyxt-noa">PollyXT-NOA</a></p></li>
+<li><p><a class="reference external" href="#pollyxt-tjk">PollyXT-TJK</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Polly defaults are used for configuring the processing program, when the calibration procedure fails. At present stage, there are 3 calibration procedures which are essential for the program: lidar constants, depolarization calibration constant and water vapor calibration constant. Besides, the overlap file is also recommended to be attached to compare with the estimated overlap function through the signal ratio between Near-Range (NR) and Far-Range (FR) channels. In general, different polly systems have their own specific default settings because of their different functionalities. Old polly system has less channels, which in the end would require less calibration procedures and thus less default settings. The most advanced polly system, like the arielle, has been powered with 13 channels, namely 3β+2α+2δ+2FOV, which needs more efforts for retrieving the products.</p>
+</div>
+<div class="section" id="polly-systems">
+<h2>Polly Systems<a class="headerlink" href="#polly-systems" title="Permalink to this headline">¶</a></h2>
+<p>The defaults for the operational polly systems were listed as below, which are highly dependent on their channels. Detailed information about the instrument can be found in <a class="reference internal" href="pollynet.html"><span class="doc">here</span></a>.</p>
+<div class="section" id="polly-1v2">
+<h3>Polly_1V2<a class="headerlink" href="#polly-1v2" title="Permalink to this headline">¶</a></h3>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[16893959541573.252000, 1, 1, 1, 28466210203696.203000]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”polly_1v2__overlap_532.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|</p>
+</div>
+<div class="section" id="pollyxt-dwd">
+<h3>PollyXT-DWD<a class="headerlink" href="#pollyxt-dwd" title="Permalink to this headline">¶</a></h3>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[123459332446.982710, 1, 97878575429631.625000, 1, 1, 389530086877146.060000, 1, 1]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_dwd_overlap_532.txt”|
+|overlapFile355|overlap file for saving the overlap function of 355 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_dwd_overlap_355.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|</p>
+</div>
+<div class="section" id="pollyxt-lacros">
+<h3>PollyXT-LACROS<a class="headerlink" href="#pollyxt-lacros" title="Permalink to this headline">¶</a></h3>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|depolCaliConst355|V* at 355. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd355|std of V* at 355|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[42545559767070.414000, 1, 6.3e13, 1, 97878575429631.625000, 1, 2.2e14, 389530086877146.060000, 1, 1, 1, 1, 1]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_lacros_overlap_532.txt”|
+|overlapFile355|overlap file for saving the overlap function of 355 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_lacros_overlap_355.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|
+|molDepol355|molecule depolarization ratio at 355 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0239|
+|molDepolStd355|std of molecule depolarization ratio at 355 nm.|float|0.0|
+|wvconst|water vapor calibration constant [g<em>kg^{-1}]. If the water vapor calibration cannot be done and there was no available calibration constant within 1 week, the default water vapor constant will be used.|float|15.0|
+|wvconstStd|std of water vapor calibration constant [g</em>kg^{-1}].|float|0.0|</p>
+</div>
+<div class="section" id="arielle">
+<h3>arielle<a class="headerlink" href="#arielle" title="Permalink to this headline">¶</a></h3>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels.|array|[123459332446.982710, 1, 97878575429631.625000, 1, 1, 389530086877146.060000, 1, 1]|
+|depolCaliConst355|V* at 355. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd355|std of V* at 355|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[42545559767070.414000, 1, 6.3e13, 1, 97878575429631.625000, 1, 2.2e14, 389530086877146.060000, 1, 1, 1, 1, 1]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”arielle_overlap_532.txt”|
+|overlapFile355|overlap file for saving the overlap function of 355 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”arielle_overlap_355.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|
+|molDepol355|molecule depolarization ratio at 355 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0239|
+|molDepolStd355|std of molecule depolarization ratio at 355 nm.|float|0.0|
+|wvconst|water vapor calibration constant [g<em>kg^{-1}]. If the water vapor calibration cannot be done and there was no available calibration constant within 1 week, the default water vapor constant will be used.|float|15.0|
+|wvconstStd|std of water vapor calibration constant [g</em>kg^{-1}].|float|0.0|</p>
+</div>
+<div class="section" id="pollyxt-uw">
+<h3>PollyXT-UW<a class="headerlink" href="#pollyxt-uw" title="Permalink to this headline">¶</a></h3>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|depolCaliConst355|V* at 355. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd355|std of V* at 355|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[42545559767070.414000, 1, 6.3e13, 1, 97878575429631.625000, 1, 2.2e14, 389530086877146.060000, 1, 1, 1, 1, 1]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_uw_overlap_532.txt”|
+|overlapFile355|overlap file for saving the overlap function of 355 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_uw_overlap_355.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|
+|molDepol355|molecule depolarization ratio at 355 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0239|
+|molDepolStd355|std of molecule depolarization ratio at 355 nm.|float|0.0|
+|wvconst|water vapor calibration constant [g<em>kg^{-1}]. If the water vapor calibration cannot be done and there was no available calibration constant within 1 week, the default water vapor constant will be used.|float|15.0|
+|wvconstStd|std of water vapor calibration constant [g</em>kg^{-1}].|float|0.0|</p>
+</div>
+<div class="section" id="pollyxt-tropos">
+<h3>PollyXT-TROPOS<a class="headerlink" href="#pollyxt-tropos" title="Permalink to this headline">¶</a></h3>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|depolCaliConst355|V* at 355. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd355|std of V* at 355|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[42545559767070.414000, 1, 6.3e13, 1, 97878575429631.625000, 1, 2.2e14, 389530086877146.060000, 1, 1, 1, 1, 1]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_tropos_overlap_532.txt”|
+|overlapFile355|overlap file for saving the overlap function of 355 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_tropos_overlap_355.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|
+|molDepol355|molecule depolarization ratio at 355 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0239|
+|molDepolStd355|std of molecule depolarization ratio at 355 nm.|float|0.0|
+|wvconst|water vapor calibration constant [g<em>kg^{-1}]. If the water vapor calibration cannot be done and there was no available calibration constant within 1 week, the default water vapor constant will be used.|float|15.0|
+|wvconstStd|std of water vapor calibration constant [g</em>kg^{-1}].|float|0.0|</p>
+</div>
+<div class="section" id="pollyxt-fmi">
+<h3>PollyXT-FMI<a class="headerlink" href="#pollyxt-fmi" title="Permalink to this headline">¶</a></h3>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|depolCaliConst355|V* at 355. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd355|std of V* at 355|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[42545559767070.414000, 1, 6.3e13, 1, 97878575429631.625000, 1, 2.2e14, 389530086877146.060000, 1, 1, 1, 1, 1]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_fmi_overlap_532.txt”|
+|overlapFile355|overlap file for saving the overlap function of 355 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_fmi_overlap_355.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|
+|molDepol355|molecule depolarization ratio at 355 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0239|
+|molDepolStd355|std of molecule depolarization ratio at 355 nm.|float|0.0|
+|wvconst|water vapor calibration constant [g<em>kg^{-1}]. If the water vapor calibration cannot be done and there was no available calibration constant within 1 week, the default water vapor constant will be used.|float|15.0|
+|wvconstStd|std of water vapor calibration constant [g</em>kg^{-1}].|float|0.0|</p>
+</div>
+<div class="section" id="pollyxt-noa">
+<h3>PollyXT-NOA<a class="headerlink" href="#pollyxt-noa" title="Permalink to this headline">¶</a></h3>
+<p><strong>Attention:</strong> The setup has been upgraded from 2 near-range channels to 4 near-range channels at 2016.</p>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|depolCaliConst355|V* at 355. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd355|std of V* at 355|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[42545559767070.414000, 1, 6.3e13, 1, 97878575429631.625000, 1, 2.2e14, 389530086877146.060000, 1, 1, 1, 1, 1]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_noa_overlap_532.txt”|
+|overlapFile355|overlap file for saving the overlap function of 355 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_noa_overlap_355.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|
+|molDepol355|molecule depolarization ratio at 355 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0239|
+|molDepolStd355|std of molecule depolarization ratio at 355 nm.|float|0.0|
+|wvconst|water vapor calibration constant [g<em>kg^{-1}]. If the water vapor calibration cannot be done and there was no available calibration constant within 1 week, the default water vapor constant will be used.|float|15.0|
+|wvconstStd|std of water vapor calibration constant [g</em>kg^{-1}].|float|0.0|</p>
+</div>
+<div class="section" id="pollyxt-tjk">
+<h3>PollyXT-TJK<a class="headerlink" href="#pollyxt-tjk" title="Permalink to this headline">¶</a></h3>
+<p>|settings|meaning|Data Type|example|
+|:——:|:——|:——-:|:—–:|
+|depolCaliConst532|V* at 532. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd532|std of V* at 532|float|0.0|
+|depolCaliConst355|V* at 355. If depol calibration failed because of cloud contamination and there was no available V* within 1 week, the default value will be taken for depol caculations|float|0.024443|
+|depolCaliConstStd355|std of V* at 355|float|0.0|
+|LC|lidar constant. If lidar calibration failed and there was no available lidar constants within 1 week, the default values will be taken for calibrate the lidar signal. The order of this variable is the same like the order of the channels|array|[42545559767070.414000, 1, 6.3e13, 1, 97878575429631.625000, 1, 2.2e14, 389530086877146.060000, 1, 1, 1, 1, 1]|
+|LCStd|std of the lidar constants|array|[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]|
+|overlapFile532|overlap file for saving the overlap function of 532 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_tjk_overlap_532.txt”|
+|overlapFile355|overlap file for saving the overlap function of 355 channel. This file can only have two columns: one is the height [m] and the other is the overlap function. There should be 1 header to describe the variables. An exemplified one can be found in the folder of ‘/lib/pollyDefaults/’|string|”pollyxt_tjk_overlap_355.txt”|
+|molDepol532|molecule depolarization ratio at 532 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0053|
+|molDepolStd532|std of molecule depolarization ratio at 532 nm.|float|0.0|
+|molDepol355|molecule depolarization ratio at 355 nm. In theory, this value can be calculated based on the filter bandwidth and central wavelength. But due to some system effects from retardation, diattenuation and depolarization, the theoritical value always deviate with the measured molecular background volume depolarization ratio. And this will introduce large error for calculating the particle depolarization ratio of weak aerosol layers. Therefore, we setup this default to cancel out some part of the influences|float|0.0239|
+|molDepolStd355|std of molecule depolarization ratio at 355 nm.|float|0.0|
+|wvconst|water vapor calibration constant [g<em>kg^{-1}]. If the water vapor calibration cannot be done and there was no available calibration constant within 1 week, the default water vapor constant will be used.|float|15.0|
+|wvconstStd|std of water vapor calibration constant [g</em>kg^{-1}].|float|0.0|</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="polly_logbook.html" class="btn btn-neutral float-right" title="logbook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="polly_config.html" class="btn btn-neutral float-left" title="Polly Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Yin, Baars
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

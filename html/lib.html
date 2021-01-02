@@ -1,0 +1,4051 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib functions &mdash; Pollynet_Processing_Chain  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="polly general functions" href="polly_general_func.html" />
+    <link rel="prev" title="Running Picasso on the server (Internal tutorial)" href="doc/running_Pollynet_Processing_Chain_on_the_server.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Pollynet_Processing_Chain
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/anaconda_installation.html">Anaconda installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_config.html">Polly Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_defaults.html">Polly Default Settings for pollynet processing chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/polly_logbook.html">logbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet.html">pollynet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet_processing_chain_config.html">pollynet_processing_chain_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/pollynet_processing_program.html">PollyNET Processing Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/running_Pollynet_Processing_Chain_on_the_server.html">Running Picasso on the server (Internal tutorial)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">lib functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_general_func.html">polly general functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scattering.html">Rayleigh Scattering module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pollynet_Processing_Chain</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>lib functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib">
+<span id="lib-functions"></span><h1>lib functions<a class="headerlink" href="#module-lib" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-lib"></span><dl class="mat function">
+<dt id="lib.DouglasPeucker">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">DouglasPeucker</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">height</em>, <em class="sig-param">epsilon</em>, <em class="sig-param">heightBase</em>, <em class="sig-param">heightTop</em>, <em class="sig-param">maxHThick</em>, <em class="sig-param">window_size</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.DouglasPeucker" title="Permalink to this definition">¶</a></dt>
+<dd><p>DOUGLASPEUCKER simplify the signal according to Douglas-Peucker algorithm.
+Inputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>signal: array</dt><dd><p>Molecule corrected signal. [MHz]</p>
+</dd>
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>epsilon: float</dt><dd><p>maximum distance.</p>
+</dd>
+<dt>heightBase: float</dt><dd><p>minimun height for the algorithm. [m]</p>
+</dd>
+<dt>heightTop: float</dt><dd><p>maximum height for the algorithm. [m]</p>
+</dd>
+<dt>maxHThick:</dt><dd><p>maximum spatial thickness of each segment. [m]</p>
+</dd>
+<dt>window_size: integer</dt><dd><p>size of the average smooth window.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>array</dt><dd><p>index of the signal that stands for different segments of the
+signal.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>sigIndx</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm">https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm</a></p>
+<dl class="simple">
+<dt>History:</dt><dd><p>2017-12-29. First edition by Zhenping.
+2018-07-29. Add the height range for the searching instead of SNR restriction.
+2018-07-31. Add the maxHThick argument to control the maximum thickness
+of each output segment.x</p>
+</dd>
+<dt>Contact</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.OverlapCor">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">OverlapCor</code><span class="sig-paren">(</span><em class="sig-param">sigFR</em>, <em class="sig-param">overlap</em>, <em class="sig-param">height</em>, <em class="sig-param">normRange</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.OverlapCor" title="Permalink to this definition">¶</a></dt>
+<dd><p>OVERLAPCOR Overlap correction.
+.. rubric:: Example</p>
+<p>sigCor = OverlapCor(sigFR, overlap, height, normRange)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sigFR: matrix (height * time)</dt><dd><p>far-range signal</p>
+</dd>
+<dt>overlap: array</dt><dd><p>overlap function.</p>
+</dd>
+<dt>height: array</dt><dd><p>height above ground. (m)</p>
+</dd>
+<dt>normRange: array</dt><dd><p>signal normalization range. (m)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>sigCor: matrix (height * time)</dt><dd><p>glued signal.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.SigGlue">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">SigGlue</code><span class="sig-paren">(</span><em class="sig-param">sigFR</em>, <em class="sig-param">sigNR</em>, <em class="sig-param">sigRatio</em>, <em class="sig-param">height</em>, <em class="sig-param">normRange</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.SigGlue" title="Permalink to this definition">¶</a></dt>
+<dd><p>SIGGLUE glue near-range and far-range signal.
+.. rubric:: Example</p>
+<p>sigGl = SigGlue(sigFR, sigNR, height, normRange)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sigFR: matrix (height * time)</dt><dd><p>far-range signal</p>
+</dd>
+<dt>sigNR: matrix (height * time)</dt><dd><p>near-range signal.</p>
+</dd>
+<dt>sigRatio: numeric</dt><dd><p>ratio of lidar constants between near-range and far-range signal.</p>
+</dd>
+<dt>height: array</dt><dd><p>height above ground. (m)</p>
+</dd>
+<dt>normRange: array</dt><dd><p>signal normalization range. (m)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>sigGl: matrix (height * time)</dt><dd><p>glued signal.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.VDE_cld">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">VDE_cld</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">height</em>, <em class="sig-param">BG</em>, <em class="sig-param">minLayerDepth</em>, <em class="sig-param">minHeight</em>, <em class="sig-param">smoothWin</em>, <em class="sig-param">minSNR</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.VDE_cld" title="Permalink to this definition">¶</a></dt>
+<dd><p>VDE_CLD cloud layer detection with VDE method. THis method only required elstic
+signal.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signal: array</dt><dd><p>raw signal without background. [photon count]</p>
+</dd>
+<dt>height: array</dt><dd><p>height above the ground. [km]</p>
+</dd>
+<dt>BG: numeric</dt><dd><p>background signal. [photon count]</p>
+</dd>
+<dt>minLayerDepth: numeric</dt><dd><p>minimun layer geometrical depth (default: 0.2). [km]</p>
+</dd>
+<dt>minHeight: numeric</dt><dd><p>minimum height to start the searching with (default: 0.4). [km]</p>
+</dd>
+<dt>smoothWin: numeric</dt><dd><p>smoothindow in bins (default: 3).</p>
+</dd>
+<dt>minSNR: numeric</dt><dd><p>minimum layer SNR to filter the fake features (default: 5).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>struct array</dt><dd><dl class="simple">
+<dt>id: numeric</dt><dd><p>identity of the layer.</p>
+</dd>
+<dt>baseHeight: numeric</dt><dd><p>the layer base height. [km]</p>
+</dd>
+<dt>topHeight: numeric</dt><dd><p>the layer top height. [km]</p>
+</dd>
+<dt>peakHeight: numeric</dt><dd><p>the layer height with maximum backscatter signal. [km]</p>
+</dd>
+<dt>layerDepth: numeric</dt><dd><p>geometrical depth of the layer. [km]</p>
+</dd>
+<dt>flagCloud: logical</dt><dd><p>cloud flag.</p>
+</dd>
+</dl>
+</dd>
+<dt>PD: array</dt><dd><p>SDP signal.</p>
+</dd>
+<dt>PN: array</dt><dd><p>VDE signal</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>layerInfo</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p>Zhao, C., Y. Wang, Q. Wang, Z. Li, Z. Wang, and D. Liu (2014), A new
+cloud and aerosol layer detection method based on micropulse lidar
+measurements, Journal of Geophysical Research: Atmospheres, 119(11),
+6788-6802.</p></li>
+</ol>
+<dl class="simple">
+<dt>History:</dt><dd><p>2020-02-11. First edition by Zhenping.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.addSQLiteJDBC">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">addSQLiteJDBC</code><span class="sig-paren">(</span><em class="sig-param">SQLiteJDBCPath</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.addSQLiteJDBC" title="Permalink to this definition">¶</a></dt>
+<dd><p>addSQLiteJDBC add SQLite Java database connector (JDBC) to MATLAB search path.
+.. rubric:: Example</p>
+<p>addSQLiteJDBC(SQLiteJDBCPath)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>SQLiteJDBCPath: char</dt><dd><p>absolute path of the SQLite JDBC.</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>flagDownloadSQLiteJDBC: logical</dt><dd><p>flag to control whether to download the SQLite JDBC. (default: false)</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-20. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt id="lib.addincludepath">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">addincludepath</code><a class="headerlink" href="#lib.addincludepath" title="Permalink to this definition">¶</a></dt>
+<dd><p>add all the subdirectories in the folder of ‘../include/’
+History:</p>
+<blockquote>
+<div><p>2019-08-14 Add the comments by Zhenping Yin</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat script">
+<dt id="lib.addlibpath">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">addlibpath</code><a class="headerlink" href="#lib.addlibpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the subdirectories in ‘../lib/’
+History:</p>
+<blockquote>
+<div><p>2019-08-14. Add the comments by Zhenping Yin</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.auto_RCS_cRange">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">auto_RCS_cRange</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">rcs</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.auto_RCS_cRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>auto_RCS_cRange search the suitable color range for range corrected signal.
+.. rubric:: Example</p>
+<p>% Usecase 1: find the color range of range corrected signal
+cRange = auto_RCS_cRange(height, rcs)</p>
+<p>% Usecase 2: find the color range based with signal at given spatial range
+cRange = auto_RCS_cRange(height, rcs, ‘hRange’, [0, 7000])</p>
+<p>% Usecase 3: specify the minimun color range
+cRange = auto_RCS_cRange(height, rcs, ‘minCRange’, 0)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height over ground. [m]</p>
+</dd>
+<dt>rcs: matrix (height * time)</dt><dd><p>range corrected signal</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>hRange: 2-element array</dt><dd><p>vertical range for searching the best color range. [m]</p>
+</dd>
+<dt>minCRange: double</dt><dd><p>minimum color range.</p>
+</dd>
+<dt>maxCRange: double</dt><dd><p>maximum color range.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>cRange: 2-element array</dt><dd><p>color range of the range corrected signal.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-05-16. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.basename">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">basename</code><span class="sig-paren">(</span><em class="sig-param">fileFullpath</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.basename" title="Permalink to this definition">¶</a></dt>
+<dd><p>BASENAME cut the basename from the file fullpath.
+.. rubric:: Example</p>
+<p>[basename] = basename(fileFullpath)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>fileFullpath: char</dt><dd><p>fullpath.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>basename: char</dt><dd><p>basename of the file</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-08-22. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.ceilo_bsc_ModelSonde">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">ceilo_bsc_ModelSonde</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ceilo_bsc_ModelSonde" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads pressure, altitude and temperature arrays from gdas model sounding</p>
+<p>This function reads pressure, altitude and temperature arrays from gdas
+model sounding for the specified filename.</p>
+<p>Input arguments:</p>
+<dl class="simple">
+<dt>filename    - string containing full filepath and filename</dt><dd><ul class="simple">
+<li><p>can contain wildcard character instead of lon/lat
+information</p></li>
+</ul>
+</dd>
+</dl>
+<p>Output arguments:</p>
+<p>pressure    - pressure [hPa]</p>
+<p>altitude    - height [m]</p>
+<p>temperature - temperature [�C]</p>
+<p>relh        - relative humidity [%]</p>
+<dl class="simple">
+<dt>History:</dt><dd><p>(Raw version from Birgit Heese.)
+2018-12-15. Add ouput of relh</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.ceilo_bsc_WebSonde">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">ceilo_bsc_WebSonde</code><span class="sig-paren">(</span><em class="sig-param">URL</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ceilo_bsc_WebSonde" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads pressure, altitude and temperature arrays from sounding file given
+in specified weblocation</p>
+<blockquote>
+<div><p>This function reads pressure, altitude and temperature arrays from
+sounding for the specified web location.</p>
+<p>Input arguments:</p>
+<dl class="simple">
+<dt>URL         - string containing URL where web content regarding an</dt><dd><p>appropriate sounding file is stored</p>
+</dd>
+</dl>
+<p>Output arguments:</p>
+<p>pressure    - pressure [hPa]</p>
+<p>altitude    - height [m]</p>
+<p>temperature - temperature [�C]</p>
+<p>relh        - relative humidity [%]</p>
+<p>mTime       - launching time. [datenum]</p>
+<dl class="simple">
+<dt>History:</dt><dd><p>read the radiosonde data in the given time period. (Raw version from Birgit Heese.)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.chi2fit">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">chi2fit</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">measure_error</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.chi2fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>CHI2FIT Chi-2 fitting. All the code are translated from the exemplified code in Numerical
+Recipies in C (2nd Edition). Great help comes from Birgit Heese.
+.. rubric:: Example</p>
+<p>[a, b, sigmaA, sigmaB, r_ab, Q] = linfit(x, y, meansure_error)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>x: array</dt><dd><p>The length of x should be larger than 1.</p>
+</dd>
+<dt>y: array</dt><dd><p>The measured signal.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>a: float</dt><dd><p>intersect of the linear regression.</p>
+</dd>
+<dt>b: float</dt><dd><p>slope of the linear regression</p>
+</dd>
+<dt>sigmaA:</dt><dd><p>Uncertainty of intersect</p>
+</dd>
+<dt>sigmaB:</dt><dd><p>Uncertainty of slope</p>
+</dd>
+<dt>chi2:</dt><dd><p>chi2 value</p>
+</dd>
+<dt>Q:</dt><dd><p>goodness of fit.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-08-03. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.cloudDetect_Zhao">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">cloudDetect_Zhao</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">height</em>, <em class="sig-param">signal</em>, <em class="sig-param">bg</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.cloudDetect_Zhao" title="Permalink to this definition">¶</a></dt>
+<dd><p>CLOUDDETECT_ZHAO cloud layer detection based on Zhao’s algorithm.
+.. rubric:: Example</p>
+<p>% Usecase 1: get the cloud mask
+flagCloudFree = cloudDetect_Zhao(time, height, signal, bg);</p>
+<p>% Usecase 2: specify the detection range
+[flagCloudFree, layerStatus] = cloudDetect_Zhao(time, height, signal, bg, ‘detectRange’, [0, 8000])</p>
+<p>% Usecase 3: specify the minimum layer depth
+[flagCloudFree, layerStatus] = cloudDetect_Zhao(time, height, signal, bg, ‘minDepth’, 500);</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>time: array</dt><dd><p>measurement time for each profile. (datenum)</p>
+</dd>
+<dt>height: array</dt><dd><p>height above ground. (m)</p>
+</dd>
+<dt>signal: matrix (height x time)</dt><dd><p>signal. (photon count)</p>
+</dd>
+<dt>bg: array</dt><dd><p>background. (photon count)</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>minDepth: double</dt><dd><p>minimum layer depth (default: 100). (m)</p>
+</dd>
+<dt>detectRange: 2-element array</dt><dd><p>bottom and top height for cloud detection (default: [0, 10000]). (m)</p>
+</dd>
+<dt>heightFullOverlap: double</dt><dd><p>minimum height with full overlap (default: 600). (m)</p>
+</dd>
+<dt>smoothWin: integer</dt><dd><p>smooth window (default: 8). (bins)</p>
+</dd>
+<dt>minSNR: double</dt><dd><p>minimum layer mean signal-noise-ratio (default: 1).</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flagCloudFree: array</dt><dd><p>cloud free mask for each profile.</p>
+</dd>
+<dt>layerStatus: matrix (height x time)</dt><dd><p>layer status for each bin. (0: unknown; 1: cloud; 2: aerosol)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p>Zhao, C., Y. Wang, Q. Wang, Z. Li, Z. Wang, and D. Liu (2014), A new
+cloud and aerosol layer detection method based on micropulse lidar
+measurements, Journal of Geophysical Research: Atmospheres, 119(11),
+6788-6802.</p></li>
+</ol>
+<dl class="simple">
+<dt>History:</dt><dd><p>2020-04-26. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.cloudScreen_MSG">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">cloudScreen_MSG</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">height</em>, <em class="sig-param">signal</em>, <em class="sig-param">slope_thres</em>, <em class="sig-param">search_region</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.cloudScreen_MSG" title="Permalink to this definition">¶</a></dt>
+<dd><p>CLOUDSCREEN_MSG cloud screen with maximum signal gradient.
+Usage:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>flagCloudFree = cloudScreen_MSG(height, signal, slope_thres, …</dt><dd><p>search_region)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>time: array</dt><dd><p>measurement time for each profile.</p>
+</dd>
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>signal: matrix (height * time)</dt><dd><p>photon count rate. [MHz]</p>
+</dd>
+<dt>slope_thres: float</dt><dd><p>threshold of the slope to determine whether there is
+strong backscatter signal. [MHz*m]</p>
+</dd>
+<dt>search_region: 2-elements array</dt><dd><p>[baseHeight, topHeight]. [m]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flagCloudFree: boolean</dt><dd><p>whether the profile is cloud free.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-03-04. First edition by zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.cloud_layering">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">cloud_layering</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">height</em>, <em class="sig-param">tc</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.cloud_layering" title="Permalink to this definition">¶</a></dt>
+<dd><p>cloud_layering extracting cloud information from target classification product.
+.. rubric:: Example</p>
+<p>Usage 1:
+[clBaseH, clTopH, clPh, clPhProb] = cloud_layering(time, height, tc)</p>
+<p>Usage 2:
+% threshold for the minimum cloud layer depth
+clBaseH = cloud_layering(time, height, tc, ‘minCloudDepth’, 100)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>time: array</dt><dd><p>time for each profile. (datenum)</p>
+</dd>
+<dt>height: array</dt><dd><p>height above ground. (m)</p>
+</dd>
+<dt>tc: matrix (height x time)</dt><dd><p>target classification.</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>minCloudDepth: double</dt><dd><p>minimum cloud layer depth (default: 0). (m)</p>
+</dd>
+<dt>liquidCloudBit: integer</dt><dd><p>target classification bit for liquid cloud (default: 1).</p>
+</dd>
+<dt>iceCloudBit: integer</dt><dd><p>target classification bit for ice cloud (default: 2).</p>
+</dd>
+<dt>cloudBits: array</dt><dd><p>target classification bits for clouds (default: [1, 2]).</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>clBaseH: maxtrix (MAXCLOUDLAYERS x time)</dt><dd><p>cloud based height. (m)</p>
+</dd>
+<dt>clTopH: matrix (MAXCLOUDLAYERS x time)</dt><dd><p>cloud top height. (m)</p>
+</dd>
+<dt>clPh: maxtrix (MAXCLOUDLAYERS x time)</dt><dd><p>cloud phase. (0: unknown; 1: ice; 2: liquid; 3: mixed-phase)</p>
+</dd>
+<dt>clPhProb: maxtrix (MAXCLOUDLAYERS x time)</dt><dd><p>probability of cloud phase. (Range: 0-1)</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-21. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.convert_temp_2_laserlogbook">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">convert_temp_2_laserlogbook</code><span class="sig-paren">(</span><em class="sig-param">fileinfo_new</em>, <em class="sig-param">pollyList</em>, <em class="sig-param">pollyTempDirs</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.convert_temp_2_laserlogbook" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert_temp_2_laserlogbook convert the polly temps file to laserlogbook file.
+.. rubric:: Example</p>
+<p>convert_temp_2_laserlogbook(fileinfo_new, pollyList, pollyTempDirs)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>fileinfo_new: char</dt><dd><p>absolute path of the fileinfo_new</p>
+</dd>
+<dt>pollyList: cell</dt><dd><p>python list whose temps file needs to be converted.</p>
+</dd>
+<dt>pollyTempDirs: cell</dt><dd><p>the respective temps folder.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>laserlogbookFullpath: char</dt><dd><p>absolute path of the laserlogbook file that was converted from the temps file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>example of polly temps file:</p>
+<blockquote>
+<div><blockquote>
+<div><p>Time, UTC     T1064    pyro      T1     RH1      T2     RH2    Tout   RHout   Status   Dout</p>
+</div></blockquote>
+<p>23.09.2019 00:00:01     -31.3    44.3    25.0    27.2    24.4    28.8    18.5    37.6       7       7
+23.09.2019 00:00:05     -31.2    44.2    25.0    27.2    24.5    29.0    18.5    37.9       7       7
+23.09.2019 00:00:10     -31.3    43.9    25.0    27.4    24.6    28.7    18.6    37.6       7       7</p>
+<blockquote>
+<div><p>example of polly laserlogbook file:</p>
+</div></blockquote>
+<p>2019-09-21 18:00:49SC,29233803 WT,28.6 HT,35   EO,8024 LS,310,1,0400   ER,OK,0400      EN,435  ExtPyro: 17.800 mJ      Temp1064: -30.5 C, Temp1: 30.1 C, Temp2: 31.4 C, OutsideRH: 60.7 %, OutsideT: 28.8 C, roof: 0, rain: 2, shutter: 4
+2019-09-21 18:01:56SC,29235134 WT,28.6 HT,35   EO,8024 LS,310,1,0400   ER,OK,0400      EN,442  ExtPyro: 18.295 mJ      Temp1064: -30.5 C, Temp1: 30.0 C, Temp2: 31.2 C, OutsideRH: 60.3 %, OutsideT: 28.9 C, roof: 0, rain: 2, shutter: 4</p>
+</div></blockquote>
+<dl class="simple">
+<dt>History:</dt><dd><p>2019-09-28. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.datenum_2_unix_timestamp">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">datenum_2_unix_timestamp</code><span class="sig-paren">(</span><em class="sig-param">matlab_datenum</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.datenum_2_unix_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>DATENUM_2_UNIX_TIMESTAMP convert the matlab datenum to unix timstamp.
+.. rubric:: Example</p>
+<p>[unix_timestamp] = datenum_2_unix_timestamp(matlab_datenum)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>matlab_datenum: datenum</p>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>unix_timestamp: float</dt><dd><p>unix timestamp coressponding to the input.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-05-10. First Edition by Zhenping</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>unix timestamp is based on the seconds since 1 January 1970. And both of the convention
+didn’t correct the leap seconds.</p>
+</div>
+<dl class="simple">
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.datestr_convert_0">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">datestr_convert_0</code><span class="sig-paren">(</span><em class="sig-param">thisDatenum</em>, <em class="sig-param">thisFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.datestr_convert_0" title="Permalink to this definition">¶</a></dt>
+<dd><p>DATESTR_CONVERT_0 Convert datenum to datestr with keeping 0 to empty string, instead of ‘00000100’
+.. rubric:: Example</p>
+<p>[thisStr] = datestr_convert_0(thisDatenum)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>thisDatenum: float</dt><dd><p>matlab datenum.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>thisStr: char array</dt><dd><p>date string corresponding to the input matlab datenum.</p>
+</dd>
+<dt>thisFormat: char array</dt><dd><p>date string format with being compatible with datestr format.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-05-15. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.depol_cali">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">depol_cali</code><span class="sig-paren">(</span><em class="sig-param">signal_t</em>, <em class="sig-param">bg_t</em>, <em class="sig-param">signal_x</em>, <em class="sig-param">bg_x</em>, <em class="sig-param">time</em>, <em class="sig-param">depol_cali_pAng_time_start</em>, <em class="sig-param">depol_cali_pAng_time_end</em>, <em class="sig-param">depol_cali_nAng_time_start</em>, <em class="sig-param">depol_cali_nAng_time_end</em>, <em class="sig-param">TR_t</em>, <em class="sig-param">TR_x</em>, <em class="sig-param">caliHIndxRange</em>, <em class="sig-param">SNRmin</em>, <em class="sig-param">sigMax</em>, <em class="sig-param">rel_std_dplus</em>, <em class="sig-param">rel_std_dminus</em>, <em class="sig-param">segmentLen</em>, <em class="sig-param">smoothWin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.depol_cali" title="Permalink to this definition">¶</a></dt>
+<dd><p>DEPOL_CALI depolarization calibration for PollyXT lidar system.
+.. rubric:: Example</p>
+<dl>
+<dt>[depol_cal_fac, depol_cal_fac_std, depol_cal_time] = depol_cali(signal_t,</dt><dd><p>bg_t, signal_x, bg_x, time, depol_cali_pAng_time_start,
+depol_cali_pAng_time_end, depol_cali_nAng_time_start,
+depol_cali_nAng_time_end, TR_t, TR_x, caliHIndxRange,
+SNRmin, sigMax, rel_std_dplus, rel_std_dminus,
+segmentLen, smoothWin, flagShowResults)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signal_t: matrix</dt><dd><p>background-removed photon count signal at total channel.
+(nBins * nProfiles)</p>
+</dd>
+<dt>bg_t: matrix</dt><dd><p>background at total channel. (nBins * nProfiles)</p>
+</dd>
+<dt>signal_x: matrix</dt><dd><p>background-removed photon count signal at cross channel.
+(nBins * nProfiles)</p>
+</dd>
+<dt>bg_x: matrix</dt><dd><p>background at cross channel. (nBins * nProfiles)</p>
+</dd>
+<dt>time: array</dt><dd><p>datenum array represents the measurement time of each profile.</p>
+</dd>
+<dt>depol_cali_pAng_time_start: array</dt><dd><p>datenum array represents the start time that the polarizer
+rotates to the positive angle.</p>
+</dd>
+<dt>depol_cali_pAng_time_end: array</dt><dd><p>datenum array represents the stop time that the polarizer
+rotates to the positive angle.</p>
+</dd>
+<dt>depol_cali_nAng_time_start array</dt><dd><p>datenum array represents the start time that the polarizer
+rotates to the negative angle.</p>
+</dd>
+<dt>depol_cali_nAng_time_end: array</dt><dd><p>datenum array represents the end time that the polarizer
+rotates to the negative angle.</p>
+</dd>
+<dt>TR_t: float</dt><dd><p>tranmission at total channel.</p>
+</dd>
+<dt>TR_x: float</dt><dd><p>transmision at cross channel.</p>
+</dd>
+<dt>caliHIndxRange: 2-element array</dt><dd><p>range of height indexes at which the signal can be used for
+depolarization calibration.</p>
+</dd>
+<dt>SNRmin: array</dt><dd><p>minimum SNR for calibration.</p>
+</dd>
+<dt>sigMax: array</dt><dd><p>maximum signal that could be used in the calibration to prevent
+pulse pileup effects. (Photon Count)</p>
+</dd>
+<dt>rel_std_dplus: float</dt><dd><p>maximum relative std of dplus that is allowed.</p>
+</dd>
+<dt>rel_std_dplus: float</dt><dd><p>maximum relative std of dminus that is allowed.</p>
+</dd>
+<dt>segmentLen: integer</dt><dd><p>segement length for testing the variability of the calibration results
+to prevent of cloud contamintaion.</p>
+</dd>
+<dt>smoothWin: integer</dt><dd><p>width of the sliding window for smoothing the signal.</p>
+</dd>
+<dt>flagShowResults: logical</dt><dd><p>flag to control whether to save the intermediate results.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>depol_cal_fac: array</dt><dd><p>depolarization calibration factor.</p>
+</dd>
+<dt>depol_cal_fac_std: array</dt><dd><p>std of depolarization calibration factor.</p>
+</dd>
+<dt>depol_cal_start_time: array</dt><dd><p>start time for each successful calibration.</p>
+</dd>
+<dt>depol_cal_stop_time: array</dt><dd><p>stop time for each successful calibration.</p>
+</dd>
+<dt>globalAttri: struct</dt><dd><p>all the information about the depol calibration.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-07-25. First edition by Zhenping.
+2019-06-08. If no depol cali, return empty array.
+2019-09-06. Remove the part to replace the bins of low SNR with NaN,</p>
+<blockquote>
+<div><p>because it will lead to bias when doing smoothing.</p>
+</div></blockquote>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.diaryon">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">diaryon</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.diaryon" title="Permalink to this definition">¶</a></dt>
+<dd><p>DIARYON Activate the diary function.
+.. rubric:: Example</p>
+<p>diaryon(file)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>log file.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-28. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.display_labview_results">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">display_labview_results</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">yLim</em>, <em class="sig-param">errorbarInterval</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.display_labview_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>DISPLAY_LABVIEW_RESULTS display thelabview retrieving results.
+.. rubric:: Example</p>
+<p>[fig] = display_labview_results(file, yLim, errorbarInterval)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>the absolute path of the file which contains the data from LabView program.</p>
+</dd>
+<dt>yLim: array [2 elements]</dt><dd><p>height range for the figure. [km]</p>
+</dd>
+<dt>errorbarInterval: integer</dt><dd><p>interval for each error bar.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>fig: handle</dt><dd><p>handle of the figure.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-02-18. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.download_aeronet_list">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">download_aeronet_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.download_aeronet_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>DOWNLOAD_AERONET_LIST Download global aeronet site list.
+.. rubric:: Example</p>
+<p>[flag] = download_aeronet_list()</p>
+<p>Inputs:
+Outputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>flag: logical</dt><dd><p>return status of the function.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-12-22. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.download_radiosonde_list">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">download_radiosonde_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.download_radiosonde_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>DOWNLOAD_RADIOSONDE_LIST Download global radiosonde site list.
+.. rubric:: Example</p>
+<p>[flag] = download_radiosonde_list()</p>
+<p>Inputs:
+Outputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>flag: logical</dt><dd><p>return status of the function.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-12-22. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.extract_cali_results">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">extract_cali_results</code><span class="sig-paren">(</span><em class="sig-param">dbFile</em>, <em class="sig-param">csvFilepath</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.extract_cali_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>extract_cali_results extract calibration results from SQLite database to ASCII files.
+.. rubric:: Example</p>
+<p>% Usecase 1: convert single table
+extract_cali_results(‘/path/to/dbFile’, ‘/path/to/csvFile’, …</p>
+<blockquote>
+<div><p>‘tablename’, ‘lidar_calibration_constant’);</p>
+</div></blockquote>
+<p>% Usecase 2: convert all tables
+extract_cali_results(‘/path/to/dbFile’, ‘/path/to/csvFile’);</p>
+<p>% Usecase 3: add prefix for csv files
+extract_cali_results(‘/path/to/dbFile’, ‘/path/to/csvFile’, …</p>
+<blockquote>
+<div><p>‘prefix’, ‘<a href="#id7"><span class="problematic" id="id8">arielle_</span></a>’);</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>dbFile: char</dt><dd><p>absolute path of database file.</p>
+</dd>
+<dt>csvFilepath: char</dt><dd><p>output folder for the csv file.</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>tablename: char</dt><dd><p>table name that needs to be extracted (regular expression is supported).
+(defaults: ‘.*’)</p>
+</dd>
+<dt>prefix: char</dt><dd><p>prefix for the ASCII filename.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>csvFilenames: cell</dt><dd><p>absolute path for extracted ASCII files.</p>
+</dd>
+<dt>csvFileID: cell</dt><dd><p>identifier (table name) for respective csv file.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-20. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.extract_datetime_from_labviewfile">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">extract_datetime_from_labviewfile</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.extract_datetime_from_labviewfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXTRACT_DATETIME_FROM_LABVIEWFILE Get the start time, end time and smoothing
+window from the <a href="#id1"><span class="problematic" id="id2">*</span></a>info file, output by the LabView program.
+.. rubric:: Example</p>
+<p>[startTime, endTime, smoothWin] = extract_datetime_from_labviewfile(file)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>absolute path of the labview <a href="#id3"><span class="problematic" id="id4">*</span></a>info file.
+‘/Users/Desktop/Athina_test-20190311_243 AM-338 AM-75smooth.txt’</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>startTime: datenum</dt><dd><p>the start for the retrieving.</p>
+</dd>
+<dt>endTime: datenum</dt><dd><p>the end time for the retrieving.</p>
+</dd>
+<dt>smoothWin: integer</dt><dd><p>the width of the applied smoothing window.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-01-28. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.fillmissing">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">fillmissing</code><span class="sig-paren">(</span><em class="sig-param">xIn</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.fillmissing" title="Permalink to this definition">¶</a></dt>
+<dd><p>FILLMISSING fill the missing values in input array.
+.. rubric:: Example</p>
+<p>[xOut] = fillmissing(xIn, varargin)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>xIn: array or matrix</dt><dd><p>input array which could contain some values that you want to
+replace.</p>
+</dd>
+<dt>varargin: cell</dt><dd><p>leave it blank for updating.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>xOut: array or matrix</dt><dd><p>after the missing values were filled.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-31. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.gdas1FileTimestamp">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">gdas1FileTimestamp</code><span class="sig-paren">(</span><em class="sig-param">gdas1File</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.gdas1FileTimestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>GDAS1FILETIMESTAMP extract the timestamp from the gdas1File name.
+.. rubric:: Example</p>
+<p>[datetime] = gdas1FileTimestamp(gdas1File)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>gdas1File: char</dt><dd><p>gdas1 data file.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>datetime: float</dt><dd><p>datenum.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-01-04. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.getsysinfo">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">getsysinfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.getsysinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>GETSYSINFO get the system information.
+.. rubric:: Example</p>
+<p>[username, userpath, platform] = getsysinfo()</p>
+<p>Inputs:
+Outputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>username: char</dt><dd><p>current user of the OS.</p>
+</dd>
+<dt>userpath: char</dt><dd><p>home directory of the current user.</p>
+</dd>
+<dt>platform: char</dt><dd><p>current running OS.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-12-16. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.interp_AERONET_AOD">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">interp_AERONET_AOD</code><span class="sig-paren">(</span><em class="sig-param">wl1</em>, <em class="sig-param">AOD1</em>, <em class="sig-param">wl2</em>, <em class="sig-param">AOD2</em>, <em class="sig-param">wlOut</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.interp_AERONET_AOD" title="Permalink to this definition">¶</a></dt>
+<dd><p>INTERP_AERONET_AOD interp the AERONET AOD with the angstroem law.
+.. rubric:: Example</p>
+<p>[AODOut] = interp_AERONET_AOD(wl1, AOD1, wl2, AOD2, wlOut)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>wl1: float</dt><dd><p>wavelength 1. [nm]</p>
+</dd>
+<dt>AOD1: float</dt><dd><p>AOD at wavelength 1.</p>
+</dd>
+<dt>wl2: float</dt><dd><p>wavelength 2. [nm]</p>
+</dd>
+<dt>AOD2: float</dt><dd><p>AOD at wavelength 2.</p>
+</dd>
+<dt>wlOut: float</dt><dd><p>query wavelength. [nm]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>AODOut: float</dt><dd><p>the interpolated AOD at hte input wavelength ‘wvOut’</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.interp_meteor">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">interp_meteor</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">xOut</em>, <em class="sig-param">method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.interp_meteor" title="Permalink to this definition">¶</a></dt>
+<dd><p>INTERP_METEOR interp the meteorological parameters which could contain a lot
+of NaNs.
+.. rubric:: Example</p>
+<p>[yOut] = interp_meteor(x, y, xOut)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>x: array</dt><dd><p>sample points</p>
+</dd>
+<dt>y: array</dt><dd><p>sample values</p>
+</dd>
+<dt>xOut: array</dt><dd><p>query points.</p>
+</dd>
+<dt>method: char</dt><dd><p>interpolation method. (‘linear’, ‘cubic’, ‘nearest’)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>yOut: array</dt><dd><p>query values.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.is_nc_variable">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">is_nc_variable</code><span class="sig-paren">(</span><em class="sig-param">ncFile</em>, <em class="sig-param">varName</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.is_nc_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>IS_NC_VARIABLE test the ncFile whether contains the variable with name of
+varName.
+.. rubric:: Example</p>
+<p>[flag] = is_nc_variable(ncFile, varName)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>ncFile: char</dt><dd><p>the path for the input netcdf file.</p>
+</dd>
+<dt>varName: char</dt><dd><p>the variable name you want to search.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical</dt><dd><p>if flag is true, it means the varName was contained in the ncFile.
+Vice versa.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-10. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.listdir">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">listdir</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">exppat</em>, <em class="sig-param">depth</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.listdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>LISTDIR list all the valid directory in path.
+Usage:</p>
+<blockquote>
+<div><p>a = listdir(‘~/Desktop’);</p>
+</div></blockquote>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>path: char</dt><dd><p>the path for searching.</p>
+</dd>
+<dt>exppat: [optional]</dt><dd><p>expression pattern for the search.</p>
+</dd>
+<dt>depth: [optional]</dt><dd><p>recursive searching depth.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>dirs: cell array</dt><dd><p>the searched items.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-05-18. First edition by Zhenping.
+2018-09-14. Add the depth parameter for supporting recursive searching.
+2018-11-11. Remove the searched . and .. folder. Rearrange the search</p>
+<blockquote>
+<div><p>logic</p>
+</div></blockquote>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.listfile">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">listfile</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">exppat</em>, <em class="sig-param">depth</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.listfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>LISTFILE list all the qualified files in path.
+Usage:</p>
+<blockquote>
+<div><p>a = listfile(‘~/Desktop’, ‘<a href="#id5"><span class="problematic" id="id6">*</span></a>.m’);</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>path: char</dt><dd><p>the path for searching.</p>
+</dd>
+<dt>exppat: [optional]</dt><dd><p>expression pattern for the searching.</p>
+</dd>
+<dt>depth: [optional]</dt><dd><p>recursive searching depth</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>files: cell array</dt><dd><p>the searched items.</p>
+</dd>
+<dt>filesize: cell array</dt><dd><p>the size the searched items. [bytes]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-07-25. First edition by Zhenping.
+2018-09-14. Add recursive searching depth.
+2019-09-03. Add the output of filesize</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.loadConfigPrivate">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">loadConfigPrivate</code><span class="sig-paren">(</span><em class="sig-param">configFile</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.loadConfigPrivate" title="Permalink to this definition">¶</a></dt>
+<dd><p>loadConfigPrivate load key-value paired configuration file, and convert it into matlab struct.
+.. rubric:: Example</p>
+<p>[thisConfig] = loadConfigPrivate(configFile)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>configFile: char</dt><dd><p>absolute path the configuration file. This file should only contain the key=value pair and with comments start with ‘#’.
+e.g.,
+# This is an example
+user=”Zhenping”
+password=’123’</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>thisConfig: struct</dt><dd><p>this struct contains all the valid key-value pairs in the configuration file. The comments will be filtered and any line start with whitespace will be filtered as well.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-09-02. Source code comes from the answer in matlab forum under the link [<a class="reference external" href="https://de.mathworks.com/matlabcentral/answers/16494-periodically-updated-static-text-and-reading-from-key-value-file">https://de.mathworks.com/matlabcentral/answers/16494-periodically-updated-static-text-and-reading-from-key-value-file</a>]. Great thanks to the author Meric Ozturk.
+2019-09-02. Modified by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.load_depolconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">load_depolconst</code><span class="sig-paren">(</span><em class="sig-param">queryTime</em>, <em class="sig-param">dbFile</em>, <em class="sig-param">pollyType</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.load_depolconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>load_depolconst load depolarization calibration constant from database.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[depolconst, depolconstStd, caliStartTime, caliStopTime] =</dt><dd><p>load_depolconst(queryTime, dbFile, pollyType, wavelength)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>queryTime: datenum</dt><dd><p>query time.</p>
+</dd>
+<dt>dbFile: char</dt><dd><p>absolute path of the SQLite database.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly name. (case-sensitive)</p>
+</dd>
+<dt>wavelength: char</dt><dd><p>wavelength (‘355’ or ‘532’).</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>deltaTime: datenum</dt><dd><p>search range for the query time. (default: NaN)</p>
+</dd>
+<dt>flagClosest: logical</dt><dd><p>flag to control whether to return the closest value only.
+(default: false)
+(default: false)</p>
+</dd>
+<dt>flagBeforeQuery: logical</dt><dd><p>flag to control whether to return records with calibration time before
+queryTime. (default: false)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>depolconst: array</dt><dd><p>depolarization calibration constant.</p>
+</dd>
+<dt>depolconstStd: array</dt><dd><p>uncertainty of depolarization calibration constant.</p>
+</dd>
+<dt>caliStartTime: array</dt><dd><p>calibration start time for each record.</p>
+</dd>
+<dt>caliStopTime: array</dt><dd><p>calibration stop time for each record.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-17. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.load_liconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">load_liconst</code><span class="sig-paren">(</span><em class="sig-param">queryTime</em>, <em class="sig-param">dbFile</em>, <em class="sig-param">pollyType</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">caliMethod</em>, <em class="sig-param">telescope</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.load_liconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>load_liconst load lidar calibration constant from database.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[liconst, liconstStd, caliStartTime, caliStopTime] =</dt><dd><p>load_liconst(queryTime, dbFile, pollyType, wavelength, caliMethod)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>queryTime: datenum</dt><dd><p>query time.</p>
+</dd>
+<dt>dbFile: char</dt><dd><p>absolute path of the SQLite database.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly name. (case-sensitive)</p>
+</dd>
+<dt>wavelength: char</dt><dd><p>wavelength (‘355’, ‘532’, ‘1064’, ‘387’ or ‘607’).</p>
+</dd>
+<dt>caliMethod: char</dt><dd><p>calibration method (‘Klett_Method’, ‘Raman_Method’, ‘AOD_Constrained_Method’)</p>
+</dd>
+<dt>telescope: char</dt><dd><p>detection range. (‘far_range’, or ‘near_range’)</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>deltaTime: datenum</dt><dd><p>search range for the query time. (default: NaN)</p>
+</dd>
+<dt>flagClosest: logical</dt><dd><p>flag to control whether to return the closest value only.
+(default: false)
+(default: false)</p>
+</dd>
+<dt>flagBeforeQuery: logical</dt><dd><p>flag to control whether to return records with calibration time before
+queryTime. (default: false)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>liconst: array</dt><dd><p>lidar calibration constant.</p>
+</dd>
+<dt>liconstStd: array</dt><dd><p>uncertainty of lidar calibration constant.</p>
+</dd>
+<dt>caliStartTime: array</dt><dd><p>calibration start time for each record.</p>
+</dd>
+<dt>caliStopTime: array</dt><dd><p>calibration stop time for each record.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-17. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.load_polly_config">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">load_polly_config</code><span class="sig-paren">(</span><em class="sig-param">configFile</em>, <em class="sig-param">configDir</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.load_polly_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>LOAD_POLLY_CONFIG load the polly configurations for processing the polly data.
+.. rubric:: Example</p>
+<p>[pollyConfig] = load_polly_config(configFile, configDir)</p>
+<dl>
+<dt>Inputs:</dt><dd><p>configFile: char
+configDir: char</p>
+<blockquote>
+<div><p>the directory for saving the polly configuration files.</p>
+</div></blockquote>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>pollyConfig: struct</dt><dd><p>polly configurations. Details can be found in doc/polly_config.md</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-16. First edition by Zhenping
+2019-08-01. Remove the conversion of depol cali time.</p>
+<blockquote>
+<div><p>(Don’t need to set the depol cali time any more)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>2019-08-03. Add global polly config for unify the defaults polly</dt><dd><p>settings.</p>
+</dd>
+</dl>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.load_wvconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">load_wvconst</code><span class="sig-paren">(</span><em class="sig-param">queryTime</em>, <em class="sig-param">dbFile</em>, <em class="sig-param">pollyType</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.load_wvconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>load_wvconst load water vapor calibration constant from database.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[wvconst, wvconstStd, caliStartTime, caliStopTime, caliInstrument,</dt><dd><p>instrumentMeasTime] = load_wvconst(queryTime, dbFile, pollyType)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>queryTime: datenum</dt><dd><p>query time.</p>
+</dd>
+<dt>dbFile: char</dt><dd><p>absolute path of the SQLite database.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly name. (case-sensitive)</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>deltaTime: datenum</dt><dd><p>search range for the query time. (default: NaN)</p>
+</dd>
+<dt>flagClosest: logical</dt><dd><p>flag to control whether to return the closest value only.
+(default: false)</p>
+</dd>
+<dt>flagBeforeQuery: logical</dt><dd><p>flag to control whether to return records with calibration time before
+queryTime. (default: false)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>wvconst: array</dt><dd><p>water vapor calibration constant. (g*kg^{-1})</p>
+</dd>
+<dt>wvconstStd: array</dt><dd><p>uncertainty of water vapor calibration constant. (g*kg^{-1})</p>
+</dd>
+<dt>caliStartTime: array</dt><dd><p>calibration start time for each record.</p>
+</dd>
+<dt>caliStopTime: array</dt><dd><p>calibration stop time for each record.</p>
+</dd>
+<dt>caliInstrument: cell</dt><dd><p>intrument used in the water vapor calibration for each record.</p>
+</dd>
+<dt>instrumentMeasTime: array</dt><dd><p>timestamp for the data measured by the standard instrument.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-17. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.locatenewfiles_newdb">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">locatenewfiles_newdb</code><span class="sig-paren">(</span><em class="sig-param">pollyAppConfigFile</em>, <em class="sig-param">picassoConfigFile</em>, <em class="sig-param">pollyDataBaseDir</em>, <em class="sig-param">minDataSize</em>, <em class="sig-param">tSearchStart</em>, <em class="sig-param">tSearchRange</em>, <em class="sig-param">flagCheckGDAS1</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.locatenewfiles_newdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>locatenewfiles_newdb Search the updated polly data in the server with comparing
+its file size with the file size saved in the database. And also checked the
+GDAS1 status together if ‘flagCheckGDAS1’ was set true. The modified zipped
+files will be extracted to the todopath and the fileinfo_new file will be
+created to trigger the Picasso.
+.. rubric:: Example</p>
+<p>[flag] = locatenewfiles_newdb(pollyAppConfigFile, picassoConfigFile, …</p>
+<blockquote>
+<div><p>pollyDataBaseDir, minDataSize, tSearchStart, tSearchRange, flagCheckGDAS1)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>pollyAppConfigFile: char</dt><dd><p>filename of the pollyAPP private configuration file.
+e.g., ‘~/pollyAPP/config/config.private’</p>
+</dd>
+<dt>picassoConfigFile: char</dt><dd><p>filename of the picasso global configuration file.
+e.g., ‘~/Pollynet_Processing_Chain/config/pollynet_processing_chain_config.json’</p>
+</dd>
+<dt>pollyDataBaseDir: char</dt><dd><p>root directory for holding polly data
+e.g., ‘/pollyhome’</p>
+</dd>
+<dt>minDataSize: integer</dt><dd><p>minumum size of the polly data to trigger the processing. [bytes]</p>
+</dd>
+<dt>tSearchStart: datenum</dt><dd><p>start time for searching the polly data file.</p>
+</dd>
+<dt>tSearchRange: datenum</dt><dd><p>search range for searching the polly data file before the tSearchStart.</p>
+</dd>
+<dt>flagCheckGDAS1: logical</dt><dd><p>flag to control whether to reprocess the data when GDAS1 files were ready.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical</dt><dd><p>status for the whole process.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-09-02. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.logical2str">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">logical2str</code><span class="sig-paren">(</span><em class="sig-param">logicalIn</em>, <em class="sig-param">replaceString</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.logical2str" title="Permalink to this definition">¶</a></dt>
+<dd><p>LOGICAL2STR convert the logical array to cell array with replace the 0/1
+to true/false or yes/no.
+.. rubric:: Example</p>
+<p>[strOut] = logical2str(logicalIn, replaceString)</p>
+<dl>
+<dt>Inputs:</dt><dd><p>logicalIn: logical
+replaceString: char</p>
+<blockquote>
+<div><p>If set ‘yes’, the true will be replaced with yes. Otherwise,
+true will be replaced with true.</p>
+</div></blockquote>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>strOut: cell</dt><dd><p>char array for each logical element</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.mean_stable">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">mean_stable</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">win</em>, <em class="sig-param">minBin</em>, <em class="sig-param">maxBin</em>, <em class="sig-param">minRelStd</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.mean_stable" title="Permalink to this definition">¶</a></dt>
+<dd><p>MEAN_STABLE calculate the mean value of x based on the least fluctuated
+segment of x. The searching is based on the std inside each window of x.
+.. rubric:: Example</p>
+<p>[xStable, xIndx, xRelStd] = mean_stable(x, win)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>x: array</dt><dd><p>signal</p>
+</dd>
+<dt>win: scalar</dt><dd><p>window width for calculate the relative std</p>
+</dd>
+<dt>minBin: integer</dt><dd><p>the start bin for the mean calculation</p>
+</dd>
+<dt>maxBin: integer</dt><dd><p>the end bin for the mean calculation</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>xStable: float</dt><dd><p>stable mean value.</p>
+</dd>
+<dt>xIndx: array</dt><dd><p>index of the elements to be used to calculate the mean value.</p>
+</dd>
+<dt>xRelStd: float</dt><dd><p>relative uncertainty of the sequences to calculate the mean values.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-08-21. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.movingLinfit_variedWin">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">movingLinfit_variedWin</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">signal</em>, <em class="sig-param">measure_error</em>, <em class="sig-param">win</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.movingLinfit_variedWin" title="Permalink to this definition">¶</a></dt>
+<dd><p>MOVINGLINFIT_VARIEDWIN estimate the slope with chi-2 fitting model.
+The width of the window can be either fixed or height dependent.
+.. rubric:: Example</p>
+<p>[slope] = movingLinfit_variedWin(height, signal, measure_error, win)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>the height array for each bin.</p>
+</dd>
+<dt>signal: array</dt><dd><p>signal for each bin.</p>
+</dd>
+<dt>measure_error: array</dt><dd><p>measurement error for each bin.</p>
+</dd>
+<dt>win: integer or matrix</dt><dd><p>If win is a integer, the width of the smoothing window will be
+fixed. Or you can set it to be [[bottom1, top1, width1],
+[bottom2, top2, width2], …], the widths then can be specified
+for each segement.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>slope: array</dt><dd><p>slope at each given point.</p>
+</dd>
+<dt>slopestd: array</dt><dd><p>standard deviation of the slope at each given point.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-09. Finish the documentation.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.movingslope_variedWin">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">movingslope_variedWin</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">winWidth</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.movingslope_variedWin" title="Permalink to this definition">¶</a></dt>
+<dd><p>MOVINGSLOPE_VARIEDWIN calculate the slope of the signal with movingslope
+function. This is a wrapper for the movingslope function to make the
+movingslope function can be compatible to height independent smoothing window.
+.. rubric:: Example</p>
+<p>[slope] = movingslope_variedWin(signal, winWidth)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signal: array</dt><dd><p>signal for each bin.</p>
+</dd>
+<dt>winWidth: integer or matrix</dt><dd><p>if winWidth is a integer, the width of the window will be fixed.
+But if winWidth is set to be a k*3 matrix, the width of the window
+will be height dependent, like [[1, 20, 3], [18, 30, 5],
+[25, 40, 7]], which means the width of the window will be 3 between
+10 and 20, 5 between 18 and 30 and 7 between 25 and 40.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>slope: array</dt><dd><p>slope at each bin.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-08-03. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.movingsmooth_variedWin">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">movingsmooth_variedWin</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">winWidth</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.movingsmooth_variedWin" title="Permalink to this definition">¶</a></dt>
+<dd><p>MOVINGSMOOTH_VARIEDWIN calculate the derivative with sliding smooth function.
+.. rubric:: Example</p>
+<p>[slope] = movingsmooth_variedWin(signal, winWidth)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signal: array</dt><dd><p>signal for each bin.</p>
+</dd>
+<dt>winWidth: integer or matrix</dt><dd><p>if winWidth is a integer, the width of the window will be fixed.
+But if winWidth is set to be a k*3 matrix, the width of the window
+will be height dependent, like [[1, 20, 3], [18, 30, 5],
+[25, 40, 7]], which means the width of the window will be 3 between
+10 and 20, 5 between 18 and 30 and 7 between 25 and 40.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>slope: array</dt><dd><p>slope for each bin.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-08-07. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.multiscatter">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">multiscatter</code><span class="sig-paren">(</span><em class="sig-param">option</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.multiscatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>MULTISCATTER  perform multiple scatter modeling for lidar system. This
+program is just a simple wrapper for the c programs from Hogan R. The original
+programs of the model can be downloaded at <a class="reference external" href="http://www.met.rdg.ac.uk/clouds/multiscatter/">http://www.met.rdg.ac.uk/clouds/multiscatter/</a>.
+Version 1.2.10 is required for the base of the wrapper function.
+Usage 1:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>data = multiscatter(‘Userdefined’, filename);   % User defined cloud</dt><dd><p>% parameter file is used. The format of the input file can be
+% referred to the examples in /multiscatter-1.2.10/examples</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>option: char</dt><dd><p>To control the ability of the function.
+(‘monodispersed’ or ‘Userdefined’)</p>
+</dd>
+<dt>filename: char</dt><dd><p>the full path of the input file.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage 2:</dt><dd><dl>
+<dt>data = multiscatter(‘monodispersed’, range, cloudBase, …</dt><dd><p>cloudExt, cloudRadius, cloudLR, lambda, fov, …
+divergence, altitude);   % monodispersed cloud parameters</p>
+<blockquote>
+<div><p>% were assumed.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>option: char</dt><dd><p>To control the ability of the function.
+(‘monodispersed’ or ‘Userdefined’)</p>
+</dd>
+<dt>range: array</dt><dd><p>range of gate above the ground starting with the nearest gate to
+instrument. [m]</p>
+</dd>
+<dt>cloudBase: float</dt><dd><p>height of the cloud base. Default is 1000. [m]</p>
+</dd>
+<dt>cloudExt: float</dt><dd><p>mean extinction coefficient of the cloud layer.
+Default is 0.01. [m^{-1}]</p>
+</dd>
+<dt>cloudRadius: float</dt><dd><p>effective mean radius of the cloud droplets. Default is 5. [microns]</p>
+</dd>
+<dt>cloudLR: float</dt><dd><p>cloud mean lidar ratio. Default is 18.8. [Sr]</p>
+</dd>
+<dt>lambda: float</dt><dd><p>the wavelength of the transmitting laser. Default is 532. [nm]</p>
+</dd>
+<dt>fov: float</dt><dd><p>receiver field-of-view, 1/e half-width. Default is 0.5. [mrad]</p>
+</dd>
+<dt>divergence: float</dt><dd><p>transmitter divergence, 1/e half-width. Default is 0.1. [mrad]</p>
+</dd>
+<dt>altitude: float</dt><dd><p>altitude of the instrument. Default is 0. [m]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>data: struct</dt><dd><dl class="simple">
+<dt>range: array</dt><dd><p>apparent range above the ground. [m]</p>
+</dd>
+<dt>cloudExt: array</dt><dd><p>cloud extintion coefficient. [m^{-1}]</p>
+</dd>
+<dt>cloudRadius: array</dt><dd><p>cloud effective mean radius. [microns]</p>
+</dd>
+<dt>att_total: array</dt><dd><p>total attenuated backscatter. [m^{-1}*Sr^{-1}]</p>
+</dd>
+<dt>att_single: array</dt><dd><p>attenuated backscatter with single backscattering.
+[m^{-1}*Sr^{-1}]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-04-12. First edition by Zhenping.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.multiscatter_model">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">multiscatter_model</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.multiscatter_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>MULTISCATTER_MODEL running the mulple scattering model to calculate the
+multiple scattering factor. Detailed information you can find in
+‘../lib/multiscatter.m’
+Inputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>filename: char</dt><dd><p>the absolute path for the lidar configuration file. You can find
+an detailed information about the format and the multiple
+scattering model [here](<a class="reference external" href="http://www.met.reading.ac.uk/clouds/multiscatter/">http://www.met.reading.ac.uk/clouds/multiscatter/</a>)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>data: struct</dt><dd><dl class="simple">
+<dt>range: array</dt><dd><p>apparent range above the ground. [m]</p>
+</dd>
+<dt>cloudExt: array</dt><dd><p>cloud extintion coefficient. [m^{-1}]</p>
+</dd>
+<dt>cloudRadius: array</dt><dd><p>cloud effective mean radius. [microns]</p>
+</dd>
+<dt>att_total: array</dt><dd><p>total attenuated backscatter. [m^{-1}*Sr^{-1}]</p>
+</dd>
+<dt>att_single: array</dt><dd><p>attenuated backscatter with single backscattering.
+[m^{-1}*Sr^{-1}]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you’ve compiled the multiple scattering model and added it to
+the searching path before you run the function.</p>
+</div>
+<dl class="simple">
+<dt>History:</dt><dd><p>2019-08-14. Add comments by Zhenping Yin</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.parentFolder">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">parentFolder</code><span class="sig-paren">(</span><em class="sig-param">folder</em>, <em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.parentFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>PARENTFOLDER return the parent folder.
+.. rubric:: Example</p>
+<p>[parentFolder] = parentFolder(folder, level)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl>
+<dt>folder: char</dt><dd><p>folder name.</p>
+</dd>
+<dt>level: integer</dt><dd><p>parent level.
+e.g., 1 stands for the direct parent of the folder.</p>
+<blockquote>
+<div><p>2 stands for second parent of the folder.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>parentFolder: char</dt><dd><p>parent folder.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-08-22. First edition by Zhenping
+2018-08-28. Support for unix platform</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.pollynet_process_history_data">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">pollynet_process_history_data</code><span class="sig-paren">(</span><em class="sig-param">pollyType</em>, <em class="sig-param">startTime</em>, <em class="sig-param">endTime</em>, <em class="sig-param">saveFolder</em>, <em class="sig-param">pollynetConfigFile</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pollynet_process_history_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>POLLYNET_PROCESS_HISTORY_DATA process hitorical pollyType data by Pollynet
+Processing program
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[] = pollynet_process_history_data(pollyType, startTime, endTime,</dt><dd><p>saveFolder, pollynetConfigFile)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>pollyType: char</dt><dd><p>set the instrument type”
+- pollyxt_lacros”
+- pollyxt_tropos”
+- pollyxt_noa”
+- pollyxt_fmi”
+- pollyxt_uw”
+- pollyxt_dwd”
+- pollyxt_tjk”
+- arielle”
+- polly_1v2”</p>
+</dd>
+<dt>startTime: char</dt><dd><p>start date with format of ‘yyyymmdd’</p>
+</dd>
+<dt>endTime: char</dt><dd><p>end date with format of ‘yyyymmdd’</p>
+</dd>
+<dt>saveFolder: char</dt><dd><p>polly data folder.
+e.g., /oceanethome/pollyxt</p>
+</dd>
+<dt>pollynetConfigFile: char</dt><dd><p>the absolute path of the pollynet configuration file.
+e.g., ‘/config/pollynet_processing_chain_config.json’</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Outputs:
+History:</p>
+<blockquote>
+<div><p>2019-01-24. First Edition by Zhenping
+2019-08-12. Enable use different pollynet configuration file.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.quasi_retrieving">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">quasi_retrieving</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">att_beta</em>, <em class="sig-param">molExt</em>, <em class="sig-param">molBsc</em>, <em class="sig-param">LRaer</em>, <em class="sig-param">nIters</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.quasi_retrieving" title="Permalink to this definition">¶</a></dt>
+<dd><p>QUASI_RETRIEVING Retrieve the aerosol optical properties with quasi retrieving
+method
+.. rubric:: Example</p>
+<dl>
+<dt>[quasi_par_bsc, quasi_par_ext] = quasi_retrieving(height, att_beta,</dt><dd><p>molExt, molBsc, LRaer)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl>
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>att_beta: matrix</dt><dd><p>attenuated backscatter. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molExt: matrix</dt><dd><p>molecule extinction coefficient. [m^{-1}]</p>
+</dd>
+<dt>molBsc: matrix</dt><dd><blockquote>
+<div><p>molecule backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>LRaer: float</dt><dd><p>aerosol lidar ratio. [Sr]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>quasi_par_bsc: matrix</dt><dd><p>quasi particle backscatter coefficient. [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>quasi_par_ext: matrix</dt><dd><p>quasi particle extinction coefficient. [m^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt><dd><p>Baars, H., P. Seifert, R. Engelmann, and U. Wandinger (2017), Target
+categorization of aerosol and clouds by continuous
+multiwavelength-polarization lidar measurements, Atmospheric Measurement
+Techniques, 10(9), 3175-3201, doi:10.5194/amt-10-3175-2017.</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-25. First Edition by Zhenping
+2019-03-31. Add the keywork of ‘nIters’ to control the iteration times.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.quasi_retrieving_V2">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">quasi_retrieving_V2</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">att_beta_el</em>, <em class="sig-param">att_beta_ra</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">molExtEl</em>, <em class="sig-param">molBscEl</em>, <em class="sig-param">molExtRa</em>, <em class="sig-param">AE</em>, <em class="sig-param">LR</em>, <em class="sig-param">nIters</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.quasi_retrieving_V2" title="Permalink to this definition">¶</a></dt>
+<dd><p>QUASI_RETRIEVING_V2 Retrieve the aerosol optical properties with quasi
+retrieving method (V2). This method was improved from the quasi-retrieving
+method, which also takes use of the Raman signal. Detailed information please
+refer to ‘../doc/quasi_retrieving_V2.pdf’
+.. rubric:: Example</p>
+<p>[quasi_par_bsc, quasi_par_ext] = quasi_retrieving_V2(height,
+att_beta_el, att_beta_ra, wavelength, molExtEl, molBscEl, molExtRa, AE,
+LR, nIters)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>att_beta_el: matrix</dt><dd><p>attenuated backscatter at elastic wavelength. [m^{-1}sr^{-1}]</p>
+</dd>
+<dt>att_beta_ra: matrix</dt><dd><p>attenuated backscatter at corresponding Raman backscatter
+wavelength. [m^{-1}sr^{-1}]</p>
+</dd>
+<dt>wavelength: integer</dt><dd><p>the wavelength of the elastic backscatter to guide to choose the
+suitable Raman wavelength. [nm]</p>
+</dd>
+<dt>molExtEl: matrix</dt><dd><p>molecule extinction coefficient at the Elastic wavelength. [m^{-1}]</p>
+</dd>
+<dt>molBscEl: matrix</dt><dd><p>molecule backscatter coefficient at the Elastic wavelength.
+[m^{-1}sr^{-1}]</p>
+</dd>
+<dt>molExtRa: matrix</dt><dd><p>molecule extinction coefficient at the Raman backscatter wavelength.
+[m^{-1}]</p>
+</dd>
+<dt>AE: float</dt><dd><p>Extinction related Angstroem exponent.</p>
+</dd>
+<dt>LR: float</dt><dd><p>aerosol lidar ratio. [sr]</p>
+</dd>
+<dt>nIters: integer</dt><dd><p>number of iterations to converge the retrieving results.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>quasi_par_bsc: matrix</dt><dd><p>quasi particle backscatter coefficient. [m^{-1}sr^{-1}]</p>
+</dd>
+<dt>quasi_par_ext: matrix</dt><dd><p>quasi particle extinction coefficient. [m^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-03. First Edition by Zhenping. Inspired by Holger Baars.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.radiosonde_search">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">radiosonde_search</code><span class="sig-paren">(</span><em class="sig-param">sondeFolder</em>, <em class="sig-param">measurementTime</em>, <em class="sig-param">fileType</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.radiosonde_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>RADIOSONDE_SEARCH Search the most close radiosonde data with given time.
+.. rubric:: Example</p>
+<p>[sondeFile] = radiosonde_search(sondeFolder, measurementTime)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>sondeFolder: str</dt><dd><p>the folder of the sonding files.</p>
+</dd>
+<dt>measurementTime: datenum</dt><dd><p>the measurement time, which used for searching the closest sonding
+file.</p>
+</dd>
+<dt>fileType: integer</dt><dd><p>file type of the radiosonde file.
+- 1: radiosonde file for MOSAiC (default)
+- 2: radiosonde file for MUA</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>sondeFile: str</dt><dd><p>the filename of the searched sonding file. If no file was found, an
+empty string will be returned.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-07-19. First Edition by Zhenping
+2019-12-18. Add <cite>fileType</cite> to specify the type of the radiosonde file.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.rayleighfit">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">rayleighfit</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">sig_aer</em>, <em class="sig-param">pc</em>, <em class="sig-param">bg</em>, <em class="sig-param">sig_mol</em>, <em class="sig-param">dpIndx</em>, <em class="sig-param">layerThickConstrain</em>, <em class="sig-param">slopeConstrain</em>, <em class="sig-param">SNRConstrain</em>, <em class="sig-param">flagShowDetail</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.rayleighfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>RAYLEIGHFIT search the clean region with rayleigh fit algorithm.
+Usage:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>[ hBIndx, hTIndx ] = rayleighfit(height, sig_aer, sig_mol, dpIndx,</dt><dd><p>layerThickConstrain, pureRayleighConstrain, SNRConstrain,
+flagShowDetail)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height. [m]</p>
+</dd>
+<dt>sig_aer: array</dt><dd><p>range corrected signal.</p>
+</dd>
+<dt>pc: array</dt><dd><p>photon count signal.</p>
+</dd>
+<dt>bg: array</dt><dd><p>background.</p>
+</dd>
+<dt>sig_mol: array</dt><dd><p>range corrected molecular signal.</p>
+</dd>
+<dt>dpIndx: array</dt><dd><p>index of the region which is calculated by Douglas-Peucker algorithm.</p>
+</dd>
+<dt>layerThickConstrain: float</dt><dd><p>constrain for the reference layer thickness. [m]</p>
+</dd>
+<dt>pureRayleighConstrain: float</dt><dd><p>constrain for the uncertainty of the regressed extinction
+coefficient in the reference height.
+(see test 3 in Baars et al, ACP, 2016)</p>
+</dd>
+<dt>SNRConstrain: float</dt><dd><p>minimum SNR for the signal at the reference height.</p>
+</dd>
+<dt>flagShowDetail: boolean</dt><dd><p>if flagShowDetail is true, the calculation information will be
+printed. Default is false.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>hBIndx: int</dt><dd><p>index of the bottom of the searched region. If the region is not
+found, NaN will be returned.</p>
+</dd>
+<dt>hTIndx: int</dt><dd><p>index of the top of the searched region. If the region is not found,
+NaN will be returned.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>Baars, H., et al. (2016). “An overview of the first decade of Polly NET:
+an emerging network of automated Raman-polarization lidars for
+continuous aerosol profiling.” Atmospheric Chemistry and Physics 16(8):
+5111-5137.</p>
+<dl>
+<dt>History:</dt><dd><blockquote>
+<div><p>2018-01-01. First edition by Zhenping.
+2018-07-05. Add the SNR constrain for the reference height.
+2019-01-01. change the single array to double to avoid overflow in</p>
+<blockquote>
+<div><p>chi2fit.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>2019-05-26. Strengthen the criteria for Near-Far Range test.</dt><dd><p>Old: (meanSig_aer + deltaSig_aer) &gt;= meanSig_mol
+New: (meanSig_aer + deltaSig_aer/3) &gt;= meanSig_mol</p>
+</dd>
+<dt>2019-08-03. Using the SNR for the final determination. The higher SNR of</dt><dd><p>the reference, the better.</p>
+</dd>
+</dl>
+<p>2019-09-15. Fix the bug in slope criteria.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_AERONET">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_AERONET</code><span class="sig-paren">(</span><em class="sig-param">site</em>, <em class="sig-param">mdate</em>, <em class="sig-param">level</em>, <em class="sig-param">flagFilterNegAOD</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_AERONET" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_AERONET This function determines the Aerosol Optical Depth (AOD) from a
+collocated photometer. Available AOD values for a specified day are returned.
+Data is downloaded for the specified location from Aeronet website:
+<a class="reference external" href="http://aeronet.gsfc.nasa.gov/new_web/aerosols.html">http://aeronet.gsfc.nasa.gov/new_web/aerosols.html</a>
+The function accesses the appropriate aeronet website first. This way
+the website is triggered to create a compressed file with the requested
+data. This file is accessed and unzipped into a temporary file. The
+temporary file is then read and finally deleted. AOD values and
+corresponding time along with the link to the aeronet website are
+returned.
+.. rubric:: Example</p>
+<p>[measTime, AOD, wavelength, IWV, angstrexp440_870, AERONETAttri] =
+read_AERONET(site, date, level)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>site: char</dt><dd><p>AERONET site. You can find the nearest site by referring to
+doc/AERONET-station-list.txt</p>
+</dd>
+<dt>mdate: integer or two-element array</dt><dd><p>the measurement day or [startDate, endDate]. [datenum]</p>
+</dd>
+<dt>level: char</dt><dd><p>product level. (‘10’, ‘15’, ‘20’)</p>
+</dd>
+<dt>flagFilterNegAOD: logical</dt><dd><p>flag to control whether to filter out the negative AOD values.
+(default: true)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>measTime: array</dt><dd><p>time of each measurment point.</p>
+</dd>
+<dt>AOD_{wavelength}: array</dt><dd><p>AOD at wavelength.</p>
+</dd>
+<dt>wavelength: array</dt><dd><p>wavelength of each channel. [nm]</p>
+</dd>
+<dt>IWV: array</dt><dd><p>Integrated Water Vapor. [kg * m^{-2}]</p>
+</dd>
+<dt>angstrexp440_870: array</dt><dd><p>angstroem exponent 440-870 nm</p>
+</dd>
+<dt>AERONETAttri: struct</dt><dd><dl class="simple">
+<dt>URL: char</dt><dd><p>URL to retrieve the data.</p>
+</dd>
+<dt>level: char</dt><dd><p>product level. (‘10’, ‘15’, ‘20’)</p>
+</dd>
+<dt>status: logical</dt><dd><p>status to show whether retrieve the data successfully.</p>
+</dd>
+<dt>IWVUnit: char</dt><dd><p>unit of integrated water vapor. [kg * m^{-2}]</p>
+</dd>
+<dt>location: char</dt><dd><p>AERONET site</p>
+</dd>
+<dt>PI: char</dt><dd><p>PI of the current AERONET site.</p>
+</dd>
+<dt>contact: char</dt><dd><p>email of the PI.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt><dd><p>ceilo_bsc_readAeronetPhotometerAOD_wget.m</p>
+</dd>
+<dt>History:</dt><dd><p>2017-12-19. First edition by Zhenping.
+2018-06-22. Add ‘TreatAsEmpty’ keyword to textscan function to filter</p>
+<blockquote>
+<div><p>N/A field in AERONET data.</p>
+</div></blockquote>
+<p>2018-12-23. Second Edition by Zhenping
+2019-02-06. Add ‘flagFilterNegAOD’ to keyword to enable filtering out</p>
+<blockquote>
+<div><p>negative AOD values.</p>
+</div></blockquote>
+<p>2019-09-01. Enable download the AERONET data between two dates.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_MWR_IWV">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_MWR_IWV</code><span class="sig-paren">(</span><em class="sig-param">files</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_MWR_IWV" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_MWR_IWV read the integrated water vapor from the microwave radiometer
+outputs.
+.. rubric:: Example</p>
+<p>[tIWV, IWV, IWVErr] = read_MWR_IWV(tIWV, IWV, IWVErr Inputs)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>files: char | cell</dt><dd><p>absolute paths of the netcdf files for saving the IWV results from
+HATPRO. Generally, you can find the data in our rsd server.
+Detailed information you can contact with Patric Seifert.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl>
+<dt>IWV: array</dt><dd><p>intergrated water vapor. [kg*m^{-2}]</p>
+</dd>
+<dt>tIWV: array</dt><dd><p>time for each bin. [datenum]</p>
+</dd>
+<dt>IWVErr: float</dt><dd><p>standar deviation of IWV. [kg*m^{-2}]</p>
+</dd>
+<dt>IWVAttri: struct</dt><dd><p>institution: char
+contact: char
+source: char</p>
+<blockquote>
+<div><p>data source or instrument.</p>
+</div></blockquote>
+<p>site: char</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-01-03. First Edition by Zhenping
+2019-12-02. Add support for reading multiple files.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_default_overlap">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_default_overlap</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_default_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_DEFAULT_OVERLAP Read the overlap function from file.
+.. rubric:: Example</p>
+<p>[height, overlap] = read_default_overlap(file)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>overlap file. The format of this file can be referred to
+doc/polly_defaults.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>height: array</dt><dd><p>height for each range bin. [m]</p>
+</dd>
+<dt>overlap: array</dt><dd><p>overlap function.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-21. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_fileinfo_new">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_fileinfo_new</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_fileinfo_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_FILEINFO_NEW read the new file info for activating the target
+classification processing
+.. rubric:: Example</p>
+<p>[fileinfo_new] = read_fileinfo_new(file)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>filename of the fileinfo_new which locates in todo_filelist</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>fileinfo_new: struct</dt><dd><dl class="simple">
+<dt>todoPath: cell</dt><dd><p>path of the todo_filelist</p>
+</dd>
+<dt>dataPath: cell</dt><dd><p>directory to the respective polly lidar data</p>
+</dd>
+<dt>dataFilename: cell</dt><dd><p>filename of the polly data</p>
+</dd>
+<dt>zipFile: cell</dt><dd><p>filename of the zipped polly data</p>
+</dd>
+<dt>dataSize: array</dt><dd><p>file size of the zipped polly data</p>
+</dd>
+<dt>pollyVersion: cell</dt><dd><p>polly lidar label. e.g., ‘POLLYXT_TROPOS’</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-15. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_gdas1">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_gdas1</code><span class="sig-paren">(</span><em class="sig-param">tRange</em>, <em class="sig-param">gdas1site</em>, <em class="sig-param">folder</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_gdas1" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_GDAS1 read the gdas1 file
+.. rubric:: Example</p>
+<p>[alt, temp, pres, relh] = read_gdas1(tRange, gdas1site, folder)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>tRange: 2-element array</dt><dd><p>search range.</p>
+</dd>
+<dt>gdas1site: char</dt><dd><p>the location for gdas1. Our server will automatically produce the
+gdas1 products for all our pollynet location. You can find it in
+/lacroshome/cloudnet/data/model/gdas1</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>alt: array</dt><dd><p>altitute for each range bin. [m]</p>
+</dd>
+<dt>temp: array</dt><dd><p>temperature for each range bin. If no valid data, NaN will be
+filled. [C]</p>
+</dd>
+<dt>pres: array</dt><dd><p>pressure for each range bin. If no valid data, NaN will be filled.
+[hPa]</p>
+</dd>
+<dt>rh: array</dt><dd><p>relative humidity for each range bin. If no valid data, NaN will be
+filled. [%]</p>
+</dd>
+<dt>gdas1file: char</dt><dd><p>filename of gdas1 file.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-22. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_logbook">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_logbook</code><span class="sig-paren">(</span><em class="sig-param">logbookFile</em>, <em class="sig-param">nChannel</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_logbook" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_LOGBOOK read the logbook information from logbookFile. The format of
+logbookFile can be found in /doc/logbook.md
+.. rubric:: Example</p>
+<p>[logbook] = read_logbook(logbookFile)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>logbookFile: char</dt><dd><p>filename of the logbook file.</p>
+</dd>
+<dt>nChannel: int32</dt><dd><p>number of all the channels.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>logbook: struct</dt><dd><dl class="simple">
+<dt>datetime: array</dt><dd><p>datetime for applying the changes.</p>
+</dd>
+<dt>changes: struct</dt><dd><p>flagOverlap: logical
+flagWindowwipe: logical
+flagFlashlamps: logical
+flagPulsepower: logical
+flagRestart: logical</p>
+</dd>
+<dt>flag_CH_NDChange: logical matrix (IDs * nChannel)</dt><dd><p>logical to show whether there is ND filter changes in certain
+channels.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-02-08. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_meteor_data">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_meteor_data</code><span class="sig-paren">(</span><em class="sig-param">measTime</em>, <em class="sig-param">altitude</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_meteor_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_METEOR_DATA Read the meteorological data according the input
+meteorological data type.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[alt, temp, pres, relh, attri] = read_meteor_data(measTime, altitude, …</dt><dd><p>varargin)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>measTime: datenum</dt><dd><p>the measurement time.</p>
+</dd>
+<dt>altitude: array</dt><dd><p>height above the mean sea level. [m]</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>meteorDataSource: str</dt><dd><p>meteorological data type.
+e.g., ‘gdas1’(default), ‘standard_atmosphere’, ‘websonde’, ‘radiosonde’</p>
+</dd>
+<dt>gdas1Site: str</dt><dd><p>the GDAS1 site for the current campaign.</p>
+</dd>
+<dt>gdas1_folder: str</dt><dd><p>the main folder of the GDAS1 profiles.</p>
+</dd>
+<dt>radiosondeSitenum: integer</dt><dd><p>site number, which can be found in
+doc/radiosonde-station-list.txt.</p>
+</dd>
+<dt>radiosondeFolder: str</dt><dd><p>the folder of the sonding files.</p>
+</dd>
+<dt>radiosondeType: integer</dt><dd><p>file type of the radiosonde file.
+- 1: radiosonde file for MOSAiC (default)
+- 2: radiosonde file for MUA</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>alt: array</dt><dd><p>height above the mean sea surface. [m]</p>
+</dd>
+<dt>temp: array</dt><dd><p>temperature for each range bin. [C]</p>
+</dd>
+<dt>pres: array</dt><dd><p>pressure for each range bin. [hPa]</p>
+</dd>
+<dt>relh: array</dt><dd><p>relative humidity for each range bin. [%]</p>
+</dd>
+<dt>attri: struct</dt><dd><dl class="simple">
+<dt>dataSource: cell</dt><dd><p>meteorological data used in the data processing for each
+cloud-free group.</p>
+</dd>
+<dt>URL: cell</dt><dd><p>data file info for each cloud-free group.</p>
+</dd>
+<dt>datetime: array</dt><dd><p>datetime label for the meteorlogical data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-07-20. First Edition by Zhenping
+2020-04-16. rewrite the function interface</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_pollynet_history">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_pollynet_history</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_pollynet_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_POLLYNET_HISTORY read the pollynet history file for activating the
+target classification processing
+.. rubric:: Example</p>
+<p>[campaignHistory] = read_pollynet_history(file)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>filename of pollynet history of places, which was located in
+the todo_filelist. The <cite>lat</cite> and <cite>lon</cite> were reversed in the file.
+Take care.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>campaignHistory: struct</dt><dd><dl class="simple">
+<dt>name: cell</dt><dd><p>polly type.</p>
+</dd>
+<dt>location: cell</dt><dd><p>location of the campaign.</p>
+</dd>
+<dt>startTime: array (datenum)</dt><dd><p>start time of the campaign.</p>
+</dd>
+<dt>endTime: array (datenum)</dt><dd><p>stop time of the campaign.</p>
+</dd>
+<dt>lon: array (double)</dt><dd><p>longitude of the campaign (degree).</p>
+</dd>
+<dt>lat: array (double)</dt><dd><p>latitude of the campaign (degree).</p>
+</dd>
+<dt>asl: array (double)</dt><dd><p>height of the campaign (above sea level) (m).</p>
+</dd>
+<dt>depolConst: array (double)</dt><dd><p>predefined depolarization calibration constant.</p>
+</dd>
+<dt>molDepol: array (double)</dt><dd><p>predefined molecular depolarization ratio.</p>
+</dd>
+<dt>caption: cell</dt><dd><p>caption for the campaign.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-15. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_pollynet_processing_configs">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_pollynet_processing_configs</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_pollynet_processing_configs" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_POLLYNET_PROCESSING_CONFIGS read pollynet history configuration file.
+.. rubric:: Example</p>
+<p>[pollyConfigHistory] = read_pollynet_processing_configs(file)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>pollynet processing configurature files. This file is used to guide
+the processing chain to search for the suitable config file and
+processing function to processing the polly data. More detailed
+information can be found in doc/pollynet.md</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>pollyConfigHistory: struct</dt><dd><p>pollyVersion: cell
+startTime: array (datenum)
+endTime: array (datenum)
+pollyConfigFile: cell
+pollyProcessFunc: cell
+pollyUpdateInfo: cell
+pollyDefaultsFile: cell</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-17. First edition by Zhenping
+2018-12-18. Add pollyDefaultsFile category.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_processed_data">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_processed_data</code><span class="sig-paren">(</span><em class="sig-param">instrument</em>, <em class="sig-param">parameter</em>, <em class="sig-param">hRange</em>, <em class="sig-param">tRange</em>, <em class="sig-param">resFolder</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_processed_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_PROCESSED_DATA read the processed data from pollynet processing program
+in the given range.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[time, height, res] = read_processed_data(instrument, parameter,</dt><dd><p>tRange, resFolder)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>instrument: str</dt><dd><dl class="simple">
+<dt>polly instrument. {‘pollyxt_lacros’, ‘pollyxt_noa’,</dt><dd><p>‘pollyxt_tropos’, ‘pollyxt_fmi’, ‘arielle’}</p>
+</dd>
+</dl>
+</dd>
+<dt>parameter: str</dt><dd><p>the label of the parameter which you want to extract.
+data
+LC_aeronet_1064nm
+LC_aeronet_355nm
+LC_aeronet_532nm
+LC_klett_1064nm
+LC_klett_355nm
+LC_klett_532nm
+LC_raman_1064nm
+LC_raman_355nm
+LC_raman_532nm
+attenuated_backscatter_1064nm
+attenuated_backscatter_355nm
+attenuated_backscatter_532nm
+target_classification
+target_classification_V2
+volume_depolarization_ratio_355nm
+volume_depolarization_ratio_532nm</p>
+</dd>
+<dt>hRange: 2-element array</dt><dd><p>vertical range. [km]</p>
+</dd>
+<dt>tRange: 2-element array (datenum)</dt><dd><p>start time and end time of the extraction.</p>
+</dd>
+<dt>resFolder: str</dt><dd><p>the folder of saving the processign results.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><p>time, height, res</p>
+</dd>
+<dt>History:</dt><dd><p>2019-04-10. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_radiosonde">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_radiosonde</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">fileType</em>, <em class="sig-param">missingValue</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_radiosonde" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_RADIOSONDE read the radiosonde data from netCDF file.
+.. rubric:: Example</p>
+<p>[alt, temp, pres, relh, datetime] = read_radiosonde(file, fileType)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: str</dt><dd><p>filename of radiosonde data file.</p>
+</dd>
+<dt>fileType: integer</dt><dd><p>file type of the radiosonde file.
+- 1: radiosonde file for MOSAiC (default)
+- 2: radiosonde file for MUA</p>
+</dd>
+<dt>missingValue: double</dt><dd><p>missing value for filling the empty bins. These values need to be
+replaced with NaN to be compatible with the processing program.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>alt: array</dt><dd><p>altitute for each range bin. [m]</p>
+</dd>
+<dt>temp: array</dt><dd><p>temperature for each range bin. If no valid data, NaN will be
+filled. [C]</p>
+</dd>
+<dt>pres: array</dt><dd><p>pressure for each range bin. If no valid data, NaN will be filled.
+[hPa]</p>
+</dd>
+<dt>rh: array</dt><dd><p>relative humidity for each range bin. If no valid data, NaN will be
+filled. [%]</p>
+</dd>
+<dt>datetime: datenum</dt><dd><p>datetime for the radiosonde data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The radiosonde file should be in netCDF and must contain the variable of
+‘altitude’, ‘temperature’, ‘pressure’ and ‘RH’. Below is the description
+of each variable. (detailed information please see example in
+‘..exampleconvert_radiosonde_data')</p>
+<blockquote>
+<div><dl class="simple">
+<dt>variables:</dt><dd><dl class="simple">
+<dt>double altitude(altitude=6728);</dt><dd><p>:unit = “m”;
+:long_name = “Height of lidar above mean sea level”;
+:standard_name = “altitude”;
+:axis = “Z”;</p>
+</dd>
+<dt>double pressure(altitude=6728);</dt><dd><p>:unit = “hPa”;
+:long_name = “air pressure”;
+:standard_name = “pressure”;
+:_FillValue = -999.0; // double</p>
+</dd>
+<dt>double temperature(altitude=6728);</dt><dd><p>:unit = “degree celsius”;
+:long_name = “air temperature”;
+:standard_name = “temperature”;
+:_FillValue = -999.0; // double</p>
+</dd>
+<dt>double RH(altitude=6728);</dt><dd><p>:unit = “%”;
+:long_name = “relative humidity”;
+:standard_name = “RH”;
+:_FillValue = -999.0; // double</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<dl>
+<dt>History:</dt><dd><dl class="simple">
+<dt>2019-07-19. First Edition by Zhenping</dt><dd><p>2019-07-28. Add the criteria for empty file.</p>
+</dd>
+</dl>
+<p>2019-12-18. Add <cite>fileType</cite> to specify the type of the radiosonde file.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_results_from_Holger">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_results_from_Holger</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_results_from_Holger" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_RESULTS_FROM_HOLGER read the retrieving results from the Labview Program.
+.. rubric:: Example</p>
+<p>[data] = read_results_from_Holger(file)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>filename of the output file by the Labview Program.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>data: matrix</dt><dd><p>1: Height(km)
+2: Beta355 (Mm^-1 sr^-1)
+3: error beta355 (Mm^-1 sr^-1)
+4: Beta532 (Mm^-1 sr^-1)
+5: error beta532 (Mm^-1 sr^-1)
+6: Beta1064 (Mm^-1 sr^-1)
+7: error beta1064 (Mm^-1 sr^-1)
+8: alpha355 (Mm^-1 sr^-1)
+9: error alpha355 (Mm^-1)
+10: alpha532 (Mm^-1 sr^-1)
+11: error alpha532 (Mm^-1)
+12: S355 (sr^-1)
+13: errorS355
+14: S532 (sr^-1)
+15: error S532
+16: Angstrom ext
+17: error Angstrom ext
+18: Angstrom b355/532
+19: error Angstrom b355/532
+20: Angstrom b532/1064
+21: error Angstrom b532/1064
+22: voldepol höhe
+23: vol.depol 532
+24: error vol.depol
+25: partdepolhöhe
+26: part. depol 532
+27: error part. depol
+28: sounding height (km)
+29: Temperature (K)
+30: Pressure (Pa)
+31: voltdepol height
+32: vol. depol 355
+33: error
+34: partdepol height
+35: part. depol 355
+36: error
+37: Mixing ratio height (km)
+38: Water vapour mixing ratio (g/kg)
+39: Height NF (km)
+40: Beta532 NF (Mm^-1 sr^-1)
+41: error beta532 NF (Mm^-1 sr^-1)
+42: alpha 532 NF (Mm^-1 sr^-1)
+43: error alpha532 NF (Mm^-1)
+44: Spar 532 NF (sr)
+45: error Spar532 NF (sr)
+46: Height HSRL (km)
+47: BetaHSRL (Mm^-1 sr^-1)
+48: error betaHSRL (Mm^-1 sr^-1)
+49: alpha HSRL (Mm^-1 sr^-1)
+50: error alphaHSRL (Mm^-1)
+51: Spar HSRL (sr)
+52: error Spar HSRL (sr)
+53: vol. depol 1064
+54: error
+55: part. depol 1064
+56: error
+57: water_vapour_error
+58: Sounding height
+59: water_vapor_mix_sonde
+60: Height NF 355 (km)
+61: Beta355 NF (Mm^-1 sr^-1)
+62: error beta355 NF (Mm^-1 sr^-1)
+63: alpha 355 NF (Mm^-1 sr^-1)
+64: error alpha355 NF (Mm^-1)
+65: Spar 355 NF (sr)
+66: error Spar 355 NF (sr)
+67: BetaMOL 355 (m^-1 sr^-1)
+68: BetaMOL 532 (m^-1 sr^-1)
+69: BetaMOL 1064 (m^-1 sr^-1)
+70: Ang b355/532 NF
+71: Error Ang b355/532 NF
+72: Ang Ext NF
+73: Error Ang Ext NF</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-06-27. First edition by Zhenping.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.read_websonde">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">read_websonde</code><span class="sig-paren">(</span><em class="sig-param">measTime</em>, <em class="sig-param">tRange</em>, <em class="sig-param">sitenum</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.read_websonde" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_WEBSONDE search the closest radionsde based on the ui in
+<a class="reference external" href="http://weather.uwyo.edu/upperair/sounding.html">http://weather.uwyo.edu/upperair/sounding.html</a>. And read the data.
+.. rubric:: Example</p>
+<p>[alt, temp, pres, rh, globalAttri] = read_websonde(measTime, tRange,
+sitenum)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>measTime: float</dt><dd><p>polly measurement time. [datenum]</p>
+</dd>
+<dt>tRange: 2-element array</dt><dd><p>search range for the online radiosonde. [current whole day]</p>
+</dd>
+<dt>sitenum: integer</dt><dd><p>site number, which can be found in doc/radiosonde-station-list.txt.
+You can update the list with using download_radiosonde_list.m</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>alt: array</dt><dd><p>altitute for each range bin. [m]</p>
+</dd>
+<dt>temp: array</dt><dd><p>temperature for each range bin. If no valid data, NaN will be
+filled. [C]</p>
+</dd>
+<dt>pres: array</dt><dd><p>pressure for each range bin. If no valid data, NaN will be filled.
+[hPa]</p>
+</dd>
+<dt>rh: array</dt><dd><p>relative humidity for each range bin. If no valid data, NaN will be
+filled. [%]</p>
+</dd>
+<dt>globalAttri: struct</dt><dd><p>URL: URL which can be used to retrieve the current returned values.
+datetime: measurement time for current used sonde. [datenum]
+sitenum: site number for current used sonde.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-22. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.regexp_token">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">regexp_token</code><span class="sig-paren">(</span><em class="sig-param">thisStr</em>, <em class="sig-param">pattern</em>, <em class="sig-param">defaults</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.regexp_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>REGEXP_TOKEN regexp with the input pattern. If not found, return defaults. (Use
+only 1 output token in the ‘pattern’)
+.. rubric:: Example</p>
+<p>[item] = regexp_token(thisStr, pattern, defaults)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>thisStr: char</dt><dd><p>input char array.
+e.g., ‘a: 2; b: 3’</p>
+</dd>
+<dt>pattern: char</dt><dd><p>search patter. (Defailed information can be found in REGEXP)
+e.g., ‘(?&lt;=b: )d*’</p>
+</dd>
+<dt>defaults: char</dt><dd><p>default return for the searched patter.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>item: char</dt><dd><p>the searched pattern.
+e.g., ‘3’</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-08-04. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.repmat_molscatter">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">repmat_molscatter</code><span class="sig-paren">(</span><em class="sig-param">mTime</em>, <em class="sig-param">alt</em>, <em class="sig-param">meteorInfo</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.repmat_molscatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>REPMAT_MOLSCATTER Read GDAS1 meteorological data and calculate molecule optical
+properties, then repmat it to the lidar measurment grids.
+.. rubric:: Example</p>
+<p>[molBsc355, molExt355, molBsc532, molExt532, molBsc1064, molExt1064,
+globalAttri, molBsc387, molExt387, molBsc607, molExt607] =
+repmat_molscatter(mTime, alt, meteorInfo)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>mTime: array</dt><dd><p>datetime for each polly profile. [datenum]</p>
+</dd>
+<dt>alt: array</dt><dd><p>altitude (above the mean sea level). [m]</p>
+</dd>
+<dt>meteorInfo: struct</dt><dd><dl class="simple">
+<dt>meteorDataSource: str</dt><dd><p>meteorological data type.
+e.g., ‘gdas1’, ‘standard_atmosphere’, ‘websonde’, ‘radiosonde’</p>
+</dd>
+<dt>gdas1Site: str</dt><dd><p>the GDAS1 site for the current campaign.</p>
+</dd>
+<dt>gdas1_folder: str</dt><dd><p>the main folder of the GDAS1 profiles.</p>
+</dd>
+<dt>radiosondeSitenum: integer</dt><dd><p>site number, which can be found in
+doc/radiosonde-station-list.txt. You can update the list with
+using download_radiosonde_list.m</p>
+</dd>
+<dt>radiosondeFolder: str</dt><dd><p>the folder of the sonding files.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>molBsc355: matrix</dt><dd><p>molecule backscatter coefficient at 355 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molExt355: matrix</dt><dd><p>molecule extinction coefficient at 355 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molBsc532: matrix</dt><dd><p>molecule backscatter coefficient at 532 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molExt532: matrix</dt><dd><p>molecule extinction coefficient at 532 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molBsc1064: matrix</dt><dd><p>molecule backscatter coefficient at 1064 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molExt1064: matrix</dt><dd><p>molecule extinction coefficient at 1064 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>globalAttri: struct</dt><dd><dl class="simple">
+<dt>source: char</dt><dd><p>the source of meteorological data.</p>
+</dd>
+<dt>datetime: float</dt><dd><p>the time stamp for the meteorological data.</p>
+</dd>
+</dl>
+</dd>
+<dt>molBsc387: matrix</dt><dd><p>molecule backscatter coefficient at 387 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molExt387: matrix</dt><dd><p>molecule extinction coefficient at 387 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molBsc607: matrix</dt><dd><p>molecule backscatter coefficient at 607 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+<dt>molExt607: matrix</dt><dd><p>molecule extinction coefficient at 607 nm with a size of
+numel(alt)*numel(mTime). [m^{-1}Sr^{-1}]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-25. First Edition by Zhenping
+2019-08-03. Add the output of molecular backscatter and extinction at</p>
+<blockquote>
+<div><p>387 and 407 nm.</p>
+</div></blockquote>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.rho_air">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">rho_air</code><span class="sig-paren">(</span><em class="sig-param">pressure</em>, <em class="sig-param">temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.rho_air" title="Permalink to this definition">¶</a></dt>
+<dd><p>RHO_AIR calculate the air denstiry as a function of pressure and temperature
+.. rubric:: Example</p>
+<p>[rho] = rho_air(pressure, temperature)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>pressure: array</dt><dd><p>pressure. [hPa]</p>
+</dd>
+<dt>temperature: array</dt><dd><p>temperature. [K]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>rho: array</dt><dd><p>air density. [g*m^{-3}]</p>
+</dd>
+</dl>
+</dd>
+<dt>Reference:</dt><dd><p>Dai, G., et al. (2018). “Calibration of Raman lidar water vapor profiles
+by means of AERONET photometer observations and GDAS meteorological
+data.” Atmospheric Measurement Techniques 11(5): 2735-2748.</p>
+</dd>
+<dt>History:</dt><dd><p>2018-12-26. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.rmext">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">rmext</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.rmext" title="Permalink to this definition">¶</a></dt>
+<dd><p>RMEXT remove the file extension.
+.. rubric:: Example</p>
+<p>[filename] = rmext(file)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>file: char</dt><dd><p>file.
+e.g., ‘polly_data.txt’</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>filename: char</dt><dd><p>if there is no extension label, the ‘file’ will be treated to be no
+extension then it will be directly returned. Otherwise, the
+extension will be removed.
+e.g., ‘polly_data’</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-29. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.saturated_vapor_pres">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">saturated_vapor_pres</code><span class="sig-paren">(</span><em class="sig-param">temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.saturated_vapor_pres" title="Permalink to this definition">¶</a></dt>
+<dd><p>SATURATED_VAPOR_PRES calculate the saturated water vapor pressure.
+.. rubric:: Example</p>
+<p>[es] = saturated_vapor_pres(temperature)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>temperature: array</dt><dd><p>air temperature. [�C]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>es: array</dt><dd><p>saturated water vapor pressure. [hPa]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Arden_Buck_equation">https://en.wikipedia.org/wiki/Arden_Buck_equation</a></p>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-12-26. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.save_depolconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">save_depolconst</code><span class="sig-paren">(</span><em class="sig-param">dbFile</em>, <em class="sig-param">depolconst</em>, <em class="sig-param">depolconstStd</em>, <em class="sig-param">dcStartTime</em>, <em class="sig-param">dcStopTime</em>, <em class="sig-param">pollyDataFilename</em>, <em class="sig-param">pollyType</em>, <em class="sig-param">wavelength</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.save_depolconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>SAVE_DEPOLCONST save depolarization calibration results.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>save_depolconst(dbFile, depolconst, depolconstStd, dcStartTime,</dt><dd><p>dcStopTime, pollyDataFilename, pollyType, wavelength)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>dbFile: char</dt><dd><p>absolute path of the database.</p>
+</dd>
+<dt>depolconst: array</dt><dd><p>depolarization calibration constants.</p>
+</dd>
+<dt>depolconstStd: array</dt><dd><p>uncertainty of depolarization calibration constants.</p>
+</dd>
+<dt>dcStartTime: array</dt><dd><p>start time of each calibration period.</p>
+</dd>
+<dt>dcStopTime: array</dt><dd><p>stop time of each calibration period.</p>
+</dd>
+<dt>pollyDataFilename: char</dt><dd><p>the polly netcdf data file.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly type. (case-sensitive)</p>
+</dd>
+<dt>wavelength: char</dt><dd><p>wavelength. (‘355’ or ‘532’)</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-18. First edition.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.save_liconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">save_liconst</code><span class="sig-paren">(</span><em class="sig-param">dbFile</em>, <em class="sig-param">liconst</em>, <em class="sig-param">liconstStd</em>, <em class="sig-param">lcStartTime</em>, <em class="sig-param">lcStopTime</em>, <em class="sig-param">pollyDataFilename</em>, <em class="sig-param">pollyType</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">caliMethod</em>, <em class="sig-param">telescope</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.save_liconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>SAVE_LICONST save lidar calibration results.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>save_liconst(dbFile, liconst, liconstStd, lcStartTime,</dt><dd><p>lcStopTime, pollyDataFilename, pollyType, wavelength,
+caliMethod)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>dbFile: char</dt><dd><p>absolute path of the database.</p>
+</dd>
+<dt>liconst: array</dt><dd><p>lidar calibration constants.</p>
+</dd>
+<dt>liconstStd: array</dt><dd><p>uncertainty of lidar calibration constants.</p>
+</dd>
+<dt>lcStartTime: array</dt><dd><p>start time of each calibration period.</p>
+</dd>
+<dt>lcStopTime: array</dt><dd><p>stop time of each calibration period.</p>
+</dd>
+<dt>pollyDataFilename: char</dt><dd><p>the polly netcdf data file.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly type. (case-sensitive)</p>
+</dd>
+<dt>wavelength: char</dt><dd><p>wavelength. (‘355’, ‘532’, ‘1064’, ‘387’ or ‘607’)</p>
+</dd>
+<dt>caliMethod: char</dt><dd><p>applied lidar calibration method.
+(‘Klett_Method’, ‘Raman_Method’ or ‘AOD_Constrained_Method’)</p>
+</dd>
+<dt>telescope: char</dt><dd><p>detection range.
+(‘near_range’, or ‘far_range’)</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-18. First edition.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.save_wvconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">save_wvconst</code><span class="sig-paren">(</span><em class="sig-param">dbFile</em>, <em class="sig-param">wvconst</em>, <em class="sig-param">wvconstStd</em>, <em class="sig-param">WVCaliInfo</em>, <em class="sig-param">IWVAttri</em>, <em class="sig-param">pollyDataFilename</em>, <em class="sig-param">pollyType</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.save_wvconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>save_wvconst  save water vapor calibration results.
+.. rubric:: Example</p>
+<dl>
+<dt>save_wvconst(dbFile, wvconst, wvconstStd, WVCaliInfo, IWVAttri,</dt><dd><p>pollyDataFilename, pollyType)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl>
+<dt>dbFile: char</dt><dd><p>absolute path of the database.</p>
+</dd>
+<dt>wvconst: array</dt><dd><p>water vapor calibration constants. [g*kg^{-1}]</p>
+</dd>
+<dt>wvconstStd: array</dt><dd><p>uncertainty of water vapor calibration constants. [g*kg^{-1}]</p>
+</dd>
+<dt>WVCaliInfo: struct</dt><dd><dl class="simple">
+<dt>source: char</dt><dd><p>data source. (‘AERONET’, ‘MWR’ or else)</p>
+</dd>
+<dt>site: char</dt><dd><p>measurement site.</p>
+</dd>
+<dt>datetime: array</dt><dd><p>datetime of applied IWV.</p>
+</dd>
+</dl>
+<p>PI: char
+contact: char</p>
+</dd>
+<dt>IWVAttri: struct</dt><dd><dl class="simple">
+<dt>cali_start_time: array</dt><dd><p>water vapor calibration start time. [datenum]</p>
+</dd>
+<dt>cali_stop_time: array</dt><dd><p>water vapor calibration stop time. [datenum]</p>
+</dd>
+<dt>WVCaliInfo: cell</dt><dd><p>calibration information for each calibration period.</p>
+</dd>
+<dt>IntRange: matrix</dt><dd><p>index of integration range for calculate the raw IWV from lidar.</p>
+</dd>
+</dl>
+</dd>
+<dt>pollyDataFilename: char</dt><dd><p>the polly netcdf data file.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly type. (case-sensitive)</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-19. First Edition by Zhenping
+2019-02-12. Remove the bug for saving flagCalibration at some time with</p>
+<blockquote>
+<div><p>no calibration constants.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>2019-08-09. Saving the real applied water vapor constant instead of the</dt><dd><p>defaults. And remove the outputs of the function.</p>
+</dd>
+</dl>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.search_campaigninfo">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">search_campaigninfo</code><span class="sig-paren">(</span><em class="sig-param">task</em>, <em class="sig-param">pollynetHistory</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.search_campaigninfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>SEARCH_CAMPAIGNINFO search for the history information from pollynet_history_places_new.txt
+.. rubric:: Example</p>
+<p>[campaign_info] = search_campaigninfo(task, pollynetHistory)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>task: struct</dt><dd><p>todoPath: char
+dataPath: char
+dataFilename: char
+dataFullpath: char
+dataSize: integer
+pollyVersion: char
+dataTime: datenum</p>
+</dd>
+<dt>pollynetHistory: struct</dt><dd><p>name: cell
+location: cell
+startTime: array (datenum)
+endTime: array (datenum)
+lon: array (double)
+lat: array (double)
+asl: array (double)
+depolConst: array (double)
+molDepol: array (double)
+caption: cell</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>campaign_info: struct</dt><dd><p>name: char
+location: char
+startTime: datenum
+endTime: datenum
+lon: double
+lat: double
+asl: double
+depolConst: double
+molDepol: double
+caption: char</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-17. First edition by Zhenping
+2019-08-15. Change the function name</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.search_close_AERONET_AOD">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">search_close_AERONET_AOD</code><span class="sig-paren">(</span><em class="sig-param">lidarTime</em>, <em class="sig-param">AEROENTTime</em>, <em class="sig-param">minLag</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.search_close_AERONET_AOD" title="Permalink to this definition">¶</a></dt>
+<dd><p>SEARCH_CLOSE_AERONET_AOD search the closest AOD measurement index.
+.. rubric:: Example</p>
+<p>[indx] = search_close_AERONET_AOD(lidarTime, AEROENTTime, minLag)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>lidarTime: datenum</dt><dd><p>lidar measurement time.</p>
+</dd>
+<dt>AEROENTTime: array</dt><dd><p>measurement time for each AERONET points.</p>
+</dd>
+<dt>minLag: datenum</dt><dd><p>minimum lag.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>indx: integer</dt><dd><p>index of the closest AERONET measurement point. If no required point
+was found, an empty array will be returned.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-23. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.search_polly_file">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">search_polly_file</code><span class="sig-paren">(</span><em class="sig-param">pollyFolder</em>, <em class="sig-param">thisTime</em>, <em class="sig-param">timeLapse</em>, <em class="sig-param">flagLatest</em>, <em class="sig-param">flagModifiedTime</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.search_polly_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>SEARCH_POLLY_FILE Search the most recent polly measurement data.
+.. rubric:: Example</p>
+<p>[filePath] = search_polly_file(pollyFolder, thisTime, timeLapse)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>pollyFolder: char</dt><dd><p>the polly folder.
+e.g., ‘C:UserszhenpingDocumentsDataPollyXTarielle’.
+Don’t include the ‘data_zip’</p>
+</dd>
+<dt>thisTime: datenum</dt><dd><p>the base time you want to search.</p>
+</dd>
+<dt>timeLapse: float</dt><dd><p>the search range of the base time. [datenum]</p>
+</dd>
+<dt>flagLatest: logical</dt><dd><p>whether to take the latest file only. (Defaults: false)</p>
+</dd>
+<dt>flagModifiedTime: logical</dt><dd><p>whether to search file based on its modified time. (Defaults: true)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>filePath: cell</dt><dd><p>the absolute path of the found polly data files.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-07-22. First Edition by Zhenping
+2019-08-07. Enable the output of multiple filepaths.
+2019-08-09. Add the variable to control the output of the latest polly</p>
+<blockquote>
+<div><p>data file.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>2019-09-02. Add the flag to search the recent files based on the</dt><dd><p>modiefied time.</p>
+</dd>
+</dl>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.select_depolconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">select_depolconst</code><span class="sig-paren">(</span><em class="sig-param">depolconst</em>, <em class="sig-param">depolconstStd</em>, <em class="sig-param">depolCaliStartTime</em>, <em class="sig-param">depolCaliStopTime</em>, <em class="sig-param">queryTime</em>, <em class="sig-param">dbFile</em>, <em class="sig-param">pollyType</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.select_depolconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>SELECT_DEPOLCONST select most suitable depol calibration constant.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[dcUsed, dcUsedStd, dcUsedStartTime, dcUsedStopTime] =</dt><dd><dl class="simple">
+<dt>select_depolconst(depolconst, depolconstStd, depolCaliTime,</dt><dd><p>queryTime, dbFile, pollyType, wavelength)</p>
+</dd>
+</dl>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>depolconst: array</dt><dd><p>depolarization calibration constant.</p>
+</dd>
+<dt>depolconstStd: array</dt><dd><p>uncertainty of depolarization calibration constant.</p>
+</dd>
+<dt>depolCaliStartTime: array</dt><dd><p>start time for each depolarization calibration period. (datenum)</p>
+</dd>
+<dt>depolCaliStopTime: array</dt><dd><p>stop time for each depolarization calibration period. (datenum)</p>
+</dd>
+<dt>queryTime: datenum</dt><dd><p>query time for searching the depolarization calibration constant.</p>
+</dd>
+<dt>dbFile: char</dt><dd><p>full path of the depol calibration file.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly type. (case-sensitive)</p>
+</dd>
+<dt>wavelength: char</dt><dd><p>wavelength (‘355’ or ‘532’)</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>flagUsePrevDepolConst: logical</dt><dd><p>flag to control whether to search for depolarization calibration
+constants from the database.</p>
+</dd>
+<dt>flagDepolCali: logical</dt><dd><p>flag to control whether to use depolarization calibration constants.</p>
+</dd>
+<dt>deltaTime: datenum</dt><dd><p>maximum time lapse between query time and calibration time of old
+calibration results.</p>
+</dd>
+<dt>default_depolconst: double</dt><dd><p>default depolarization calibration constant, which will be used if no
+suitable calibration results were found.</p>
+</dd>
+<dt>default_depolconstStd: double</dt><dd><p>uncertainty of default depolarization calibration constant.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>dcUsed: double</dt><dd><p>depolarization calibration constants.</p>
+</dd>
+<dt>dcUsedStd: double</dt><dd><p>uncertainty of depolarization calibration constants.</p>
+</dd>
+<dt>dcUsedStartTime: double</dt><dd><p>depolarization calibration start time.
+(0 was set if there was no successful depolarization calibration.)</p>
+</dd>
+<dt>dcUsedStopTime: double</dt><dd><p>depolarization calibration stop time.
+(0 was set if there was no successful depolarization calibration.)</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-02-26. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.select_liconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">select_liconst</code><span class="sig-paren">(</span><em class="sig-param">liconst</em>, <em class="sig-param">liconstStd</em>, <em class="sig-param">caliStartTime</em>, <em class="sig-param">caliStopTime</em>, <em class="sig-param">queryTime</em>, <em class="sig-param">dbFile</em>, <em class="sig-param">pollyType</em>, <em class="sig-param">wavelength</em>, <em class="sig-param">telescope</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.select_liconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>select_liconst select the most suitable lidar constant.
+.. rubric:: Example</p>
+<dl class="simple">
+<dt>[lcUsed, lcUsedStd, lcUsedTag, lcUsedWarning] = select_liconst(liconst,</dt><dd><p>liconstStd, caliStartTime, caliStopTime, queryTime, dbFile, pollyType,
+wavelength)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>liconst: array</dt><dd><p>lidar calibration constants.</p>
+</dd>
+<dt>liconstStd: array</dt><dd><p>uncertainty of lidar constants.</p>
+</dd>
+<dt>caliStartTime: array</dt><dd><p>start time for each lidar calibration period. (datenum)</p>
+</dd>
+<dt>caliStopTime: array</dt><dd><p>stop time for each lidar calibration period. (datenum)</p>
+</dd>
+<dt>queryTime: datenum</dt><dd><p>query time for searching the lidar calibration constant.</p>
+</dd>
+<dt>dbFile: char</dt><dd><p>path of SQLite database, which contains lidar calibration
+results.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly type name. (case-sensitive)</p>
+</dd>
+<dt>wavelength: char</dt><dd><p>wavelength (‘355’, ‘532’, ‘1064’, ‘387’ or ‘607’)</p>
+</dd>
+<dt>telescope: char</dt><dd><p>detection range. (‘near_range’, or ‘far_range’)</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>flagUsePrevLC: logical</dt><dd><p>flag to control whether to search for lidar calibration
+constants from the database.</p>
+</dd>
+<dt>flagLCCalibration: logical</dt><dd><p>flag to control whether to use lidar calibration constants.</p>
+</dd>
+<dt>deltaTime: datenum</dt><dd><p>maximum time lapse between query time and calibration time of old
+calibration results.</p>
+</dd>
+<dt>default_liconst: double</dt><dd><p>default lidar calibration constant, which will be used if no
+suitable calibration results were found.</p>
+</dd>
+<dt>default_liconstStd: double</dt><dd><p>uncertainty of default lidar calibration constant.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>lcUsed: double</dt><dd><p>lidar constant that will be used. (photon_count * m^3 * sr)</p>
+</dd>
+<dt>lcUsedStd: double</dt><dd><p>uncertainty of lidar constant. (photon_count * m^3 * sr)</p>
+</dd>
+<dt>lcUsedTag: integer</dt><dd><p>source of the applied lidar constant.
+(1: klett; 2: raman; 3: defaults; 4: history)</p>
+</dd>
+<dt>lcUsedWarning: logical</dt><dd><p>flag to show whether the calibration constant is unstable.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-18. First edition.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.select_wvconst">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">select_wvconst</code><span class="sig-paren">(</span><em class="sig-param">wvconst</em>, <em class="sig-param">wvconstStd</em>, <em class="sig-param">IWVAttri</em>, <em class="sig-param">queryTime</em>, <em class="sig-param">dbFile</em>, <em class="sig-param">pollyType</em>, <em class="sig-param">varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.select_wvconst" title="Permalink to this definition">¶</a></dt>
+<dd><p>select_wvconst  select the most appropriate water vapor calibration constant.
+.. rubric:: Example</p>
+<dl>
+<dt>[wvconstUsed, wvconstUsedStd, wvconstUsedInfo] =</dt><dd><dl class="simple">
+<dt>select_wvconst(wvconst, wvconstStd,</dt><dd><p>IWVAttri, queryTime, dbFile, pollyType)</p>
+</dd>
+</dl>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>wvconst: array</dt><dd><p>water vapor calibration constants. [g*kg^{-1}]</p>
+</dd>
+<dt>wvconstStd: array</dt><dd><p>uncertainty of water vapor calibration constants. [g*kg^{-1}]</p>
+</dd>
+<dt>IWVAttri: struct</dt><dd><dl class="simple">
+<dt>datetime: array</dt><dd><p>water vapor calibration time. [datenum]</p>
+</dd>
+<dt>WVCaliInfo: cell</dt><dd><p>calibration information for each calibration period.</p>
+</dd>
+<dt>IntRange: matrix</dt><dd><p>index of integration range for calculate the raw IWV from lidar.</p>
+</dd>
+</dl>
+</dd>
+<dt>queryTime: datenum</dt><dd><p>query time for searching the water vapor calibration constant.</p>
+</dd>
+<dt>dbFile: char</dt><dd><p>path of SQLite database, which contains water vapor calibration
+results.</p>
+</dd>
+<dt>pollyType: char</dt><dd><p>polly type name. (case-sensitive)</p>
+</dd>
+</dl>
+</dd>
+<dt>Keywords:</dt><dd><dl class="simple">
+<dt>flagUsePrevWVConst: logical</dt><dd><p>flag to control whether to search for the water vapor calibration
+constants from the database.</p>
+</dd>
+<dt>flagWVCalibration: logical</dt><dd><p>flag to control whether to use water vapor calibration constants.</p>
+</dd>
+<dt>deltaTime: datenum</dt><dd><p>maximum time lapse between query time and calibration time of old
+calibration results.</p>
+</dd>
+<dt>default_wvconst: double</dt><dd><p>default water vapor calibration constant, which will be used if no
+suitable calibration results were found.</p>
+</dd>
+<dt>default_wvconstStd: double</dt><dd><p>uncertainty of default water vapor calibration constant.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>wvconstUsed: float</dt><dd><p>applied water vapor calibration constants.[g*kg^{-1}]</p>
+</dd>
+<dt>wvconstUsedStd: float</dt><dd><p>uncertainty of applied water vapor calibration constants.
+[g*kg^{-1}]</p>
+</dd>
+<dt>wvconstUsedInfo: struct</dt><dd><dl class="simple">
+<dt>flagCalibrated: logical</dt><dd><p>flag to show whether the applied constant comes from a
+successful calibration. If not, the result comes from the
+defaults.</p>
+</dd>
+<dt>IWVInstrument: char</dt><dd><p>the instrument for external standard IWV measurement</p>
+</dd>
+<dt>nIWVCali: integer</dt><dd><p>number of successful water vapor calibration.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-19. First Edition by Zhenping
+2019-08-16. Fix bug for taking defaults when there was no calibration</p>
+<blockquote>
+<div><p>instead of taking the previous calibration results.</p>
+</div></blockquote>
+<p>2020-04-18. Update the interface.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.sigGenWithNoise">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">sigGenWithNoise</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">noise</em>, <em class="sig-param">nProfile</em>, <em class="sig-param">method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.sigGenWithNoise" title="Permalink to this definition">¶</a></dt>
+<dd><p>SIGGENWITHNOISE generate the noise containing signal with certain noise adding
+algorithm.
+.. rubric:: Example</p>
+<p>[signalGen] = sigGenWithNoise(signal, noise, nProfile, method)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl>
+<dt>signal: array</dt><dd><blockquote>
+<div><p>signal strength.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>noise: array</dt><dd><p>noise. Unit should be keep the same with signal.</p>
+</dd>
+<dt>nProfile: array</dt><dd><p>number of signal profiles should be generated.</p>
+</dd>
+</dl>
+</dd>
+<dt>method: char</dt><dd><p>‘norm’: normal distributed noise -&gt;
+signalGen = signal + norm * noise
+‘poisson’: poisson distributed noise -&gt;
+signal = poisson(signal, nProfile)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>signalGen: matrix length(signal) * nProfile</dt><dd><p>noise containing signal.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-08-17. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.signalStd">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">signalStd</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">bg</em>, <em class="sig-param">smoothWindow</em>, <em class="sig-param">dimension</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.signalStd" title="Permalink to this definition">¶</a></dt>
+<dd><p>SIGNALSTD The uncertainty of the signal with taking into account of background
+noise and additional smoothing.
+.. rubric:: Example</p>
+<p>[sigStd] = signalStd(signal, bg, smoothWindow, dimension)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signal: array</dt><dd><p>signal strength</p>
+</dd>
+<dt>bg: array</dt><dd><p>background</p>
+</dd>
+<dt>smoothWindow: scalar or matrix</dt><dd><p>the width of the smoothing window. If smoothWindow is a scalar,
+the width is fixed. Otherwise, the width of smoothing window is
+dependent of the height.</p>
+</dd>
+<dt>dimension: integer</dt><dd><p>the dimension which the smoothing is along with.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>sigStd: array</dt><dd><p>uncertainty of the signal</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-09-02. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.smooth2">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">smooth2</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">win_m</em>, <em class="sig-param">win_n</em>, <em class="sig-param">flagMatrix</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.smooth2" title="Permalink to this definition">¶</a></dt>
+<dd><p>SMOOTH2 smooth matrix with running mean window.
+Usage:</p>
+<blockquote>
+<div><p>res = smooth2(data, win_m, win_n)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>data: matrix</dt><dd><p>input data.</p>
+</dd>
+<dt>win_m: int32</dt><dd><p>span along the 1-dimension</p>
+</dd>
+<dt>win_n: int32</dt><dd><p>span along the 2-dimension</p>
+</dd>
+<dt>flagMatrix: logical</dt><dd><p>whether to calculate the smoothing in a matrix way, which is much
+faster than by loop.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>res: matrix</dt><dd><p>smoothed data</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-02-22. First edition by Zhenping
+2019-09-05. Add the ‘flagMatrix’ to speed up the 2-D smoothing</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.smoothWin">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">smoothWin</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">win</em>, <em class="sig-param">method</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.smoothWin" title="Permalink to this definition">¶</a></dt>
+<dd><p>SMOOTHWIN smooth the signal with a height dependent window
+.. rubric:: Example</p>
+<p>[signal] = smoothWin(signal, win, method)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>signal: array</dt><dd><p>signal array.</p>
+</dd>
+<dt>win: scalar or matrix</dt><dd><p>if win is a scalar, the signal will be smoothed by a fixed sliding
+window;
+if win is a matrix, the window can be specified by the win matrix in
+different range</p>
+</dd>
+<dt>method: char</dt><dd><p>smoothing method. (default, ‘moving’)</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>signalSM: array</dt><dd><p>smoothed signal</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-08-20. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.subfigPos">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">subfigPos</code><span class="sig-paren">(</span><em class="sig-param">pos</em>, <em class="sig-param">nRow</em>, <em class="sig-param">nColumn</em>, <em class="sig-param">xPad</em>, <em class="sig-param">yPad</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.subfigPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>SUBFIGPOS calculate the normalized position of each subfigure.
+.. rubric:: Example</p>
+<p>[figPos] = subfigPos(pos, nRow, nColumn, xpad, ypad)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>pos: 4-element array</dt><dd><p>[left, bottom, width, height]</p>
+</dd>
+<dt>nRow: integer</dt><dd><p>number of the total rows. (default, 1)</p>
+</dd>
+<dt>nColumn: integer</dt><dd><p>number of the total columns. (default, 1)</p>
+</dd>
+<dt>xPad: numeric</dt><dd><p>x-padding</p>
+</dd>
+<dt>yPad: numeric</dt><dd><p>y-padding</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>figPos: matrix</dt><dd><p>returned postition of each subfigures. The first figure is the
+top-right one and as followed by from left-to-right and
+top-to-base.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-11-09. First edition by Zhenping
+2019-12-15. Enable set the x-y padding.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.tNow">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">tNow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.tNow" title="Permalink to this definition">¶</a></dt>
+<dd><p>TNOW generate the string of the present time with a certain format
+.. rubric:: Example</p>
+<p>[tStr] = tNow()</p>
+<p>Inputs:
+Outputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>tStr: char</dt><dd><p>date string for now.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-12-16. First edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.testSQLiteJDBC">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">testSQLiteJDBC</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.testSQLiteJDBC" title="Permalink to this definition">¶</a></dt>
+<dd><p>testSQLiteJDBC test whether SQLite JDBC is in MATLAB Java search path.
+.. rubric:: Example</p>
+<p>[flagSQLDriverValid] = testSQLiteJDBC()</p>
+<dl class="simple">
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flagSQLDriverValid: logical</dt><dd><p>flag to show whether SQLite JDBC is in the search path.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2020-04-23. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zp&#46;yin&#37;&#52;&#48;whu&#46;edu&#46;cn">zp<span>&#46;</span>yin<span>&#64;</span>whu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.timelabellayout">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">timelabellayout</code><span class="sig-paren">(</span><em class="sig-param">tIn</em>, <em class="sig-param">outFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.timelabellayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>TIMELABELLAYOUT tight layout of time label.
+.. rubric:: Example</p>
+<p>[tOutTick, tOutTickStr] = timelabellayout(tIn, outFormat)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>tIn: array</dt><dd><p>measurement time. [datenum]</p>
+</dd>
+<dt>outFormat: char</dt><dd><p>output format for the date string.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>tOutTick: array</dt><dd><p>datenum for each tick label.</p>
+</dd>
+<dt>tOutTickStr: cell</dt><dd><p>tick label.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-29. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.unix_timestamp_2_datenum">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">unix_timestamp_2_datenum</code><span class="sig-paren">(</span><em class="sig-param">unix_timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.unix_timestamp_2_datenum" title="Permalink to this definition">¶</a></dt>
+<dd><p>UNIX_TIMESTAMP_2_DATENUM convert the matlab datenum to unix timstamp.
+.. rubric:: Example</p>
+<p>[matlab_datenum] = unix_timestamp_2_datenum(unix_timestamp)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>unix_timestamp: datenum</p>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>matlab_datenum: float</dt><dd><p>unix timestamp coressponding to the input.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-05-10. First Edition by Zhenping</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>unix timestamp is based on the seconds since 1 January 1970. And both of
+the convention didn’t correct the leap seconds.</p>
+</div>
+<dl class="simple">
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.update_colormap">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">update_colormap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.update_colormap" title="Permalink to this definition">¶</a></dt>
+<dd><p>UPDATE_COLORMAP Update user defined colormaps used in the
+pollynet_processing_programss
+.. rubric:: Example</p>
+<p>[status_colormap, TC_colormap] = update_colormap()</p>
+<p>Inputs:
+Outputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>status_colormap: matrix</dt><dd><p>color table for the signal status plot.</p>
+</dd>
+<dt>TC_colormap: matrix</dt><dd><p>color table for the aerosol target classification plot.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>History:</dt><dd><p>2018-12-30. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.write_2_donelist">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">write_2_donelist</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">permission</em>, <em class="sig-param">lidar</em>, <em class="sig-param">location</em>, <em class="sig-param">startTime</em>, <em class="sig-param">stopTime</em>, <em class="sig-param">last_update</em>, <em class="sig-param">lambda</em>, <em class="sig-param">imageFile</em>, <em class="sig-param">level</em>, <em class="sig-param">thisinfo</em>, <em class="sig-param">nc_zip_file</em>, <em class="sig-param">nc_zip_file_size</em>, <em class="sig-param">active</em>, <em class="sig-param">GDAS1</em>, <em class="sig-param">GDAS1_timestamp</em>, <em class="sig-param">lidar_ratio</em>, <em class="sig-param">software_version</em>, <em class="sig-param">product_type</em>, <em class="sig-param">product_starttime</em>, <em class="sig-param">product_stoptime</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.write_2_donelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>WRITE_2_DONELIST Write info of each generated pic to donelist file.
+.. rubric:: Example</p>
+<p>write_2_donelist(file, permission, lidar, location, startTime,
+endTime, last_update, lambda, imageFile, level, thisinfo, nc_zip_file,
+nc_zip_file_size, active, GDAS1, GDAS1_timestamp, lidar_ratio,
+software_version, comment);</p>
+<dl>
+<dt>Inputs:</dt><dd><dl>
+<dt>file: char</dt><dd><p>filename of the done list file.</p>
+</dd>
+<dt>permission: char</dt><dd><p>file access type.</p>
+</dd>
+<dt>lidar: char</dt><dd><p>lidar label. Please go to /doc/pollynet.md for detailed information.</p>
+</dd>
+<dt>location: char</dt><dd><p>location of the current measurement campaign. This info can be
+found in /config/pollynet_processing_chain_link.txt</p>
+</dd>
+<dt>startTime: char</dt><dd><p>start time of the current measurement. (yyyy-mm-dd HH:MM:SS)</p>
+</dd>
+<dt>stopTime: char</dt><dd><p>stop time for the current logged data file. (yyyy-mm-dd HH:MM:SS)</p>
+</dd>
+<dt>last_update: char</dt><dd><p>last updated time for the image. (yyyy-mm-dd HH:MM:SS)</p>
+</dd>
+<dt>lambda: char</dt><dd><p>wavelength label for the image.</p>
+</dd>
+<dt>imageFile: char</dt><dd><p>relative directory of the image.</p>
+</dd>
+<dt>level: char</dt><dd><p>level of the image. (Need to be updated)</p>
+</dd>
+<dt>thisinfo: char</dt><dd><p>information about the image.
+(like which configurations you’ve used for the retrieving.)</p>
+</dd>
+<dt>nc_zip_file: char</dt><dd><p>data file.</p>
+</dd>
+<dt>nc_zip_file_size: char</dt><dd><p>size of the data file.</p>
+</dd>
+<dt>active: char</dt><dd><p>flag to show whether the lidar is well operated.</p>
+</dd>
+<dt>GDAS1: char</dt><dd><p>flag to show whether the GDAS1 data is used for the retrievign.</p>
+</dd>
+<dt>GDAS1_timestamp: char</dt><dd><p>timestamp for the used GDAS1 file. (yyyymmddHH)</p>
+</dd>
+<dt>lidar_ratio: char</dt><dd><p>lidar ratio.</p>
+</dd>
+<dt>software_version: char</dt><dd><p>software version</p>
+</dd>
+<dt>product_type: char</dt><dd><p>identification for different lidar product.
+(Detailed information can be found in</p>
+<blockquote>
+<div><p>/doc/pollynet_processing_program.md)</p>
+</div></blockquote>
+</dd>
+<dt>product_starttime: char</dt><dd><p>the start time for the current product. (yyyymmdd HH:MM:SS)</p>
+</dd>
+<dt>product_stoptime: char</dt><dd><p>the stop time for the current product. (yyyymmdd HH:MM:SS)</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-01-04. First Edition by Zhenping
+2019-02-15. Add two params of ‘product_starttime’ and</p>
+<blockquote>
+<div><p>‘nproduct_stoptime’.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>2019-03-12. Add input parameter of ‘product_type’ according to the</dt><dd><p>requirement of new pollyWebApplication.</p>
+</dd>
+<dt>2019-08-16. Add the criteria for ‘imageFile’. If the image doesn’t</dt><dd><p>exist, throw an warning instead of writing to the
+done_fielist.</p>
+</dd>
+</dl>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.write_daily_to_filelist">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">write_daily_to_filelist</code><span class="sig-paren">(</span><em class="sig-param">pollyType</em>, <em class="sig-param">saveFolder</em>, <em class="sig-param">pollynetConfigFile</em>, <em class="sig-param">year</em>, <em class="sig-param">month</em>, <em class="sig-param">day</em>, <em class="sig-param">writeMode</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.write_daily_to_filelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>WRITE_DAILY_TO_FILELIST Unzip the polly data and write the data info to the
+todolist file for pollynet processing chain.
+.. rubric:: Example</p>
+<dl>
+<dt>write_daily_to_filelist(pollyType, saveFolder, pollynetConfigFile,</dt><dd><p>year, month, day, writeMode)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>pollyType: char</dt><dd><p>polly instrument.
+e.g., arielle</p>
+</dd>
+<dt>saveFolder: char</dt><dd><p>polly data folder.
+e.g., /oceanethome/pollyxt</p>
+</dd>
+<dt>pollynetConfigFile: char</dt><dd><p>the absolute path of the pollynet configuration file.
+e.g., /home/picasso/Pollynet_Processing_Chain/config/pollynet_processing_chain_config.json</p>
+</dd>
+</dl>
+<p>year: integer | char
+month: integer | char
+day: integer | char
+writeMode: char</p>
+<blockquote>
+<div><p>If writeMode was ‘a’, the polly data info will be appended. If ‘w’,
+a new todofile will be created.</p>
+</div></blockquote>
+</dd>
+<dt>History:</dt><dd><p>2019-07-21. First Edition by Zhenping
+2019-10-16. Add warnings when no polly data files were found.</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.write_laserlogbook">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">write_laserlogbook</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">data</em>, <em class="sig-param">mode</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.write_laserlogbook" title="Permalink to this definition">¶</a></dt>
+<dd><p>write_laserlogbook create laserlogbook file with the given laserlogbook data.
+.. rubric:: Example</p>
+<p>write_laserlogbook(file, data, mode)</p>
+<dl>
+<dt>Inputs:</dt><dd><dl>
+<dt>file: char</dt><dd><p>absolute file path of the laserlogbook file.</p>
+</dd>
+<dt>data: struct</dt><dd><dl class="simple">
+<dt>time: datenum array</dt><dd><p>log time.</p>
+</dd>
+<dt>T1064: array</dt><dd><p>temperature of the 1064 PMT</p>
+</dd>
+<dt>pyro: array</dt><dd><p>laser energy</p>
+</dd>
+</dl>
+<p>T1: array
+RH1: array
+T2: array
+RH2: array
+Tout: array
+RHout: array
+Status: array
+Dout: array</p>
+</dd>
+<dt>mode: char</dt><dd><p>file creation mode.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>example of polly laserlogbook file:</p>
+<blockquote>
+<div><p>2019-09-21 18:00:49SC,29233803 WT,28.6 HT,35   EO,8024 LS,310,1,0400   ER,OK,0400      EN,435  ExtPyro: 17.800 mJ      Temp1064: -30.5 C, Temp1: 30.1 C, Temp2: 31.4 C, OutsideRH: 60.7 %, OutsideT: 28.8 C, roof: 0, rain: 2, shutter: 4
+2019-09-21 18:01:56SC,29235134 WT,28.6 HT,35   EO,8024 LS,310,1,0400   ER,OK,0400      EN,442  ExtPyro: 18.295 mJ      Temp1064: -30.5 C, Temp1: 30.0 C, Temp2: 31.2 C, OutsideRH: 60.3 %, OutsideT: 28.9 C, roof: 0, rain: 2, shutter: 4</p>
+</div></blockquote>
+<dl class="simple">
+<dt>History:</dt><dd><p>2019-09-28. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.write_single_to_filelist">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">write_single_to_filelist</code><span class="sig-paren">(</span><em class="sig-param">pollyType</em>, <em class="sig-param">pollyZipFilepath</em>, <em class="sig-param">pollynetConfigFile</em>, <em class="sig-param">writeMode</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.write_single_to_filelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>WRITE_SINGLE_TO_FILELIST Unzip the polly data to the todofile folder and setup
+the fileinfo_new.txt.
+.. rubric:: Example</p>
+<dl>
+<dt>[flag] = write_single_to_filelist(pollyType, pollyZipFilepath,</dt><dd><p>pollynetConfigFile, writeMode)</p>
+</dd>
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>pollyType: char</dt><dd><p>polly instrument.</p>
+</dd>
+<dt>pollyZipFilepath: char</dt><dd><p>the absolute path the zipped polly data.</p>
+</dd>
+<dt>pollynetConfigFile: char</dt><dd><p>the absolute path of the pollynet configuration file.</p>
+</dd>
+<dt>writeMode: char</dt><dd><p>If writeMode was ‘a’, the polly data info will be appended. If ‘w’,
+a new todofile will be created.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>flag: logical</dt><dd><p>if true, the file was extracted and inserted into the task list
+successfully. Vice versa.</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2019-01-01. First Edition by Zhenping
+2019-08-13. Add new input of ‘pollynetConfigFile’ to enable read the</p>
+<blockquote>
+<div><p>todofile list from the configuration file.
+Add the output of ‘flag’ to represent the status.</p>
+</div></blockquote>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt id="lib.wvmr_2_rh">
+<code class="sig-prename descclassname">lib.</code><code class="sig-name descname">wvmr_2_rh</code><span class="sig-paren">(</span><em class="sig-param">wvmr</em>, <em class="sig-param">es</em>, <em class="sig-param">pressure</em><span class="sig-paren">)</span><a class="headerlink" href="#lib.wvmr_2_rh" title="Permalink to this definition">¶</a></dt>
+<dd><p>WVMR_2_RH convert the water vapor mixing ratio to relative humidity.
+.. rubric:: Example</p>
+<p>[rh] = wvmr_2_rh(wvmr, es, pressure)</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>wvmr: array or matrix</dt><dd><p>water vapor mixing ratio. [g*kg^{-1}]</p>
+</dd>
+<dt>es: array or matrix</dt><dd><p>saturated vapor pressure. [hPa]</p>
+</dd>
+<dt>pressure: array or matrix</dt><dd><p>air pressure. [hPa]</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>rh: array or matrix</dt><dd><p>relative humidity. [%]</p>
+</dd>
+</dl>
+</dd>
+<dt>History:</dt><dd><p>2018-12-26. First Edition by Zhenping</p>
+</dd>
+<dt>Contact:</dt><dd><p><a class="reference external" href="mailto:zhenping&#37;&#52;&#48;tropos&#46;de">zhenping<span>&#64;</span>tropos<span>&#46;</span>de</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="polly_general_func.html" class="btn btn-neutral float-right" title="polly general functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="doc/running_Pollynet_Processing_Chain_on_the_server.html" class="btn btn-neutral float-left" title="Running Picasso on the server (Internal tutorial)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Yin, Baars
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

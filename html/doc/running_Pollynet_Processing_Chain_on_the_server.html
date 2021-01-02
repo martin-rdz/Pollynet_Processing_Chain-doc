@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running Picasso on the server (Internal tutorial) &mdash; Pollynet_Processing_Chain  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="lib functions" href="../lib.html" />
+    <link rel="prev" title="PollyNET Processing Program" href="pollynet_processing_program.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Pollynet_Processing_Chain
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anaconda_installation.html">Anaconda installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_config.html">Polly Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_defaults.html">Polly Default Settings for pollynet processing chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polly_logbook.html">logbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pollynet.html">pollynet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pollynet_processing_chain_config.html">pollynet_processing_chain_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pollynet_processing_program.html">PollyNET Processing Program</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running Picasso on the server (Internal tutorial)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download">Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#process-the-polly-data-at-the-given-day">Process the Polly data at the given day</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#process-the-polly-data-between-two-given-dates">Process the Polly data between two given dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automate-the-processing-for-the-entire-pollynet-data">Automate the processing for the entire PollyNET data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#schedual-the-script">Schedual the script</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lib.html">lib functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../polly_general_func.html">polly general functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scattering.html">Rayleigh Scattering module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pollynet_Processing_Chain</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Running Picasso on the server (Internal tutorial)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doc/running_Pollynet_Processing_Chain_on_the_server.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-picasso-on-the-server-internal-tutorial">
+<h1>Running Picasso on the server (Internal tutorial)<a class="headerlink" href="#running-picasso-on-the-server-internal-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Let’s start from a server without any pre-installations.</p>
+<div class="section" id="download">
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~   <span class="c1"># navigate to your home directory</span>
+git clone https://github.com/ZPYin/Pollynet_Processing_Chain
+
+<span class="nb">cd</span> Pollynet_Processing_Chain
+git fetch origin dev:dev   <span class="c1"># fetch the dev branch for feature developments</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/"><strong>Anaconda3</strong></a> to provide the Python interpreter and easy packages management</p></li>
+<li><p><a class="reference external" href="https://www.mathworks.com/downloads/"><strong>&gt; MATLAB 2014a</strong></a> (Only MATLAB 2014a and 2018b have been tested)</p></li>
+<li><p>MySQL connector</p></li>
+</ul>
+<p><strong>commands to install the dependencies</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+mkdir tmp
+<span class="nb">cd</span> tmp
+
+<span class="c1"># Anaconda3</span>
+wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
+bash Anaconda3-2019.07-Linux-x86_64.sh
+<span class="c1"># follow the installation instructions</span>
+
+<span class="c1"># install python dependencies</span>
+<span class="c1"># Anaconda3 has built-in support of `matplotlib`, `numpy` and `scipy`</span>
+</pre></div>
+</div>
+<p><strong>MySQL connector for MATLAB</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/tmp
+
+<span class="c1"># download the mysql connector</span>
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.48.tar.gz
+
+<span class="c1"># unzip mysql connector into &#39;~/include&#39;</span>
+mkdir ~/include
+unzip mysql-connector-java-5.1.48.tar.gz -d ~/include
+</pre></div>
+</div>
+<p>you can also check the <a class="reference external" href="https://dev.mysql.com/downloads/connector/j/">MySQL website</a> for details. Please choose the right <strong>version</strong> (only 5.1), otherwise you will fail to connect the to MySQL database.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add the mysql connector into MATLAB search path</span>
+<span class="c1"># Create &#39;javaclasspath.txt&#39; under ~/.matlab/{version}/ </span>
+<span class="c1"># with inserting an entry which specifies the absolute path to the .jar file</span>
+<span class="c1"># Restart matlab</span>
+</pre></div>
+</div>
+<p>Note:
+Be sure the <strong>mysql connector</strong> works before you continue the tutorial.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Details about the configurations can be found <a class="reference external" href="./doc/../Pollynet_Processing_Chain.pptx">here</a></p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>There are several bash scripts to automate your work with using the <strong>Pollynet_Processing_Chain</strong> (Picasso), which were located under <a class="reference external" href="./lib/script"><code class="docutils literal notranslate"><span class="pre">../lib/script</span></code></a>.</p>
+<p>In general, it consists of two (three) steps as below:</p>
+<ul class="simple">
+<li><p>Unzip Polly data into <code class="docutils literal notranslate"><span class="pre">todo_filelist</span></code> and write file info into <code class="docutils literal notranslate"><span class="pre">fileinfo_new.txt</span></code></p></li>
+<li><p>Activate <strong>Picasso</strong> to process the polly data and prepare the <code class="docutils literal notranslate"><span class="pre">done_filelist.txt</span></code></p></li>
+<li><p>Scan <code class="docutils literal notranslate"><span class="pre">done_filelist.txt</span></code> and add the image info into the Polly database (Picasso_go.sh)</p></li>
+</ul>
+<div class="section" id="process-the-polly-data-at-the-given-day">
+<h3>Process the Polly data at the given day<a class="headerlink" href="#process-the-polly-data-at-the-given-day" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># process the data from pollyxt_tjk at 2019-10-01</span>
+~/Pollynet_Processing_Chain/lib/script/pollynet_process_day -d <span class="m">20191001</span> -p pollyxt_tjk -f /pollyhome/pollyxt_tjk -c pollynet_processing_chain_config.json
+</pre></div>
+</div>
+<p>Instructions with using <code class="docutils literal notranslate"><span class="pre">pollynet_process_day.sh</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(base) [Picasso@rsd ~]$ pollynet_process_day -h
+Usage: /pollyhome/Picasso/Pollynet_Processing_Chain/lib/script/pollynet_process_day.sh [option...] {today|yesterday}
+
+Process the polly data at any give time.
+   -d, --yyyymmdd          set the date for the polly data
+   -p, --polly_type        set the instrument type
+                           - PollyXT_LACROS
+                           - PollyXT_TROPOS
+                           - PollyXT_NOA
+                           - PollyXT_FMI
+                           - PollyXT_UW
+                           - PollyXT_DWD
+                           - PollyXT_TJK
+                           - PollyXT_TAU
+                           - arielle
+                           - Polly_1v2
+   -f, --polly_folder      specify the polly data folder
+                           e.g., &#39;/pollyhome/pollyxt_lacros&#39;
+   -c, --config_file       specify the pollynet processing file for the data processing
+                           e.g., &#39;pollynet_processing_chain_config.json&#39;
+   -h, --help              show help message
+</pre></div>
+</div>
+</div>
+<div class="section" id="process-the-polly-data-between-two-given-dates">
+<h3>Process the Polly data between two given dates<a class="headerlink" href="#process-the-polly-data-between-two-given-dates" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># process the data from pollyxt_tjk between 2019-10-01 and 2019-10-05</span>
+~/Pollynet_Processing_Chain/lib/script/pollynet_process_history_data.sh -s <span class="m">20191001</span> -e <span class="m">20191005</span> -p pollyxt_tjk -f /pollyhome/pollyxt_tjk -c pollynet_processing_chain_config.json
+</pre></div>
+</div>
+<p>Instructions with using <code class="docutils literal notranslate"><span class="pre">pollynet_process_history_day.sh</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(base) [Picasso@rsd ~]$ pollynet_process_history_data -h
+Usage: /pollyhome/Picasso/Pollynet_Processing_Chain/lib/script/pollynet_process_history_data.sh [option...] 
+
+Process the polly history data.
+   -s, --start_date        set the start date for the polly data
+                           e.g., 20110101
+   -e, --end_date          set the end date for the polly data
+                           e.g., 20150101
+   -p, --polly_type        set the instrument type
+                           - PollyXT_LACROS
+                           - PollyXT_TROPOS
+                           - PollyXT_NOA
+                           - PollyXT_FMI
+                           - PollyXT_UW
+                           - PollyXT_DWD
+                           - PollyXT_TJK
+                           - PollyXT_TAU
+                           - arielle
+                           - Polly_1v2
+   -f, --polly_folder      specify the polly data folder
+                           e.g., &#39;/pollyhome/pollyxt_lacros&#39;
+   -c, --config_file       specify the pollynet processing file for the data processing
+                           e.g., &#39;pollynet_processing_chain_config.json&#39;
+   -h, --help              show help message
+</pre></div>
+</div>
+</div>
+<div class="section" id="automate-the-processing-for-the-entire-pollynet-data">
+<h3>Automate the processing for the entire PollyNET data<a class="headerlink" href="#automate-the-processing-for-the-entire-pollynet-data" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Process the data during the past 7 days that was not loaded into the database yet</span>
+<span class="c1"># and scan the done_filelist.txt after all the results were output</span>
+~/Pollynet_Processing_Chain/lib/script/Picasso_go.sh -p /pollyhome/Picasso/pollyAPP/config/config.private -c pollynet_processing_chain_config.json --check_gdas <span class="nb">true</span>
+</pre></div>
+</div>
+<p>Instructions with using <code class="docutils literal notranslate"><span class="pre">Picasso_go.sh</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(base) [Picasso@rsd ~]$ Picasso_go -h
+Usage: /pollyhome/Picasso/Pollynet_Processing_Chain/lib/script/Picasso_go.sh [option...]
+
+Start Picasso.
+   -p, --pollyapp_config   specify the path of &#39;config.private&#39; for the pollyAPP
+   -g, --check_gdas        flag to control whether to reprocess the data when GDAS if ready (true | false)
+   -c, --config_file       specify the pollynet processing file for the data processing
+                           e.g., &#39;pollynet_processing_chain_config.json&#39;
+   -h, --help              show help message
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="schedual-the-script">
+<h2>Schedual the script<a class="headerlink" href="#schedual-the-script" title="Permalink to this headline">¶</a></h2>
+<p>Below is an example that was configured for our live environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># For those who work with the crontab</span>
+<span class="c1"># Please keep your task well-documented, in case others can keep going.</span>
+
+<span class="c1"># setup the environment for perl and Anaconda3</span>
+<span class="nv">PATH</span><span class="o">=</span>/bin:/usr/bin:/pollyhome/Picasso/.perlbrew/libs/perl-5.22.2<span class="se">\@</span>devel/bin:/pollyhome/Picasso/perl5/perlbrew/bin:/pollyhome/Picasso/perl5/perlbrew/perls/perl-5.22.2/bin:/pollyhome/Picasso/anaconda3/bin
+<span class="nv">PERL5LIB</span><span class="o">=</span>/pollyhome/Picasso/.perlbrew/libs/perl-5.22.2@devel/lib/perl5
+
+<span class="c1"># Picasso real-time analysis</span>
+<span class="m">0</span> <span class="m">2</span>-23 * * * /usr/bin/flock -x -w <span class="m">1200</span> /tmp/ms.cron2.lockfile -c <span class="s1">&#39;/pollyhome/Picasso/Pollynet_Processing_Chain/lib/script/Picasso_go.sh &gt; /pollyhome/Picasso/log_push_current_pollydata 2&gt;&amp;1&#39;</span>
+
+<span class="c1"># Picasso reanalysis with GDAS1 data</span>
+<span class="m">1</span> <span class="m">0</span> * * * /usr/bin/flock -x -w <span class="m">1200</span> /tmp/ms.cron2.lockfile -c <span class="s1">&#39;/pollyhome/Picasso/Pollynet_Processing_Chain/lib/script/Picasso_go.sh -g true &gt; /pollyhome/Picasso/log_push_current_pollydata 2&gt;&amp;1&#39;</span>
+
+<span class="c1"># Update the GDAS1 station, AERONET and radiosonde station lsit</span>
+<span class="m">0</span> <span class="m">1</span> * * * /pollyhome/Picasso/Pollynet_Processing_Chain/lib/script/update_gdas1_site_list /pollyhome/Picasso/Pollynet_Procssing_Chain/doc/gdas1-site-list.txt
+<span class="m">2</span> <span class="m">1</span> * * * /pollyhome/Picasso/Pollynet_Processing_Chain/lib/script/update_radiosonde_and_aeronet_site_list.sh
+
+<span class="c1"># scan the trajectory results into the database</span>
+<span class="c1"># 10 1 * * * source activate traj_scanner; python /pollyhome/Picasso/trajectory_results/traj_file_scanner/src/trajectory_scanner.py; add_new_data2pollydb /pollyhome/Picasso/done_filelist/done_filelist_trajectory.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lib.html" class="btn btn-neutral float-right" title="lib functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pollynet_processing_program.html" class="btn btn-neutral float-left" title="PollyNET Processing Program" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Yin, Baars
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
